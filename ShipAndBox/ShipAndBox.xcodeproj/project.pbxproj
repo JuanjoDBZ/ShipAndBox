@@ -15,8 +15,6 @@
 		04BD4772268D0E860058B77A /* SABLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD476C268D0E860058B77A /* SABLoginVC.swift */; };
 		F233E15C268CFF6A00D44AFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F233E15B268CFF6A00D44AFD /* AppDelegate.swift */; };
 		F233E15E268CFF6A00D44AFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F233E15D268CFF6A00D44AFD /* SceneDelegate.swift */; };
-		F233E160268CFF6A00D44AFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F233E15F268CFF6A00D44AFD /* ViewController.swift */; };
-		F233E163268CFF6A00D44AFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F233E161268CFF6A00D44AFD /* Main.storyboard */; };
 		F233E165268CFF6B00D44AFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F233E164268CFF6B00D44AFD /* Assets.xcassets */; };
 		F233E168268CFF6B00D44AFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F233E166268CFF6B00D44AFD /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -31,8 +29,6 @@
 		F233E158268CFF6A00D44AFD /* ShipAndBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShipAndBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F233E15B268CFF6A00D44AFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F233E15D268CFF6A00D44AFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F233E15F268CFF6A00D44AFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F233E162268CFF6A00D44AFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F233E164268CFF6B00D44AFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F233E167268CFF6B00D44AFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F233E169268CFF6B00D44AFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -124,8 +120,6 @@
 				04BD4761268D0DF10058B77A /* SABLogin */,
 				F233E15B268CFF6A00D44AFD /* AppDelegate.swift */,
 				F233E15D268CFF6A00D44AFD /* SceneDelegate.swift */,
-				F233E15F268CFF6A00D44AFD /* ViewController.swift */,
-				F233E161268CFF6A00D44AFD /* Main.storyboard */,
 				F233E164268CFF6B00D44AFD /* Assets.xcassets */,
 				F233E166268CFF6B00D44AFD /* LaunchScreen.storyboard */,
 				F233E169268CFF6B00D44AFD /* Info.plist */,
@@ -192,7 +186,6 @@
 			files = (
 				F233E168268CFF6B00D44AFD /* LaunchScreen.storyboard in Resources */,
 				F233E165268CFF6B00D44AFD /* Assets.xcassets in Resources */,
-				F233E163268CFF6A00D44AFD /* Main.storyboard in Resources */,
 				04BD476D268D0E860058B77A /* SABLoginVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,7 +197,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F233E160268CFF6A00D44AFD /* ViewController.swift in Sources */,
 				04BD476F268D0E860058B77A /* SABLoginRouter.swift in Sources */,
 				04BD476E268D0E860058B77A /* SABLoginPresenter.swift in Sources */,
 				04BD4772268D0E860058B77A /* SABLoginVC.swift in Sources */,
@@ -218,14 +210,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F233E161268CFF6A00D44AFD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F233E162268CFF6A00D44AFD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F233E166268CFF6B00D44AFD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
