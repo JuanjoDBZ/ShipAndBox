@@ -17,6 +17,12 @@
 		F233E15E268CFF6A00D44AFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F233E15D268CFF6A00D44AFD /* SceneDelegate.swift */; };
 		F233E165268CFF6B00D44AFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F233E164268CFF6B00D44AFD /* Assets.xcassets */; };
 		F233E168268CFF6B00D44AFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F233E166268CFF6B00D44AFD /* LaunchScreen.storyboard */; };
+		F233E17D268D25DD00D44AFD /* SABRegistroVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F233E177268D25DD00D44AFD /* SABRegistroVC.xib */; };
+		F233E17E268D25DD00D44AFD /* SABRegistroPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F233E178268D25DD00D44AFD /* SABRegistroPresenter.swift */; };
+		F233E17F268D25DD00D44AFD /* SABRegistroRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F233E179268D25DD00D44AFD /* SABRegistroRouter.swift */; };
+		F233E180268D25DD00D44AFD /* SABRegistroInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F233E17A268D25DD00D44AFD /* SABRegistroInteractor.swift */; };
+		F233E181268D25DD00D44AFD /* SABRegistroProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F233E17B268D25DD00D44AFD /* SABRegistroProtocol.swift */; };
+		F233E182268D25DD00D44AFD /* SABRegistroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F233E17C268D25DD00D44AFD /* SABRegistroVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +38,12 @@
 		F233E164268CFF6B00D44AFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F233E167268CFF6B00D44AFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F233E169268CFF6B00D44AFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F233E177268D25DD00D44AFD /* SABRegistroVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SABRegistroVC.xib; sourceTree = "<group>"; };
+		F233E178268D25DD00D44AFD /* SABRegistroPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABRegistroPresenter.swift; sourceTree = "<group>"; };
+		F233E179268D25DD00D44AFD /* SABRegistroRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABRegistroRouter.swift; sourceTree = "<group>"; };
+		F233E17A268D25DD00D44AFD /* SABRegistroInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABRegistroInteractor.swift; sourceTree = "<group>"; };
+		F233E17B268D25DD00D44AFD /* SABRegistroProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABRegistroProtocol.swift; sourceTree = "<group>"; };
+		F233E17C268D25DD00D44AFD /* SABRegistroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABRegistroVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +143,54 @@
 		F233E172268D1BE000D44AFD /* SABRegistro */ = {
 			isa = PBXGroup;
 			children = (
+				F233E188268D262E00D44AFD /* View */,
+				F233E186268D261200D44AFD /* Presenter */,
+				F233E185268D260B00D44AFD /* Interactor */,
+				F233E187268D261D00D44AFD /* Protocol */,
+				F233E184268D25FB00D44AFD /* Router */,
 			);
 			path = SABRegistro;
+			sourceTree = "<group>";
+		};
+		F233E184268D25FB00D44AFD /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F233E179268D25DD00D44AFD /* SABRegistroRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F233E185268D260B00D44AFD /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				F233E17A268D25DD00D44AFD /* SABRegistroInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		F233E186268D261200D44AFD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F233E178268D25DD00D44AFD /* SABRegistroPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F233E187268D261D00D44AFD /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F233E17B268D25DD00D44AFD /* SABRegistroProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		F233E188268D262E00D44AFD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F233E177268D25DD00D44AFD /* SABRegistroVC.xib */,
+				F233E17C268D25DD00D44AFD /* SABRegistroVC.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F233E17D268D25DD00D44AFD /* SABRegistroVC.xib in Resources */,
 				F233E168268CFF6B00D44AFD /* LaunchScreen.storyboard in Resources */,
 				F233E165268CFF6B00D44AFD /* Assets.xcassets in Resources */,
 				04BD476D268D0E860058B77A /* SABLoginVC.xib in Resources */,
@@ -205,11 +264,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F233E182268D25DD00D44AFD /* SABRegistroVC.swift in Sources */,
 				04BD476F268D0E860058B77A /* SABLoginRouter.swift in Sources */,
 				04BD476E268D0E860058B77A /* SABLoginPresenter.swift in Sources */,
+				F233E17F268D25DD00D44AFD /* SABRegistroRouter.swift in Sources */,
+				F233E17E268D25DD00D44AFD /* SABRegistroPresenter.swift in Sources */,
 				04BD4772268D0E860058B77A /* SABLoginVC.swift in Sources */,
 				04BD4770268D0E860058B77A /* SABLoginInteractor.swift in Sources */,
+				F233E180268D25DD00D44AFD /* SABRegistroInteractor.swift in Sources */,
 				04BD4771268D0E860058B77A /* SABLoginProtocol.swift in Sources */,
+				F233E181268D25DD00D44AFD /* SABRegistroProtocol.swift in Sources */,
 				F233E15C268CFF6A00D44AFD /* AppDelegate.swift in Sources */,
 				F233E15E268CFF6A00D44AFD /* SceneDelegate.swift in Sources */,
 			);
