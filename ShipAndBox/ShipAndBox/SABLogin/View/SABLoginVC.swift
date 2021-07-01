@@ -11,6 +11,7 @@ import UIKit
 
 class SABLoginVC: UIViewController {
 
+    @IBOutlet weak var lbltest: UILabel!
     var presenter: SABLoginPresenterProtocol?
 
     override func viewDidLoad() {

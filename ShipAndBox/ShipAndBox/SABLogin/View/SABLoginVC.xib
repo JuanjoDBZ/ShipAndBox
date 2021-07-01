@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SABLoginVC" customModule="ShipAndBox" customModuleProvider="target">
             <connections>
+                <outlet property="lbltest" destination="vV0-iO-SzR" id="Tfw-1P-QGL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
