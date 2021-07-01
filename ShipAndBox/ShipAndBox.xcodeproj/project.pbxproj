@@ -13,6 +13,12 @@
 		04BD4770268D0E860058B77A /* SABLoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD476A268D0E860058B77A /* SABLoginInteractor.swift */; };
 		04BD4771268D0E860058B77A /* SABLoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD476B268D0E860058B77A /* SABLoginProtocol.swift */; };
 		04BD4772268D0E860058B77A /* SABLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD476C268D0E860058B77A /* SABLoginVC.swift */; };
+		E3D8DE5E268D290300911762 /* SABChangePasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3D8DE58268D290300911762 /* SABChangePasswordVC.xib */; };
+		E3D8DE5F268D290300911762 /* SABChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D8DE59268D290300911762 /* SABChangePasswordPresenter.swift */; };
+		E3D8DE60268D290300911762 /* SABChangePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D8DE5A268D290300911762 /* SABChangePasswordRouter.swift */; };
+		E3D8DE61268D290300911762 /* SABChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D8DE5B268D290300911762 /* SABChangePasswordInteractor.swift */; };
+		E3D8DE62268D290300911762 /* SABChangePasswordProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D8DE5C268D290300911762 /* SABChangePasswordProtocol.swift */; };
+		E3D8DE63268D290300911762 /* SABChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D8DE5D268D290300911762 /* SABChangePasswordVC.swift */; };
 		F233E15C268CFF6A00D44AFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F233E15B268CFF6A00D44AFD /* AppDelegate.swift */; };
 		F233E15E268CFF6A00D44AFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F233E15D268CFF6A00D44AFD /* SceneDelegate.swift */; };
 		F233E165268CFF6B00D44AFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F233E164268CFF6B00D44AFD /* Assets.xcassets */; };
@@ -32,6 +38,12 @@
 		04BD476A268D0E860058B77A /* SABLoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABLoginInteractor.swift; sourceTree = "<group>"; };
 		04BD476B268D0E860058B77A /* SABLoginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABLoginProtocol.swift; sourceTree = "<group>"; };
 		04BD476C268D0E860058B77A /* SABLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABLoginVC.swift; sourceTree = "<group>"; };
+		E3D8DE58268D290300911762 /* SABChangePasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SABChangePasswordVC.xib; sourceTree = "<group>"; };
+		E3D8DE59268D290300911762 /* SABChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABChangePasswordPresenter.swift; sourceTree = "<group>"; };
+		E3D8DE5A268D290300911762 /* SABChangePasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABChangePasswordRouter.swift; sourceTree = "<group>"; };
+		E3D8DE5B268D290300911762 /* SABChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABChangePasswordInteractor.swift; sourceTree = "<group>"; };
+		E3D8DE5C268D290300911762 /* SABChangePasswordProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABChangePasswordProtocol.swift; sourceTree = "<group>"; };
+		E3D8DE5D268D290300911762 /* SABChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABChangePasswordVC.swift; sourceTree = "<group>"; };
 		F233E158268CFF6A00D44AFD /* ShipAndBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShipAndBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F233E15B268CFF6A00D44AFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F233E15D268CFF6A00D44AFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +122,59 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		E3D8DE65268D291500911762 /* SABChangePassvord */ = {
+			isa = PBXGroup;
+			children = (
+				E3D8DE6B268D296C00911762 /* Router */,
+				E3D8DE6A268D296100911762 /* View */,
+				E3D8DE69268D295600911762 /* Protocol */,
+				E3D8DE68268D294600911762 /* Interactor */,
+				E3D8DE67268D293900911762 /* Presenter */,
+			);
+			path = SABChangePassvord;
+			sourceTree = "<group>";
+		};
+		E3D8DE67268D293900911762 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E3D8DE59268D290300911762 /* SABChangePasswordPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E3D8DE68268D294600911762 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E3D8DE5B268D290300911762 /* SABChangePasswordInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E3D8DE69268D295600911762 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E3D8DE5C268D290300911762 /* SABChangePasswordProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		E3D8DE6A268D296100911762 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E3D8DE58268D290300911762 /* SABChangePasswordVC.xib */,
+				E3D8DE5D268D290300911762 /* SABChangePasswordVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E3D8DE6B268D296C00911762 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E3D8DE5A268D290300911762 /* SABChangePasswordRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		F233E14F268CFF6A00D44AFD = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +197,7 @@
 				F233E1C3268D3DEE00D44AFD /* SABRegister */,
 				04BD4761268D0DF10058B77A /* SABLogin */,
 				F233E15B268CFF6A00D44AFD /* AppDelegate.swift */,
+				E3D8DE65268D291500911762 /* SABChangePassvord */,
 				F233E15D268CFF6A00D44AFD /* SceneDelegate.swift */,
 				F233E164268CFF6B00D44AFD /* Assets.xcassets */,
 				F233E166268CFF6B00D44AFD /* LaunchScreen.storyboard */,
@@ -250,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D8DE5E268D290300911762 /* SABChangePasswordVC.xib in Resources */,
 				F233E168268CFF6B00D44AFD /* LaunchScreen.storyboard in Resources */,
 				F233E165268CFF6B00D44AFD /* Assets.xcassets in Resources */,
 				F233E1CA268D3E0900D44AFD /* SBARegisterVC.xib in Resources */,
@@ -264,18 +331,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				F233E1CB268D3E0900D44AFD /* SBARegisterPresenter.swift in Sources */,
+=======
+				E3D8DE63268D290300911762 /* SABChangePasswordVC.swift in Sources */,
+>>>>>>> a6d7cf3eb28aec569e8bf4383f7b366bcc8e59b2
 				04BD476F268D0E860058B77A /* SABLoginRouter.swift in Sources */,
 				04BD476E268D0E860058B77A /* SABLoginPresenter.swift in Sources */,
 				F233E1CC268D3E0900D44AFD /* SBARegisterRouter.swift in Sources */,
 				04BD4772268D0E860058B77A /* SABLoginVC.swift in Sources */,
 				04BD4770268D0E860058B77A /* SABLoginInteractor.swift in Sources */,
+<<<<<<< HEAD
 				F233E1CF268D3E0900D44AFD /* SBARegisterVC.swift in Sources */,
 				F233E1CD268D3E0900D44AFD /* SBARegisterInteractor.swift in Sources */,
 				04BD4771268D0E860058B77A /* SABLoginProtocol.swift in Sources */,
 				F233E15C268CFF6A00D44AFD /* AppDelegate.swift in Sources */,
 				F233E15E268CFF6A00D44AFD /* SceneDelegate.swift in Sources */,
 				F233E1CE268D3E0900D44AFD /* SBARegisterProtocol.swift in Sources */,
+=======
+				E3D8DE5F268D290300911762 /* SABChangePasswordPresenter.swift in Sources */,
+				04BD4771268D0E860058B77A /* SABLoginProtocol.swift in Sources */,
+				F233E15C268CFF6A00D44AFD /* AppDelegate.swift in Sources */,
+				F233E15E268CFF6A00D44AFD /* SceneDelegate.swift in Sources */,
+				E3D8DE62268D290300911762 /* SABChangePasswordProtocol.swift in Sources */,
+				E3D8DE61268D290300911762 /* SABChangePasswordInteractor.swift in Sources */,
+				E3D8DE60268D290300911762 /* SABChangePasswordRouter.swift in Sources */,
+>>>>>>> a6d7cf3eb28aec569e8bf4383f7b366bcc8e59b2
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
