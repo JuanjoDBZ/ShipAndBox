@@ -31,5 +31,11 @@ class SABChangePasswordRouter {
     }
 }
 extension SABChangePasswordRouter: SABChangePasswordRouterProtocol {
+    /* Para mostrar una nueva pantalla con navigation controller.
+    func showNewView() {
+        Crea una instancia del router de la vista que quieres mostrar
+        let newView = NewViewRouter(in: window)
+        newView.showView()
+    }*/
 }
 
