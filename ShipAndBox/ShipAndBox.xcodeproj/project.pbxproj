@@ -110,15 +110,62 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		E3D8DEC4268D3E9E00911762 /* SABChangePassword */ = {
+		E362B770268E7936006388C7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		E39EB8B5268E2A6900143AA6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E3D8DEB7268D3E6700911762 /* SABChangePasswordPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E39EB8B6268E2A7300143AA6 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E3D8DEB9268D3E6700911762 /* SABChangePasswordInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E39EB8B7268E2A7C00143AA6 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				E3D8DEB6268D3E6700911762 /* SABChangePasswordVC.xib */,
-				E3D8DEB7268D3E6700911762 /* SABChangePasswordPresenter.swift */,
-				E3D8DEB8268D3E6700911762 /* SABChangePasswordRouter.swift */,
-				E3D8DEB9268D3E6700911762 /* SABChangePasswordInteractor.swift */,
-				E3D8DEBA268D3E6700911762 /* SABChangePasswordProtocol.swift */,
 				E3D8DEBB268D3E6700911762 /* SABChangePasswordVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E39EB8B8268E2A8600143AA6 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E3D8DEB8268D3E6700911762 /* SABChangePasswordRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E39EB8B9268E2A9000143AA6 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E3D8DEBA268D3E6700911762 /* SABChangePasswordProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		E3D8DEC4268D3E9E00911762 /* SABChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				E39EB8B9268E2A9000143AA6 /* Protocol */,
+				E39EB8B8268E2A8600143AA6 /* Router */,
+				E39EB8B7268E2A7C00143AA6 /* View */,
+				E39EB8B6268E2A7300143AA6 /* Interactor */,
+				E39EB8B5268E2A6900143AA6 /* Presenter */,
 			);
 			path = SABChangePassword;
 			sourceTree = "<group>";
@@ -142,10 +189,11 @@
 		F233E15A268CFF6A00D44AFD /* ShipAndBox */ = {
 			isa = PBXGroup;
 			children = (
-				04BD4761268D0DF10058B77A /* SABLogin */,
+				E362B770268E7936006388C7 /* Sources */,
 				F233E15B268CFF6A00D44AFD /* AppDelegate.swift */,
-				E3D8DEC4268D3E9E00911762 /* SABChangePassword */,
 				F233E15D268CFF6A00D44AFD /* SceneDelegate.swift */,
+				04BD4761268D0DF10058B77A /* SABLogin */,
+				E3D8DEC4268D3E9E00911762 /* SABChangePassword */,
 				F233E164268CFF6B00D44AFD /* Assets.xcassets */,
 				F233E166268CFF6B00D44AFD /* LaunchScreen.storyboard */,
 				F233E169268CFF6B00D44AFD /* Info.plist */,
@@ -375,13 +423,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ABJLZ98S9L;
+				DEVELOPMENT_TEAM = 4U7GZPW9DW;
 				INFOPLIST_FILE = ShipAndBox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.isita.ShipAndBox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appViper.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -394,13 +442,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ABJLZ98S9L;
+				DEVELOPMENT_TEAM = 4U7GZPW9DW;
 				INFOPLIST_FILE = ShipAndBox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.isita.ShipAndBox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appViper.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -10,11 +10,10 @@ import Foundation
 import UIKit
 
 class SABChangePasswordRouter {
-    private var view: SABChangePasswordVC
+    public var view: SABChangePasswordVC
     private var presenter: SABChangePasswordPresenter
     private var interactor: SABChangePasswordInteractor
-    private var window: UIWindow?
-    init(in window: UIWindow?) {
+    init() {
         self.view = SABChangePasswordVC()
         self.presenter = SABChangePasswordPresenter()
         self.interactor = SABChangePasswordInteractor()
@@ -23,11 +22,6 @@ class SABChangePasswordRouter {
         presenter.interactor = self.interactor
         presenter.router = self
         interactor.presenter = self.presenter
-        self.window = window
-    }
-    func showView() {
-        window?.rootViewController = UINavigationController(rootViewController: view)
-        window?.makeKeyAndVisible()
     }
 }
 extension SABChangePasswordRouter: SABChangePasswordRouterProtocol {

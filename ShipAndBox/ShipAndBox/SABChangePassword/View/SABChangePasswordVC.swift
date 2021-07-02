@@ -17,6 +17,10 @@ class SABChangePasswordVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let imageView = UIImageView();
+        let image = UIImage(named: "email.png");
+        imageView.image = image;
+        self.txtEmailUser.leftView = imageView;
         //Opcional
         presenter?.getInitialInfo()
     }
