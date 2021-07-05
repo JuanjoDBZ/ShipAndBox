@@ -20,7 +20,7 @@ class SABUserRegisterStepThreeVC: UIViewController, YPSignatureDelegate {
         viewSignatureUser.layer.borderWidth = 1
         viewSignatureUser.layer.borderColor = UIColor.gray.cgColor
         //Opcional
-        presenter?.getInitialInfo()
+        
     }
     
     @IBAction func clearSignatureUser(_ sender: Any) {
@@ -33,7 +33,9 @@ class SABUserRegisterStepThreeVC: UIViewController, YPSignatureDelegate {
             let imageData = self.viewSignatureUser.getSignature(scale: 10)
             let imageDataSignature = imageData?.jpegData(compressionQuality: 1)
             let imageBase64String = imageDataSignature?.base64EncodedString()
+            let customerId = 2
             //print(imageBase64String!)
+            presenter?.sendSignatureUserSAB(imageString:imageBase64String!,customerId:customerId)
         }
         
     }

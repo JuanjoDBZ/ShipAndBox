@@ -21,18 +21,19 @@ protocol SABUserRegisterStepThreeRouterProtocol {
 /// Protocolo que define los métodos y atributos para el Presenter de SABUserRegisterStepThree
 protocol SABUserRegisterStepThreePresenterProtocol {
     // VIEW -> PRESENTER
-    func getInitialInfo()
+    func sendSignatureUserSAB(imageString:String, customerId:Int)
 }
 /// Protocolo que define los métodos y atributos para el Interactor de SABUserRegisterStepThree
 protocol SABUserRegisterStepThreeInteractorInputProtocol {
     var remoteDatamanager: SABUserRegisterStepThreeRemoteDataManagerInputProtocol? { get set }
     // PRESENTER -> INTERACTOR
-    func processInfo()
+    func sendSignatureUserSABInteractor(imageString:String,customerId:Int)
 }
 
 protocol SABUserRegisterStepThreeRemoteDataManagerInputProtocol: class {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: SABUserRegisterStepThreeRemoteDataManagerOutputProtocol? { get set }
+    func sendSignatureUserSABRemoteData(imageString:String,customerId:Int)
 }
 
 protocol SABUserRegisterStepThreeRemoteDataManagerOutputProtocol: class {

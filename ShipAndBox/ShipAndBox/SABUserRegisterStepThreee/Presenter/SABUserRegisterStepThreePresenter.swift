@@ -17,8 +17,8 @@ class SABUserRegisterStepThreePresenter {
 }
 extension SABUserRegisterStepThreePresenter: SABUserRegisterStepThreePresenterProtocol {
     //Uso y nombre opcional
-    func getInitialInfo() {
-        interactor?.processInfo()
+    func sendSignatureUserSAB(imageString:String, customerId:Int) {
+        interactor?.sendSignatureUserSABInteractor(imageString: imageString, customerId:customerId)
     }
 }
 extension SABUserRegisterStepThreePresenter: SABUserRegisterStepThreeInteractorOutputProtocol {

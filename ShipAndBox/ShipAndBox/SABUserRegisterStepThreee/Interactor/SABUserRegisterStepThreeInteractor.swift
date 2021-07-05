@@ -18,8 +18,7 @@ extension SABUserRegisterStepThreeInteractor: SABUserRegisterStepThreeRemoteData
     // TODO: Implement use case methods
 }
 extension SABUserRegisterStepThreeInteractor: SABUserRegisterStepThreeInteractorInputProtocol {
-    //Uso y nombre opcional
-    func processInfo() {
-        presenter?.receiveData()
+    func sendSignatureUserSABInteractor(imageString: String, customerId:Int) {
+        remoteDatamanager?.sendSignatureUserSABRemoteData(imageString: imageString, customerId:customerId)
     }
 }
