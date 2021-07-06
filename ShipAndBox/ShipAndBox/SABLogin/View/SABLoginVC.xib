@@ -30,7 +30,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VfG-nf-mQQ">
                             <rect key="frame" x="15" y="30" width="384" height="676"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-Ship" translatesAutoresizingMaskIntoConstraints="NO" id="4Ha-zG-TJG">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-color" translatesAutoresizingMaskIntoConstraints="NO" id="4Ha-zG-TJG">
                                     <rect key="frame" x="20" y="8" width="267" height="71"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="71" id="c1Z-n4-m8q"/>
@@ -257,7 +257,7 @@
         </view>
     </objects>
     <resources>
-        <image name="logo-Ship" width="55" height="12.333333015441895"/>
+        <image name="logo-color" width="220" height="50"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
