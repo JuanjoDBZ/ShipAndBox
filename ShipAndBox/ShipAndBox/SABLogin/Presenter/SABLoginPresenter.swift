@@ -16,6 +16,10 @@ class SABLoginPresenter {
     
 }
 extension SABLoginPresenter: SABLoginPresenterProtocol {
+    func loginUser(usrEmail: String, usrPassword: String) {
+        interactor?.loginUserInteractor(usrEmail: usrEmail, usrPassword: usrPassword)
+    }
+    
 }
 extension SABLoginPresenter: SABLoginInteractorOutputProtocol {
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		047937342694C4B900979654 /* SABLoginRemoteDataManagerInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047937332694C4B900979654 /* SABLoginRemoteDataManagerInputProtocol.swift */; };
 		04BD476D268D0E860058B77A /* SABLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BD4767268D0E860058B77A /* SABLoginVC.xib */; };
 		04BD476E268D0E860058B77A /* SABLoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD4768268D0E860058B77A /* SABLoginPresenter.swift */; };
 		04BD476F268D0E860058B77A /* SABLoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD4769268D0E860058B77A /* SABLoginRouter.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		047937332694C4B900979654 /* SABLoginRemoteDataManagerInputProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABLoginRemoteDataManagerInputProtocol.swift; sourceTree = "<group>"; };
 		04BD4767268D0E860058B77A /* SABLoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SABLoginVC.xib; sourceTree = "<group>"; };
 		04BD4768268D0E860058B77A /* SABLoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABLoginPresenter.swift; sourceTree = "<group>"; };
 		04BD4769268D0E860058B77A /* SABLoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABLoginRouter.swift; sourceTree = "<group>"; };
@@ -57,9 +59,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		047937312694C41000979654 /* RemoteData */ = {
+			isa = PBXGroup;
+			children = (
+				047937332694C4B900979654 /* SABLoginRemoteDataManagerInputProtocol.swift */,
+			);
+			path = RemoteData;
+			sourceTree = "<group>";
+		};
 		04BD4761268D0DF10058B77A /* SABLogin */ = {
 			isa = PBXGroup;
 			children = (
+				047937312694C41000979654 /* RemoteData */,
 				04BD4774268D0EA10058B77A /* Presenter */,
 				04BD4765268D0E430058B77A /* Router */,
 				04BD4764268D0E3D0058B77A /* Protocol */,
@@ -267,6 +278,7 @@
 				E3D8DE63268D290300911762 /* SABChangePasswordVC.swift in Sources */,
 				04BD476F268D0E860058B77A /* SABLoginRouter.swift in Sources */,
 				04BD476E268D0E860058B77A /* SABLoginPresenter.swift in Sources */,
+				047937342694C4B900979654 /* SABLoginRemoteDataManagerInputProtocol.swift in Sources */,
 				04BD4772268D0E860058B77A /* SABLoginVC.swift in Sources */,
 				04BD4770268D0E860058B77A /* SABLoginInteractor.swift in Sources */,
 				E3D8DE5F268D290300911762 /* SABChangePasswordPresenter.swift in Sources */,

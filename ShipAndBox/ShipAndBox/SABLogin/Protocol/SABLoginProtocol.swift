@@ -19,10 +19,12 @@ protocol SABLoginRouterProtocol {
 /// Protocolo que define los métodos y atributos para el Presenter de SABLogin
 protocol SABLoginPresenterProtocol {
     // VIEW -> PRESENTER
+    func loginUser(usrEmail: String, usrPassword: String)
 }
 /// Protocolo que define los métodos y atributos para el Interactor de SABLogin
 protocol SABLoginInteractorInputProtocol {
     // PRESENTER -> INTERACTOR
+    func loginUserInteractor(usrEmail: String, usrPassword: String)
 }
 /// Protocolo que define los métodos y atributos para el Interactor de SABLogin
 protocol SABLoginInteractorOutputProtocol {
