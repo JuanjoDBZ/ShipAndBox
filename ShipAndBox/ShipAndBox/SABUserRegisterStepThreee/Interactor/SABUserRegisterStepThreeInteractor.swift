@@ -15,10 +15,15 @@ class SABUserRegisterStepThreeInteractor {
 }
 
 extension SABUserRegisterStepThreeInteractor: SABUserRegisterStepThreeRemoteDataManagerOutputProtocol {
+    func remoteDataManagerResponseStatusSendSignature(responseSignature: [SABUserRegisterStepThreeModelResponse]) {
+        presenter?.senDataResponseFromDataManger(responseSingnature: responseSignature)
+        
+    }
+    
     // TODO: Implement use case methods
 }
 extension SABUserRegisterStepThreeInteractor: SABUserRegisterStepThreeInteractorInputProtocol {
-    func sendSignatureUserSABInteractor(imageString: String, customerId:Int) {
-        remoteDatamanager?.sendSignatureUserSABRemoteData(imageString: imageString, customerId:customerId)
+    func sendSignatureUserSABInteractor(imageStringSignatureUser: String, customerId:Int) {
+        remoteDatamanager?.sendSignatureUserSABRemoteData(imageStringSignatureUser: imageStringSignatureUser, customerId:customerId)
     }
 }

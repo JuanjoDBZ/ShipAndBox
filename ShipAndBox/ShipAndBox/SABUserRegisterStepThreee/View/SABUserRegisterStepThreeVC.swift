@@ -10,15 +10,18 @@ import Foundation
 import UIKit
 
 class SABUserRegisterStepThreeVC: UIViewController, YPSignatureDelegate {
-
+    
     var presenter: SABUserRegisterStepThreePresenterProtocol?
-
+    var statusResponse = 0
+    
     @IBOutlet weak var viewSignatureUser: YPDrawSignatureView!
+    @IBOutlet weak var activitySAB: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSignatureUser.delegate = self
         viewSignatureUser.layer.borderWidth = 1
         viewSignatureUser.layer.borderColor = UIColor.gray.cgColor
+        activitySAB.hidesWhenStopped = true
         //Opcional
         
     }
@@ -32,12 +35,30 @@ class SABUserRegisterStepThreeVC: UIViewController, YPSignatureDelegate {
         if self.viewSignatureUser.getSignature(scale: 10) != nil {
             let imageData = self.viewSignatureUser.getSignature(scale: 10)
             let imageDataSignature = imageData?.jpegData(compressionQuality: 1)
-            let imageBase64String = imageDataSignature?.base64EncodedString()
+            let imageBase64StringSignatureUser = imageDataSignature?.base64EncodedString()
             let customerId = 2
             //print(imageBase64String!)
-            presenter?.sendSignatureUserSAB(imageString:imageBase64String!,customerId:customerId)
+            presenter?.sendSignatureUserSAB(imageStringSignatureUser:imageBase64StringSignatureUser!,customerId:customerId)
+        }else{
+            self.showMessage(msg:"Tienes que firmar en el recuadro")
         }
         
+    }
+    
+    func showMessage(msg:String) {
+        let alert = UIAlertController(title: "Aviso", message: msg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (alert) in
+            self.goToUserRegisterStepFour()
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func goToUserRegisterStepFour(){
+        if(self.statusResponse == 1) {
+            presenter?.goToUserRegisterStepFour()
+        }else{
+            print("nanais")
+        }
     }
     func didStart(_ view : YPDrawSignatureView) {
         print("Started Drawing")
@@ -50,7 +71,25 @@ class SABUserRegisterStepThreeVC: UIViewController, YPSignatureDelegate {
 }
 ///Protocolo para recibir datos de presenter.
 extension SABUserRegisterStepThreeVC: SABUserRegisterStepThreeViewProtocol {
-    func loadInfo(){
-        print("Realizar acciones de repintado de la vista")
+    func showActivity() {
+        DispatchQueue.main.async {
+            self.activitySAB.startAnimating()
+        }
     }
+    
+    func hideActivity() {
+        DispatchQueue.main.async {
+            self.activitySAB.stopAnimating()
+            self.activitySAB.hidesWhenStopped = true
+        }
+    }
+    
+    func getDataInViewSAB(status:Int,msg:String) {
+        DispatchQueue.main.async {
+            self.statusResponse = status
+            self.showMessage(msg:msg)
+            self.viewSignatureUser.clear()
+        }
+    }
+    
 }

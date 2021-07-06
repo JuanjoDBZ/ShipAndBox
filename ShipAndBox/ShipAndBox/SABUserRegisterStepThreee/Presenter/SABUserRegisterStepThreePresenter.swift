@@ -13,17 +13,25 @@ class SABUserRegisterStepThreePresenter {
     var view: SABUserRegisterStepThreeViewProtocol?
     var interactor: SABUserRegisterStepThreeInteractorInputProtocol?
     var router: SABUserRegisterStepThreeRouterProtocol?
-    
 }
 extension SABUserRegisterStepThreePresenter: SABUserRegisterStepThreePresenterProtocol {
-    //Uso y nombre opcional
-    func sendSignatureUserSAB(imageString:String, customerId:Int) {
-        interactor?.sendSignatureUserSABInteractor(imageString: imageString, customerId:customerId)
+    func goToUserRegisterStepFour() {
+        router?.showViewUserRegisterStepFour()
+    }
+    
+    //Se envian los prametros para obtener la firma digital
+    func sendSignatureUserSAB(imageStringSignatureUser:String, customerId:Int) {
+        interactor?.sendSignatureUserSABInteractor(imageStringSignatureUser: imageStringSignatureUser, customerId:customerId)
+        view?.showActivity()
     }
 }
 extension SABUserRegisterStepThreePresenter: SABUserRegisterStepThreeInteractorOutputProtocol {
-    //Uso y nombre opcional
-    func receiveData() {
-        view?.loadInfo()
+    func senDataResponseFromDataManger(responseSingnature: [SABUserRegisterStepThreeModelResponse]) {
+        print(responseSingnature)
+        //Se envian los resultados obtenidos del interactor para mostrarlos en la vista
+        view?.hideActivity()
+        view?.getDataInViewSAB(status:responseSingnature[0].status,msg: responseSingnature[0].message[0])
+        
     }
+    
 }
