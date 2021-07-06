@@ -26,14 +26,18 @@ class SABLoginVC: UIViewController {
         super.viewDidLoad()
     }
     
-    func loginUser(){
-     let sabloginremote = SABLoginRemoteDataManagerInputProtocol()
-     
+    func loginUser(){     
         if  txtPassword.text == "" || txtUserName.text == "" {
             let alert = UIAlertController(title: "Alert", message: "Usuario y/o Contraseña no validos.", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }else{
+            if let usrName = txtUserName.text {
+                email = usrName
+            }
+            if let usrPassword = txtPassword.text {
+                password = usrPassword
+            }
             presenter?.loginUser(usrEmail:email,usrPassword:password)
         }
 
@@ -41,6 +45,9 @@ class SABLoginVC: UIViewController {
     @IBAction func buttonGetIn(_ sender: UIButton) {
         loginUser()
     }
+    @IBAction func buttonMakeYourPaymnet(_ sender: UIButton) {
+    }
+    
 }
 ///Protocolo para recibir datos de presenter.
 extension SABLoginVC: SABLoginViewProtocol {

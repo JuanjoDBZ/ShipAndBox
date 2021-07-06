@@ -45,37 +45,27 @@ class SABLoginRemoteDataManagerInputProtocol:NSObject  {
 }
 
 extension SABLoginRemoteDataManagerInputProtocol:URLSessionDelegate {
-
-    func urlSession(_ session: URLSession,
-
-             didReceive challenge: URLAuthenticationChallenge,
-                completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-            guard challenge.previousFailureCount == 0 else {
-                challenge.sender?.cancel(challenge)
-                // Inform the user that the user name and password are incorrect
-                completionHandler(.cancelAuthenticationChallenge, nil)
-                return
-
-            }
-
-
-
-            // Within your authentication handler delegate method, you should check to see if the challenge protection space has an authentication type of NSURLAuthenticationMethodServerTrust
-
-            if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust
-
-               // and if so, obtain the serverTrust information from that protection space.
-
-               && challenge.protectionSpace.serverTrust != nil
-
-               && challenge.protectionSpace.host == "ec2-3-136-112-167.us-east-2.compute.amazonaws.com" {
-
-                let proposedCredential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
-
-                completionHandler(URLSession.AuthChallengeDisposition.useCredential, proposedCredential)
-
-            }
-
-        }
     
+    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        /// Tenemos un URLAuthenticationChallenge, confiamos en el servidor  y procedemos
+        let authMethod = challenge.protectionSpace.authenticationMethod
+        guard challenge.previousFailureCount < 1, authMethod == NSURLAuthenticationMethodServerTrust,
+            let trust = challenge.protectionSpace.serverTrust else {
+                completionHandler(.performDefaultHandling, nil)
+                return
+        }
+        completionHandler(.useCredential, URLCredential(trust: trust))
+    }
+    
+    func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {
+        // tenemos un error
+        if let err = error {
+            print("Error: URLSessionDelegate \(err.localizedDescription)")
+        } else {
+//            if requestCompletion != nil {
+//                requestCompletion!(true,completeResponse)
+//            }
+        }
+        
+    }
 }

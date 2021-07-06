@@ -173,6 +173,9 @@
                                                 <constraint firstAttribute="height" constant="30" id="eix-os-7n1"/>
                                             </constraints>
                                             <state key="normal" title="Regístrate"/>
+                                            <connections>
+                                                <action selector="buttonMakeYourPaymnet:" destination="-1" eventType="touchUpInside" id="p0t-ko-oUk"/>
+                                            </connections>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q83-pQ-ylA">
                                             <rect key="frame" x="85" y="0.0" width="214" height="52"/>
