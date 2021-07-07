@@ -29,14 +29,8 @@ class SABUserRegisterStepThreeRouter {
 }
 extension SABUserRegisterStepThreeRouter: SABUserRegisterStepThreeRouterProtocol {
     func showViewUserRegisterStepFour() {
-        print("Llamar paso4")
+        let loginVC = SABLoginRouter().view
+        self.view.navigationController?.pushViewController(loginVC, animated: true)
     }
-    
-    /* Para mostrar una nueva pantalla con navigation controller.
-    func showNewView() {
-        Crea una instancia del router de la vista que quieres mostrar
-        let newView = NewViewRouter(in: window)
-        newView.showView()
-    }*/
 }
 

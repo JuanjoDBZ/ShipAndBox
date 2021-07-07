@@ -55,18 +55,19 @@ class SABUserRegisterStepThreeVC: UIViewController, YPSignatureDelegate {
     
     func goToUserRegisterStepFour(){
         if(self.statusResponse == 1) {
+            self.statusResponse = 0
             presenter?.goToUserRegisterStepFour()
         }else{
             print("nanais")
         }
     }
     func didStart(_ view : YPDrawSignatureView) {
-        print("Started Drawing")
+        //print("Started Drawing")
     }
     // didFinish() is called rigth after the last touch of a gesture is registered in the view.
     // Can be used to enabe scrolling in a scroll view if it has previous been disabled.
     func didFinish(_ view : YPDrawSignatureView) {
-        print("Finished Drawing")
+        //print("Finished Drawing")
     }
 }
 ///Protocolo para recibir datos de presenter.
