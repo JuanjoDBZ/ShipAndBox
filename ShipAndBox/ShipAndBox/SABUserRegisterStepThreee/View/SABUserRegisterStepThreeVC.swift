@@ -13,7 +13,7 @@ class SABUserRegisterStepThreeVC: UIViewController, YPSignatureDelegate {
     
     var presenter: SABUserRegisterStepThreePresenterProtocol?
     var statusResponse = 0
-    
+    let customerId = 2
     @IBOutlet weak var viewSignatureUser: YPDrawSignatureView!
     @IBOutlet weak var activitySAB: UIActivityIndicatorView!
     override func viewDidLoad() {
@@ -36,8 +36,6 @@ class SABUserRegisterStepThreeVC: UIViewController, YPSignatureDelegate {
             let imageData = self.viewSignatureUser.getSignature(scale: 10)
             let imageDataSignature = imageData?.jpegData(compressionQuality: 1)
             let imageBase64StringSignatureUser = imageDataSignature?.base64EncodedString()
-            let customerId = 2
-            //print(imageBase64String!)
             presenter?.sendSignatureUserSAB(imageStringSignatureUser:imageBase64StringSignatureUser!,customerId:customerId)
         }else{
             self.showMessage(msg:"Tienes que firmar en el recuadro")
@@ -58,7 +56,7 @@ class SABUserRegisterStepThreeVC: UIViewController, YPSignatureDelegate {
             self.statusResponse = 0
             presenter?.goToUserRegisterStepFour()
         }else{
-            print("nanais")
+            print("error")
         }
     }
     func didStart(_ view : YPDrawSignatureView) {
