@@ -5,7 +5,6 @@
 //  Created by ISITA on 01/07/21.
 //  
 //
-
 import Foundation
 class SABUserRegisterStepThreePresenter {
     var view: SABUserRegisterStepThreeViewProtocol?
@@ -24,10 +23,16 @@ extension SABUserRegisterStepThreePresenter: SABUserRegisterStepThreePresenterPr
     }
 }
 extension SABUserRegisterStepThreePresenter: SABUserRegisterStepThreeInteractorOutputProtocol {
-    /// Se comunica con la vista para enviar los datos de respuesta del servidor, se envia estaus y el mensaje
-    /// - Parameter responseSingnature: Respuesta del servidor,  se obtiene estatus y mensaje
-    func senDataResponseFromDataManger(responseSingnature: [SABUserRegisterStepThreeModelResponse]) {
+    /// se obtiene funcionalidad para hacer si la respuesta es satisfactoria
+    /// - Parameter msg: mensaje para mostar
+    func responseSuccesRegisterStepThree(msg:String) {
         view?.hideActivity()
-        view?.getDataInViewSAB(status:responseSingnature[0].status,msg: responseSingnature[0].message[0])
+        view?.resposeSuccesRegisterStepThreeView(msg:msg)
+    }
+    /// se obtiene funcionalidad para hacer si la respuesta es erronea
+    /// - Parameter msgError: mensaje de error
+    func responseErrorRegisterStepThree(msgError:String) {
+        view?.hideActivity()
+        view?.resposeErrorRegisterStepThreeView(msgError:msgError)
     }
 }

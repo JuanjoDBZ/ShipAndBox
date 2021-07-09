@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-
 class SABUserRegisterStepThreeRouter {
     public var view: SABUserRegisterStepThreeVC
     private var presenter: SABUserRegisterStepThreePresenter
@@ -17,14 +16,11 @@ class SABUserRegisterStepThreeRouter {
         self.view = SABUserRegisterStepThreeVC()
         self.presenter = SABUserRegisterStepThreePresenter()
         self.interactor = SABUserRegisterStepThreeInteractor()
-        let remoteDataManager: SABUserRegisterStepThreeRemoteDataManagerInputProtocol = SABUserRegisterStepThreeRemoteDataManager()
         view.presenter = self.presenter
         presenter.view = self.view
         presenter.interactor = self.interactor
         presenter.router = self
         interactor.presenter = self.presenter
-        interactor.remoteDatamanager = remoteDataManager
-        remoteDataManager.remoteRequestHandler = interactor
     }
 }
 extension SABUserRegisterStepThreeRouter: SABUserRegisterStepThreeRouterProtocol {

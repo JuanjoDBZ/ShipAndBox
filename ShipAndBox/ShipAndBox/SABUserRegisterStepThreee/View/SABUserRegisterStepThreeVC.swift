@@ -13,6 +13,7 @@ class SABUserRegisterStepThreeVC: UIViewController, YPSignatureDelegate {
     var statusResponse = 0
     /// Id de usuario registrado
     let customerId = 2
+    /// Parametros que se envian para ejecutar el servicio de generar firma electronica
     var parametersCreateSignature: NSDictionary = [:]
     /// Se implementa vista de tipo YPDrawSignatureView para generar la firma
     @IBOutlet weak var viewSignatureUser: YPDrawSignatureView!
@@ -26,43 +27,43 @@ class SABUserRegisterStepThreeVC: UIViewController, YPSignatureDelegate {
         activitySAB.hidesWhenStopped = true
     }
     /// Limpia la vista de la firma
-    /// - Parameter sender: Any
-    @IBAction func clearSignatureUser(_ sender: Any) {
+    /// - Parameter sender: Contiene la información del botón que se pulsa
+    @IBAction func clearSignatureUser(_ sender: UIButton) {
         self.viewSignatureUser.clear()
     }
     /// Se genera la firma del usuario, se convierte a base64 y se envian customerId y la imagen
-    @IBAction func generateSignatureUserAndSendInfo(_ sender: Any) {
+    @IBAction func generateSignatureUserAndSendInfo(_ sender: UIButton) {
         if self.viewSignatureUser.getSignature(scale: 10) != nil {
             let imageData = self.viewSignatureUser.getSignature(scale: 10)
             let imageDataSignature = imageData?.jpegData(compressionQuality: 1)
-            let imageBase64StringSignatureUser = imageDataSignature?.base64EncodedString()
-            let dataBase64Image = "data:image/jpeg;base64,\(imageBase64StringSignatureUser!)"
-            parametersCreateSignature = [
-                        "customerId": customerId,
-                        "signContract": dataBase64Image
-                    ]
-            presenter?.sendSignatureUserSAB(parametersCreateSignature: parametersCreateSignature)
+            if let imageBase64StringSignatureUser = imageDataSignature?.base64EncodedString(){
+                let dataBase64Image = "data:image/jpeg;base64,\(imageBase64StringSignatureUser)"
+                parametersCreateSignature = [
+                    "customerId": customerId,
+                    "signContract": dataBase64Image
+                ]
+                presenter?.sendSignatureUserSAB(parametersCreateSignature: parametersCreateSignature)
+            }
         } else {
-            self.showMessage(msg:"Tienes que firmar en el recuadro")
+            self.showMessageError(msg:"Tienes que firmar en el recuadro")
         }
     }
-    /// Funcion para generar alerta de aviso
+    /// Funcion para generar alerta de aviso satisfactorio
     /// - Parameter msg: mensaje que mostrará la alerta
-    func showMessage(msg:String) {
+    func showMessageSucces(msg:String) {
         let alert = UIAlertController(title: "Aviso", message: msg, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (alert) in
-            self.goToUserRegisterStepFour()
+            self.viewSignatureUser.clear()
+            self.presenter?.goToUserRegisterStepFour()
         }))
         self.present(alert, animated: true, completion: nil)
     }
-    /// Función para ir a la siguiente pantalla si el response es exitoso
-    func goToUserRegisterStepFour() {
-        if(self.statusResponse == 1) {
-            self.statusResponse = 0
-            presenter?.goToUserRegisterStepFour()
-        } else {
-            print("error")
-        }
+    /// Funcion para generar alerta de aviso erroneo
+    /// - Parameter msg: mensaje de error
+    func showMessageError(msg:String) {
+        let alert = UIAlertController(title: "Aviso", message: msg, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     /// Permite verificar si se empieza a escribir en la vista de firma
     /// - Parameter view: vista de tipo YPDrawSignatureView
@@ -75,6 +76,22 @@ class SABUserRegisterStepThreeVC: UIViewController, YPSignatureDelegate {
 }
 ///Protocolo para recibir datos de presenter.
 extension SABUserRegisterStepThreeVC: SABUserRegisterStepThreeViewProtocol {
+    /// Función satisfactoría si se obtiene un 1
+    /// - Parameter msg: mensaje satisfactorio
+    func resposeSuccesRegisterStepThreeView(msg:String) {
+        DispatchQueue.main.async {
+            self.showMessageSucces(msg: msg)
+            self.presenter?.goToUserRegisterStepFour()
+        }
+    }
+    /// función de error si la respuesta manda 0
+    /// - Parameter msgError: mensaje de errors
+    func resposeErrorRegisterStepThreeView(msgError:String) {
+        DispatchQueue.main.async {
+            self.viewSignatureUser.clear()
+            self.showMessageError(msg: msgError)
+        }
+    }
     /// Iniciar activity
     func showActivity() {
         DispatchQueue.main.async {
@@ -86,17 +103,6 @@ extension SABUserRegisterStepThreeVC: SABUserRegisterStepThreeViewProtocol {
         DispatchQueue.main.async {
             self.activitySAB.stopAnimating()
             self.activitySAB.hidesWhenStopped = true
-        }
-    }
-    /// Obtener el estatus y el mensaje
-    /// - Parameters:
-    ///   - status: estatus de la respuesta
-    ///   - msg: mensaje de la respuesta
-    func getDataInViewSAB(status:Int,msg:String) {
-        DispatchQueue.main.async {
-            self.statusResponse = status
-            self.showMessage(msg:msg)
-            self.viewSignatureUser.clear()
         }
     }
 }

@@ -4,23 +4,32 @@
 //
 //  Created by ISITA on 01/07/21.
 //
+//APPError enumeración que muestra todos los posibles errores
+enum APPError: Error {
+    case networkError(Error)
+    case dataNotFound
+    case jsonParsingError(Error)
+    case invalidStatusCode(Int)
+}
+//Result enumeración para mostrar éxito o fracaso
+enum Result<T> {
+    case success(T)
+    case failure(APPError)
+}
 import Foundation
-
-class SABUserRegisterStepThreeRemoteDataManager:NSObject, SABUserRegisterStepThreeRemoteDataManagerInputProtocol,URLSessionDelegate {
-    var remoteRequestHandler: SABUserRegisterStepThreeRemoteDataManagerOutputProtocol?
-    var StepThreeModelResponse =  [SABUserRegisterStepThreeModelResponse]()
-    
+class SABUserRegisterStepThreeRemoteDataManager:NSObject,URLSessionDelegate {
     /// Función para consultar el ws
     /// - Parameter parametersCreateSignature: Se envia la firma y el id del usuario
-    func sendSignatureUserSABRemoteData(parametersCreateSignature: NSDictionary) {
+    func sendSignatureUserSABRemoteData<T: Decodable>(parametersCreateSignature: NSDictionary, objectType: T.Type, completion: @escaping (Result<T>) -> Void) {
         /// path para complemetar la url
         let path = "signContract"
         /// Url construida para consumir
         let url = urlPathSAB.api.urlComposerApi(path: path)
+        print(url)
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
         //now create the URLRequest object using the url object
         var request = URLRequest(url: url)
-        request.httpMethod = "POST"
+        request.httpMethod = "POST" //set http method as POST
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: parametersCreateSignature, options: .prettyPrinted) // pass dictionary to nsdata object and set it as request body
         } catch let error {
@@ -28,22 +37,23 @@ class SABUserRegisterStepThreeRemoteDataManager:NSObject, SABUserRegisterStepThr
         }
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         //create dataTask using the session object to send data to the server
-        let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
-            guard error == nil else {
-                return
-            }
-            guard let data = data else {
-                return
-            }
-            let decoder = JSONDecoder()
-            do {
-                let res = try decoder.decode(SABUserRegisterStepThreeModelResponse.self, from: data)
-                self.StepThreeModelResponse =   [res]
-                self.remoteRequestHandler?.remoteDataManagerResponseStatusSendSignature(responseSignature: self.StepThreeModelResponse)
-            } catch {
-                print(error.localizedDescription)
-            }
-        })
+        let task = session.dataTask(with: request, completionHandler: { data, response, error in
+             guard error == nil else {
+                completion(Result.failure(APPError.networkError(error!)))
+                 return
+             }
+             guard let data = data else {
+                 completion(Result.failure(APPError.dataNotFound))
+                 return
+             }
+             do {
+                 //create decodable object from data
+                let decodedObject = try JSONDecoder().decode(objectType.self, from: data)
+                completion(Result.success(decodedObject))
+             } catch let error {
+                 completion(Result.failure(APPError.jsonParsingError(error as! DecodingError)))
+             }
+         })
         task.resume()
     }
     func urlSession(_ session: URLSession,
