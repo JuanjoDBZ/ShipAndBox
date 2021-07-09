@@ -4,9 +4,8 @@
 //
 //  Created by ISITA on 05/07/21.
 //
-
 import Foundation
-
+/// Estructura para la respuesta del servidor
 struct SABUserRegisterStepThreeModelResponse: Codable {
     var status:Int
     var message = [String]()

@@ -9,21 +9,20 @@ import Foundation
 class SABUserRegisterStepThreeRemoteDataManager:NSObject, SABUserRegisterStepThreeRemoteDataManagerInputProtocol,URLSessionDelegate {
     var remoteRequestHandler: SABUserRegisterStepThreeRemoteDataManagerOutputProtocol?
     var StepThreeModelResponse =  [SABUserRegisterStepThreeModelResponse]()
-    func sendSignatureUserSABRemoteData(imageStringSignatureUser: String, customerId:Int) {
-        let params:[String: Any] = [
-            "customerId":customerId,
-            "signContract":"data:image/jpeg;base64,\(imageStringSignatureUser)"
-        ]
-        //create the url with URL
+    
+    /// Función para consultar el ws
+    /// - Parameter parametersCreateSignature: Se envia la firma y el id del usuario
+    func sendSignatureUserSABRemoteData(parametersCreateSignature: NSDictionary) {
+        /// path para complemetar la url
         let path = "signContract"
+        /// Url construida para consumir
         let url = urlPathSAB.api.urlComposerApi(path: path)
-        print(url)
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
         //now create the URLRequest object using the url object
         var request = URLRequest(url: url)
-        request.httpMethod = "POST" //set http method as POST
+        request.httpMethod = "POST"
         do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: params, options: .prettyPrinted) // pass dictionary to nsdata object and set it as request body
+            request.httpBody = try JSONSerialization.data(withJSONObject: parametersCreateSignature, options: .prettyPrinted) // pass dictionary to nsdata object and set it as request body
         } catch let error {
             print(error.localizedDescription)
         }
@@ -37,7 +36,6 @@ class SABUserRegisterStepThreeRemoteDataManager:NSObject, SABUserRegisterStepThr
                 return
             }
             let decoder = JSONDecoder()
-            
             do {
                 let res = try decoder.decode(SABUserRegisterStepThreeModelResponse.self, from: data)
                 self.StepThreeModelResponse =   [res]
@@ -48,18 +46,15 @@ class SABUserRegisterStepThreeRemoteDataManager:NSObject, SABUserRegisterStepThr
         })
         task.resume()
     }
-    
     func urlSession(_ session: URLSession,
                     didReceive challenge: URLAuthenticationChallenge,
                     completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-        
         guard challenge.previousFailureCount == 0 else {
             challenge.sender?.cancel(challenge)
             // Inform the user that the user name and password are incorrect
             completionHandler(.cancelAuthenticationChallenge, nil)
             return
         }
-        
         // Within your authentication handler delegate method, you should check to see if the challenge protection space has an authentication type of NSURLAuthenticationMethodServerTrust
         if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust
             // and if so, obtain the serverTrust information from that protection space.

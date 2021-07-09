@@ -7,9 +7,7 @@
 //
 
 import Foundation
-
 class SABUserRegisterStepThreePresenter {
-    
     var view: SABUserRegisterStepThreeViewProtocol?
     var interactor: SABUserRegisterStepThreeInteractorInputProtocol?
     var router: SABUserRegisterStepThreeRouterProtocol?
@@ -18,20 +16,18 @@ extension SABUserRegisterStepThreePresenter: SABUserRegisterStepThreePresenterPr
     func goToUserRegisterStepFour() {
         router?.showViewUserRegisterStepFour()
     }
-    
-    //Se envian los prametros para obtener la firma digital
-    func sendSignatureUserSAB(imageStringSignatureUser:String, customerId:Int) {
-        interactor?.sendSignatureUserSABInteractor(imageStringSignatureUser: imageStringSignatureUser, customerId:customerId)
+    /// Se envía imagen de la firma y el id de usuario al interactor
+    /// - Parameter parametersCreateSignature: Se envia la firma y el id del usuario
+    func sendSignatureUserSAB(parametersCreateSignature: NSDictionary) {
+        interactor?.sendSignatureUserSABInteractor(parametersCreateSignature: parametersCreateSignature)
         view?.showActivity()
     }
 }
 extension SABUserRegisterStepThreePresenter: SABUserRegisterStepThreeInteractorOutputProtocol {
+    /// Se comunica con la vista para enviar los datos de respuesta del servidor, se envia estaus y el mensaje
+    /// - Parameter responseSingnature: Respuesta del servidor,  se obtiene estatus y mensaje
     func senDataResponseFromDataManger(responseSingnature: [SABUserRegisterStepThreeModelResponse]) {
-        print(responseSingnature)
-        //Se envian los resultados obtenidos del interactor para mostrarlos en la vista
         view?.hideActivity()
         view?.getDataInViewSAB(status:responseSingnature[0].status,msg: responseSingnature[0].message[0])
-        
     }
-    
 }
