@@ -16,6 +16,14 @@ class SABChangePasswordPresenter {
     
 }
 extension SABChangePasswordPresenter: SABChangePasswordPresenterProtocol {
+    //Uso y nombre opcional
+    func getInitialInfo() {
+        interactor?.processInfo()
+    }
 }
 extension SABChangePasswordPresenter: SABChangePasswordInteractorOutputProtocol {
+    //Uso y nombre opcional
+    func receiveData() {
+        view?.loadInfo()
+    }
 }
