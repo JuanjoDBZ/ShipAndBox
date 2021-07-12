@@ -8,40 +8,25 @@
 
 import Foundation
 import UIKit
-
 class SABChangePasswordVC: UIViewController {
-
+    ///Caja de texto para poner correo
     @IBOutlet weak var txtEmailUser: UITextField!
-    
     var presenter: SABChangePasswordPresenterProtocol?
-
     override func viewDidLoad() {
         super.viewDidLoad()
         let imageView = UIImageView();
         let image = UIImage(named: "email.png");
         imageView.image = image;
         self.txtEmailUser.leftView = imageView;
-        //Opcional
         presenter?.getInitialInfo()
     }
-    
-    
-    
-    @IBAction func sendEmailRecuperatePassword(_ sender: Any) {
-        print("Enviar email")
+    /// Funión para enviar corro
+    /// - Parameter sender: recupera acción del botón
+    @IBAction func sendEmailRecuperatePassword(_ sender: UIButton) {
     }
-    
-    
-    
-    
-    
 }
-
-
-
 ///Protocolo para recibir datos de presenter.
 extension SABChangePasswordVC: SABChangePasswordViewProtocol {
     func loadInfo(){
-        print("Realizar acciones de repintado de la vista")
     }
 }
