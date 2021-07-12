@@ -5,7 +5,6 @@
 //  Created by IsitaFS003 on 30/06/21.
 //  
 //
-
 import Foundation
 import UIKit
 /// Protocolo que define los métodos y atributos para el view de SABLogin
@@ -19,6 +18,10 @@ protocol SABLoginRouterProtocol {
 /// Protocolo que define los métodos y atributos para el Presenter de SABLogin
 protocol SABLoginPresenterProtocol {
     // VIEW -> PRESENTER
+    /// Funcion que pasa los datos de la vista al presenter para su manipulacion
+    /// - Parameters:
+    ///   - usrEmail: Correo del usuario
+    ///   - usrPassword: Constraseña del usuario
     func loginUser(usrEmail: String, usrPassword: String)
 }
 /// Protocolo que define los métodos y atributos para el Interactor de SABLogin

@@ -4,16 +4,11 @@
 //
 //  Created by IsitaFS003 on 01/07/21.
 //
-
 import Foundation
-
 class SABLoginRemoteDataManagerInputProtocol:NSObject  {
-
-    //hacer la llamada al servidor (consumo de servicio)
-    typealias CompletionHandler = (_ success:Bool,_ responseFromRequest:String)->Void
-    var requestCompletion:CompletionHandler?
-
-    func GetDatalogin( params: NSDictionary,completion:@escaping CompletionHandler){
+    /// Funcion que llama el servicio de login
+    /// - Parameter params: Parametros que se enviaran al servicio
+    func GetDatalogin( params: NSDictionary){
         let url = "https://ec2-3-136-112-167.us-east-2.compute.amazonaws.com:4443/Api/login"
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "POST"
@@ -40,12 +35,14 @@ class SABLoginRemoteDataManagerInputProtocol:NSObject  {
                 print("error:\(respuesta.statusCode)")
             }
         }.resume()
-        requestCompletion = completion
     }
 }
-
 extension SABLoginRemoteDataManagerInputProtocol:URLSessionDelegate {
-    
+    /// Funcion que permite la autenticación a un servidor
+    /// - Parameters:
+    ///   - session: permite cargar los datos ala url
+    ///   - challenge: respuesta ala autenticación del servidor 
+    ///   - completionHandler: Regresa la peticion que sele hiso al servidor
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         /// Tenemos un URLAuthenticationChallenge, confiamos en el servidor  y procedemos
         let authMethod = challenge.protectionSpace.authenticationMethod
@@ -56,16 +53,13 @@ extension SABLoginRemoteDataManagerInputProtocol:URLSessionDelegate {
         }
         completionHandler(.useCredential, URLCredential(trust: trust))
     }
-    
+    /// Funcion que nos dice en que falla la aplicacion
+    /// - Parameters:
+    ///   - session:
+    ///   - error: Descripcion del error
     func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {
-        // tenemos un error
         if let err = error {
             print("Error: URLSessionDelegate \(err.localizedDescription)")
-        } else {
-//            if requestCompletion != nil {
-//                requestCompletion!(true,completeResponse)
-//            }
         }
-        
     }
 }
