@@ -13,8 +13,4 @@ class SABChangePasswordInteractor {
     
 }
 extension SABChangePasswordInteractor: SABChangePasswordInteractorInputProtocol {
-    //Uso y nombre opcional
-    func processInfo() {
-        presenter?.receiveData()
-    }
 }
