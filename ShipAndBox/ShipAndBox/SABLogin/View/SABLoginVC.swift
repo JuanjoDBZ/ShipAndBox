@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 class SABLoginVC: UIViewController {
-    /// Declaracion de objetos para la vista
+    /// Declaracion de objetos y variables  para la vista 
     @IBOutlet weak var imageLogo: UIImageView!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtUserName: UITextField!

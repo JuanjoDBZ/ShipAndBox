@@ -5,6 +5,7 @@
 //  Created by IsitaFS003 on 01/07/21.
 //
 import Foundation
+/// Clase que se encarga de las llamadas al servicio de modulo Login
 class SABLoginRemoteDataManagerInputProtocol:NSObject  {
     /// Funcion que llama el servicio de login
     /// - Parameter params: Parametros que se enviaran al servicio
@@ -55,7 +56,7 @@ extension SABLoginRemoteDataManagerInputProtocol:URLSessionDelegate {
     }
     /// Funcion que nos dice en que falla la aplicacion
     /// - Parameters:
-    ///   - session:
+    ///   - session: El objeto de sesión invalidado.
     ///   - error: Descripcion del error
     func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {
         if let err = error {
