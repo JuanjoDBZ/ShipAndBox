@@ -15,20 +15,14 @@
 		04BD4770268D0E860058B77A /* SABLoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD476A268D0E860058B77A /* SABLoginInteractor.swift */; };
 		04BD4771268D0E860058B77A /* SABLoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD476B268D0E860058B77A /* SABLoginProtocol.swift */; };
 		04BD4772268D0E860058B77A /* SABLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD476C268D0E860058B77A /* SABLoginVC.swift */; };
-		E34CCB772693929F00844554 /* SABUserRegisterStepThreeModelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34CCB762693929F00844554 /* SABUserRegisterStepThreeModelResponse.swift */; };
-		E362B79F268EA159006388C7 /* SABUserRegisterStepThreePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E362B793268EA158006388C7 /* SABUserRegisterStepThreePresenter.swift */; };
-		E362B7A0268EA159006388C7 /* SABUserRegisterStepThreeRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E362B795268EA158006388C7 /* SABUserRegisterStepThreeRemoteDataManager.swift */; };
-		E362B7A1268EA159006388C7 /* SABUserRegisterStepThreeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E362B797268EA158006388C7 /* SABUserRegisterStepThreeProtocol.swift */; };
-		E362B7A2268EA159006388C7 /* SABUserRegisterStepThreeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E362B799268EA158006388C7 /* SABUserRegisterStepThreeInteractor.swift */; };
-		E362B7A3268EA159006388C7 /* SABUserRegisterStepThreeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E362B79B268EA159006388C7 /* SABUserRegisterStepThreeRouter.swift */; };
-		E362B7A4268EA159006388C7 /* SABUserRegisterStepThreeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E362B79D268EA159006388C7 /* SABUserRegisterStepThreeVC.xib */; };
-		E362B7A5268EA159006388C7 /* SABUserRegisterStepThreeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E362B79E268EA159006388C7 /* SABUserRegisterStepThreeVC.swift */; };
-		E3D8DE5E268D290300911762 /* SABChangePasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3D8DE58268D290300911762 /* SABChangePasswordVC.xib */; };
-		E3D8DE5F268D290300911762 /* SABChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D8DE59268D290300911762 /* SABChangePasswordPresenter.swift */; };
-		E3D8DE60268D290300911762 /* SABChangePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D8DE5A268D290300911762 /* SABChangePasswordRouter.swift */; };
-		E3D8DE61268D290300911762 /* SABChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D8DE5B268D290300911762 /* SABChangePasswordInteractor.swift */; };
-		E3D8DE62268D290300911762 /* SABChangePasswordProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D8DE5C268D290300911762 /* SABChangePasswordProtocol.swift */; };
-		E3D8DE63268D290300911762 /* SABChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D8DE5D268D290300911762 /* SABChangePasswordVC.swift */; };
+		E3C55E55269D0C6B00E312A5 /* SABUserRegisterStepThreeRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C55E47269D0C6B00E312A5 /* SABUserRegisterStepThreeRemoteDataManager.swift */; };
+		E3C55E56269D0C6B00E312A5 /* SABUserRegisterStepThreePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C55E49269D0C6B00E312A5 /* SABUserRegisterStepThreePresenter.swift */; };
+		E3C55E57269D0C6B00E312A5 /* SABUserRegisterStepThreeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C55E4B269D0C6B00E312A5 /* SABUserRegisterStepThreeProtocol.swift */; };
+		E3C55E58269D0C6B00E312A5 /* SABUserRegisterStepThreeModelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C55E4D269D0C6B00E312A5 /* SABUserRegisterStepThreeModelResponse.swift */; };
+		E3C55E59269D0C6B00E312A5 /* SABUserRegisterStepThreeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3C55E4F269D0C6B00E312A5 /* SABUserRegisterStepThreeVC.xib */; };
+		E3C55E5A269D0C6B00E312A5 /* SABUserRegisterStepThreeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C55E50269D0C6B00E312A5 /* SABUserRegisterStepThreeVC.swift */; };
+		E3C55E5B269D0C6B00E312A5 /* SABUserRegisterStepThreeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C55E52269D0C6B00E312A5 /* SABUserRegisterStepThreeInteractor.swift */; };
+		E3C55E5C269D0C6B00E312A5 /* SABUserRegisterStepThreeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C55E54269D0C6B00E312A5 /* SABUserRegisterStepThreeRouter.swift */; };
 		F233E15C268CFF6A00D44AFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F233E15B268CFF6A00D44AFD /* AppDelegate.swift */; };
 		F233E15E268CFF6A00D44AFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F233E15D268CFF6A00D44AFD /* SceneDelegate.swift */; };
 		F233E165268CFF6B00D44AFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F233E164268CFF6B00D44AFD /* Assets.xcassets */; };
@@ -63,20 +57,14 @@
 		4963031E43E093E5431B14C6 /* Pods_ShipAndBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShipAndBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A99A200C05E9681CD057E0F /* Pods-ShipAndBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShipAndBox.release.xcconfig"; path = "Target Support Files/Pods-ShipAndBox/Pods-ShipAndBox.release.xcconfig"; sourceTree = "<group>"; };
 		C3073B5E52CFF9FF879248F7 /* Pods-ShipAndBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShipAndBox.debug.xcconfig"; path = "Target Support Files/Pods-ShipAndBox/Pods-ShipAndBox.debug.xcconfig"; sourceTree = "<group>"; };
-		E34CCB762693929F00844554 /* SABUserRegisterStepThreeModelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABUserRegisterStepThreeModelResponse.swift; sourceTree = "<group>"; };
-		E362B793268EA158006388C7 /* SABUserRegisterStepThreePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABUserRegisterStepThreePresenter.swift; sourceTree = "<group>"; };
-		E362B795268EA158006388C7 /* SABUserRegisterStepThreeRemoteDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABUserRegisterStepThreeRemoteDataManager.swift; sourceTree = "<group>"; };
-		E362B797268EA158006388C7 /* SABUserRegisterStepThreeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABUserRegisterStepThreeProtocol.swift; sourceTree = "<group>"; };
-		E362B799268EA158006388C7 /* SABUserRegisterStepThreeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABUserRegisterStepThreeInteractor.swift; sourceTree = "<group>"; };
-		E362B79B268EA159006388C7 /* SABUserRegisterStepThreeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABUserRegisterStepThreeRouter.swift; sourceTree = "<group>"; };
-		E362B79D268EA159006388C7 /* SABUserRegisterStepThreeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SABUserRegisterStepThreeVC.xib; sourceTree = "<group>"; };
-		E362B79E268EA159006388C7 /* SABUserRegisterStepThreeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABUserRegisterStepThreeVC.swift; sourceTree = "<group>"; };
-		E3D8DE58268D290300911762 /* SABChangePasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SABChangePasswordVC.xib; sourceTree = "<group>"; };
-		E3D8DE59268D290300911762 /* SABChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABChangePasswordPresenter.swift; sourceTree = "<group>"; };
-		E3D8DE5A268D290300911762 /* SABChangePasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABChangePasswordRouter.swift; sourceTree = "<group>"; };
-		E3D8DE5B268D290300911762 /* SABChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABChangePasswordInteractor.swift; sourceTree = "<group>"; };
-		E3D8DE5C268D290300911762 /* SABChangePasswordProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABChangePasswordProtocol.swift; sourceTree = "<group>"; };
-		E3D8DE5D268D290300911762 /* SABChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABChangePasswordVC.swift; sourceTree = "<group>"; };
+		E3C55E47269D0C6B00E312A5 /* SABUserRegisterStepThreeRemoteDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABUserRegisterStepThreeRemoteDataManager.swift; sourceTree = "<group>"; };
+		E3C55E49269D0C6B00E312A5 /* SABUserRegisterStepThreePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABUserRegisterStepThreePresenter.swift; sourceTree = "<group>"; };
+		E3C55E4B269D0C6B00E312A5 /* SABUserRegisterStepThreeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABUserRegisterStepThreeProtocol.swift; sourceTree = "<group>"; };
+		E3C55E4D269D0C6B00E312A5 /* SABUserRegisterStepThreeModelResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABUserRegisterStepThreeModelResponse.swift; sourceTree = "<group>"; };
+		E3C55E4F269D0C6B00E312A5 /* SABUserRegisterStepThreeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SABUserRegisterStepThreeVC.xib; sourceTree = "<group>"; };
+		E3C55E50269D0C6B00E312A5 /* SABUserRegisterStepThreeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABUserRegisterStepThreeVC.swift; sourceTree = "<group>"; };
+		E3C55E52269D0C6B00E312A5 /* SABUserRegisterStepThreeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABUserRegisterStepThreeInteractor.swift; sourceTree = "<group>"; };
+		E3C55E54269D0C6B00E312A5 /* SABUserRegisterStepThreeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABUserRegisterStepThreeRouter.swift; sourceTree = "<group>"; };
 		F233E158268CFF6A00D44AFD /* ShipAndBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShipAndBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F233E15B268CFF6A00D44AFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F233E15D268CFF6A00D44AFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,126 +181,121 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		E34CCB752693923E00844554 /* Model */ = {
+		E3C55E3D269D0BCC00E312A5 /* SABChangePassword */ = {
 			isa = PBXGroup;
 			children = (
-				E34CCB762693929F00844554 /* SABUserRegisterStepThreeModelResponse.swift */,
+				E3C55E3E269D0BCC00E312A5 /* Presenter */,
+				E3C55E3F269D0BCC00E312A5 /* Protocol */,
+				E3C55E40269D0BCC00E312A5 /* View */,
+				E3C55E41269D0BCC00E312A5 /* Interactor */,
+				E3C55E42269D0BCC00E312A5 /* Router */,
 			);
-			path = Model;
+			name = SABChangePassword;
+			path = ../../../../../SABChangePassword;
 			sourceTree = "<group>";
 		};
-		E362B77A268E9F41006388C7 /* SABUserRegisterStepThreee */ = {
+		E3C55E3E269D0BCC00E312A5 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				E34CCB752693923E00844554 /* Model */,
-				E362B798268EA158006388C7 /* Interactor */,
-				E362B792268EA158006388C7 /* Presenter */,
-				E362B796268EA158006388C7 /* Protocol */,
-				E362B794268EA158006388C7 /* RemoteDataManager */,
-				E362B79A268EA159006388C7 /* Router */,
-				E362B79C268EA159006388C7 /* View */,
-			);
-			path = SABUserRegisterStepThreee;
-			sourceTree = "<group>";
-		};
-		E362B792268EA158006388C7 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				E362B793268EA158006388C7 /* SABUserRegisterStepThreePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		E362B794268EA158006388C7 /* RemoteDataManager */ = {
+		E3C55E3F269D0BCC00E312A5 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				E362B795268EA158006388C7 /* SABUserRegisterStepThreeRemoteDataManager.swift */,
-			);
-			path = RemoteDataManager;
-			sourceTree = "<group>";
-		};
-		E362B796268EA158006388C7 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				E362B797268EA158006388C7 /* SABUserRegisterStepThreeProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		E362B798268EA158006388C7 /* Interactor */ = {
+		E3C55E40269D0BCC00E312A5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E362B799268EA158006388C7 /* SABUserRegisterStepThreeInteractor.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E3C55E41269D0BCC00E312A5 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		E362B79A268EA159006388C7 /* Router */ = {
+		E3C55E42269D0BCC00E312A5 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				E362B79B268EA159006388C7 /* SABUserRegisterStepThreeRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
 		};
-		E362B79C268EA159006388C7 /* View */ = {
+		E3C55E45269D0C6B00E312A5 /* generateElectronicSignature */ = {
 			isa = PBXGroup;
 			children = (
-				E362B79D268EA159006388C7 /* SABUserRegisterStepThreeVC.xib */,
-				E362B79E268EA159006388C7 /* SABUserRegisterStepThreeVC.swift */,
+				E3C55E46269D0C6B00E312A5 /* RemoteDataManager */,
+				E3C55E48269D0C6B00E312A5 /* Presenter */,
+				E3C55E4A269D0C6B00E312A5 /* Protocol */,
+				E3C55E4C269D0C6B00E312A5 /* Model */,
+				E3C55E4E269D0C6B00E312A5 /* View */,
+				E3C55E51269D0C6B00E312A5 /* Interactor */,
+				E3C55E53269D0C6B00E312A5 /* Router */,
 			);
-			path = View;
+			path = generateElectronicSignature;
 			sourceTree = "<group>";
 		};
-		E3D8DE65268D291500911762 /* SABChangePassvord */ = {
+		E3C55E46269D0C6B00E312A5 /* RemoteDataManager */ = {
 			isa = PBXGroup;
 			children = (
-				E3D8DE6B268D296C00911762 /* Router */,
-				E3D8DE6A268D296100911762 /* View */,
-				E3D8DE69268D295600911762 /* Protocol */,
-				E3D8DE68268D294600911762 /* Interactor */,
-				E3D8DE67268D293900911762 /* Presenter */,
+				E3C55E47269D0C6B00E312A5 /* SABUserRegisterStepThreeRemoteDataManager.swift */,
 			);
-			path = SABChangePassvord;
+			path = RemoteDataManager;
 			sourceTree = "<group>";
 		};
-		E3D8DE67268D293900911762 /* Presenter */ = {
+		E3C55E48269D0C6B00E312A5 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				E3D8DE59268D290300911762 /* SABChangePasswordPresenter.swift */,
+				E3C55E49269D0C6B00E312A5 /* SABUserRegisterStepThreePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		E3D8DE68268D294600911762 /* Interactor */ = {
+		E3C55E4A269D0C6B00E312A5 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				E3D8DE5B268D290300911762 /* SABChangePasswordInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		E3D8DE69268D295600911762 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				E3D8DE5C268D290300911762 /* SABChangePasswordProtocol.swift */,
+				E3C55E4B269D0C6B00E312A5 /* SABUserRegisterStepThreeProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		E3D8DE6A268D296100911762 /* View */ = {
+		E3C55E4C269D0C6B00E312A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E3D8DE58268D290300911762 /* SABChangePasswordVC.xib */,
-				E3D8DE5D268D290300911762 /* SABChangePasswordVC.swift */,
+				E3C55E4D269D0C6B00E312A5 /* SABUserRegisterStepThreeModelResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E3C55E4E269D0C6B00E312A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E3C55E4F269D0C6B00E312A5 /* SABUserRegisterStepThreeVC.xib */,
+				E3C55E50269D0C6B00E312A5 /* SABUserRegisterStepThreeVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		E3D8DE6B268D296C00911762 /* Router */ = {
+		E3C55E51269D0C6B00E312A5 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				E3D8DE5A268D290300911762 /* SABChangePasswordRouter.swift */,
+				E3C55E52269D0C6B00E312A5 /* SABUserRegisterStepThreeInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E3C55E53269D0C6B00E312A5 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E3C55E54269D0C6B00E312A5 /* SABUserRegisterStepThreeRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -340,9 +323,7 @@
 			children = (
 				F2995ACB269CFA3A000F5FB8 /* Sources */,
 				F2995AD3269CFC36000F5FB8 /* SABRegister */,
-				E362B77A268E9F41006388C7 /* SABUserRegisterStepThreee */,
 				04BD4761268D0DF10058B77A /* SABLogin */,
-				E3D8DE65268D291500911762 /* SABChangePassvord */,
 				F233E15D268CFF6A00D44AFD /* SceneDelegate.swift */,
 				F233E15B268CFF6A00D44AFD /* AppDelegate.swift */,
 				F233E164268CFF6B00D44AFD /* Assets.xcassets */,
@@ -365,6 +346,8 @@
 		F2995AD3269CFC36000F5FB8 /* SABRegister */ = {
 			isa = PBXGroup;
 			children = (
+				E3C55E45269D0C6B00E312A5 /* generateElectronicSignature */,
+				E3C55E3D269D0BCC00E312A5 /* SABChangePassword */,
 				F2995AD4269CFC4E000F5FB8 /* RegisterNewUser */,
 				F2995AE2269CFC4E000F5FB8 /* RequestInformation */,
 			);
@@ -555,9 +538,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3D8DE5E268D290300911762 /* SABChangePasswordVC.xib in Resources */,
+				E3C55E59269D0C6B00E312A5 /* SABUserRegisterStepThreeVC.xib in Resources */,
 				F2995AFA269CFC4E000F5FB8 /* RequestInformationVC.xib in Resources */,
-				E362B7A4268EA159006388C7 /* SABUserRegisterStepThreeVC.xib in Resources */,
 				F233E168268CFF6B00D44AFD /* LaunchScreen.storyboard in Resources */,
 				F233E165268CFF6B00D44AFD /* Assets.xcassets in Resources */,
 				F2995AF4269CFC4E000F5FB8 /* SABRegisterVC.xib in Resources */,
@@ -631,41 +613,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3D8DE63268D290300911762 /* SABChangePasswordVC.swift in Sources */,
-				E362B7A1268EA159006388C7 /* SABUserRegisterStepThreeProtocol.swift in Sources */,
 				F2995AD1269CFA68000F5FB8 /* YPDrawSignatureView.swift in Sources */,
 				F2995AF2269CFC4E000F5FB8 /* SABRegisterProtocol.swift in Sources */,
-				E362B79F268EA159006388C7 /* SABUserRegisterStepThreePresenter.swift in Sources */,
 				F2995AF0269CFC4E000F5FB8 /* ExternalDataManager.swift in Sources */,
-				E362B7A3268EA159006388C7 /* SABUserRegisterStepThreeRouter.swift in Sources */,
 				F2995AFC269CFC4E000F5FB8 /* RequestInformationInteractor.swift in Sources */,
 				F2995ACF269CFA68000F5FB8 /* ActivityIndicator.swift in Sources */,
 				04BD476F268D0E860058B77A /* SABLoginRouter.swift in Sources */,
-				E362B7A2268EA159006388C7 /* SABUserRegisterStepThreeInteractor.swift in Sources */,
 				04BD476E268D0E860058B77A /* SABLoginPresenter.swift in Sources */,
 				047937342694C4B900979654 /* SABLoginRemoteDataManagerInputProtocol.swift in Sources */,
 				04BD4772268D0E860058B77A /* SABLoginVC.swift in Sources */,
+				E3C55E55269D0C6B00E312A5 /* SABUserRegisterStepThreeRemoteDataManager.swift in Sources */,
+				E3C55E5C269D0C6B00E312A5 /* SABUserRegisterStepThreeRouter.swift in Sources */,
 				04BD4770268D0E860058B77A /* SABLoginInteractor.swift in Sources */,
 				F2995AF1269CFC4E000F5FB8 /* SABRegisterPresenter.swift in Sources */,
-				E3D8DE5F268D290300911762 /* SABChangePasswordPresenter.swift in Sources */,
 				F2995AF5269CFC4E000F5FB8 /* SABRegisterInteractor.swift in Sources */,
 				F2995AFB269CFC4E000F5FB8 /* RequestInformationVC.swift in Sources */,
 				F2995AFD269CFC4E000F5FB8 /* RequestInformationRouter.swift in Sources */,
+				E3C55E57269D0C6B00E312A5 /* SABUserRegisterStepThreeProtocol.swift in Sources */,
+				E3C55E5B269D0C6B00E312A5 /* SABUserRegisterStepThreeInteractor.swift in Sources */,
 				F2995AF6269CFC4E000F5FB8 /* SABRegisterRouter.swift in Sources */,
-				E362B7A5268EA159006388C7 /* SABUserRegisterStepThreeVC.swift in Sources */,
-				E34CCB772693929F00844554 /* SABUserRegisterStepThreeModelResponse.swift in Sources */,
 				04BD4771268D0E860058B77A /* SABLoginProtocol.swift in Sources */,
 				F233E15C268CFF6A00D44AFD /* AppDelegate.swift in Sources */,
 				F233E15E268CFF6A00D44AFD /* SceneDelegate.swift in Sources */,
 				F2995AD0269CFA68000F5FB8 /* urlPathSAB.swift in Sources */,
 				F2995AF9269CFC4E000F5FB8 /* RequestInformationProtocol.swift in Sources */,
-				E3D8DE62268D290300911762 /* SABChangePasswordProtocol.swift in Sources */,
-				E362B7A0268EA159006388C7 /* SABUserRegisterStepThreeRemoteDataManager.swift in Sources */,
 				F2995AF7269CFC4E000F5FB8 /* SABRequestInformationEntity.swift in Sources */,
-				E3D8DE61268D290300911762 /* SABChangePasswordInteractor.swift in Sources */,
-				E3D8DE60268D290300911762 /* SABChangePasswordRouter.swift in Sources */,
 				F2995AF8269CFC4E000F5FB8 /* RequestInformationPresenter.swift in Sources */,
+				E3C55E5A269D0C6B00E312A5 /* SABUserRegisterStepThreeVC.swift in Sources */,
+				E3C55E56269D0C6B00E312A5 /* SABUserRegisterStepThreePresenter.swift in Sources */,
 				F2995AF3269CFC4E000F5FB8 /* SABRegisterVC.swift in Sources */,
+				E3C55E58269D0C6B00E312A5 /* SABUserRegisterStepThreeModelResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
