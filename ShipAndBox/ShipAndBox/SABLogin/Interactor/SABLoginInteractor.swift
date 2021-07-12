@@ -11,10 +11,10 @@ class SABLoginInteractor {
     var externalData = SABLoginRemoteDataManagerInputProtocol()
 }
 extension SABLoginInteractor: SABLoginInteractorInputProtocol {
-    /// Funcion para el consumo de servicio de login
+    /// Función para el consumo de servicio de login.
     /// - Parameters:
-    ///   - usrEmail: Correo del usuario
-    ///   - usrPassword: Contraseña del usuario
+    ///   - usrEmail: Correo del usuario.
+    ///   - usrPassword: Contraseña del usuario.
     func loginUserInteractor(usrEmail: String, usrPassword: String) {
         let parameters: NSDictionary = [
                 "email": usrEmail,

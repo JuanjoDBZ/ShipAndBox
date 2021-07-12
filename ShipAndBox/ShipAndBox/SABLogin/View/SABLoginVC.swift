@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 class SABLoginVC: UIViewController {
-    /// Declaracion de objetos y variables  para la vista 
+    /// Declaracion de objetos y variables  para la vista.
     @IBOutlet weak var imageLogo: UIImageView!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtUserName: UITextField!
@@ -21,7 +21,7 @@ class SABLoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    /// Funcion para envio de parametros para el consumo de servicio de login
+    /// Función para envió de parámetros para el consumo de servicio de login.
     func loginUser(){     
         if  txtPassword.text == "" || txtUserName.text == "" {
             let alert = UIAlertController(title: "Alert", message: "Usuario y/o Contraseña no validos.", preferredStyle: UIAlertController.Style.alert)
@@ -37,13 +37,13 @@ class SABLoginVC: UIViewController {
             presenter?.loginUser(usrEmail:email,usrPassword:password)
         }
     }
-    /// Funcion para ingresar ala aplicacion
-    /// - Parameter sender: Objeto del programa
+    /// Función para ingresar ala aplicación.
+    /// - Parameter sender: Objeto del programa.
     @IBAction func buttonGetIn(_ sender: UIButton) {
         loginUser()
     }
-    /// Funcion para ingresar a vistas para el registro ala aplicacion 
-    /// - Parameter sender: Objeto del programa
+    /// Función para ingresar a vistas para el registro ala aplicación.
+    /// - Parameter sender: Objeto del programa.
     @IBAction func buttonMakeYourPaymnet(_ sender: UIButton) {
     }
 }

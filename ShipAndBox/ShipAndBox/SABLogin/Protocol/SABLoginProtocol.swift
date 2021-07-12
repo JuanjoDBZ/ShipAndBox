@@ -18,10 +18,10 @@ protocol SABLoginRouterProtocol {
 /// Protocolo que define los métodos y atributos para el Presenter de SABLogin
 protocol SABLoginPresenterProtocol {
     // VIEW -> PRESENTER
-    /// Funcion que pasa los datos de la vista al presenter para su manipulacion
+    /// Función que pasa los datos de la vista al presenter para su manipulación.
     /// - Parameters:
-    ///   - usrEmail: Correo del usuario
-    ///   - usrPassword: Constraseña del usuario
+    ///   - usrEmail: Correo del usuario.
+    ///   - usrPassword: Contraseña del usuario.
     func loginUser(usrEmail: String, usrPassword: String)
 }
 /// Protocolo que define los métodos y atributos para el Interactor de SABLogin

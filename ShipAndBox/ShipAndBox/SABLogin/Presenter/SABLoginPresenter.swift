@@ -12,10 +12,10 @@ class SABLoginPresenter {
     var router: SABLoginRouterProtocol?
 }
 extension SABLoginPresenter: SABLoginPresenterProtocol {
-    /// Funcion que permite la interaccion entre el presenter y el interactor 
+    /// Funcion que permite la interacción entre el presenter y el interactor.
     /// - Parameters:
-    ///   - usrEmail: Correo usuario
-    ///   - usrPassword: Contraseña usuario
+    ///   - usrEmail: Correo usuario.
+    ///   - usrPassword: Contraseña usuario.
     func loginUser(usrEmail: String, usrPassword: String) {
         interactor?.loginUserInteractor(usrEmail: usrEmail, usrPassword: usrPassword)
     }

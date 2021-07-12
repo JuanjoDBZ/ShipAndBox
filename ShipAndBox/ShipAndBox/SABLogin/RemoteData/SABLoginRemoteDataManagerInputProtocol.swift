@@ -5,10 +5,10 @@
 //  Created by IsitaFS003 on 01/07/21.
 //
 import Foundation
-/// Clase que se encarga de las llamadas al servicio de modulo Login
+/// Clase que se encarga de las llamadas al servicio de módulo Login.
 class SABLoginRemoteDataManagerInputProtocol:NSObject  {
-    /// Funcion que llama el servicio de login
-    /// - Parameter params: Parametros que se enviaran al servicio
+    /// Función que llama el servicio de login.
+    /// - Parameter params: Parámetros que se enviaran al servicio.
     func GetDatalogin( params: NSDictionary){
         let url = "https://ec2-3-136-112-167.us-east-2.compute.amazonaws.com:4443/Api/login"
         var request = URLRequest(url: URL(string: url)!)
@@ -39,13 +39,13 @@ class SABLoginRemoteDataManagerInputProtocol:NSObject  {
     }
 }
 extension SABLoginRemoteDataManagerInputProtocol:URLSessionDelegate {
-    /// Funcion que permite la autenticación a un servidor
+    /// Función que permite la autenticación a un servidor.
     /// - Parameters:
-    ///   - session: permite cargar los datos ala url
-    ///   - challenge: respuesta ala autenticación del servidor 
-    ///   - completionHandler: Regresa la peticion que sele hiso al servidor
+    ///   - session: permite cargar los datos ala url.
+    ///   - challenge: respuesta ala autenticación del servidor.
+    ///   - completionHandler: Regresa la petición que se le hizo al servidor.
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-        /// Tenemos un URLAuthenticationChallenge, confiamos en el servidor  y procedemos
+        /// Tenemos un URLAuthenticationChallenge, confiamos en el servidor  y procedemos.
         let authMethod = challenge.protectionSpace.authenticationMethod
         guard challenge.previousFailureCount < 1, authMethod == NSURLAuthenticationMethodServerTrust,
             let trust = challenge.protectionSpace.serverTrust else {
@@ -54,10 +54,10 @@ extension SABLoginRemoteDataManagerInputProtocol:URLSessionDelegate {
         }
         completionHandler(.useCredential, URLCredential(trust: trust))
     }
-    /// Funcion que nos dice en que falla la aplicacion
+    /// Función que nos dice en que falla la aplicación.
     /// - Parameters:
     ///   - session: El objeto de sesión invalidado.
-    ///   - error: Descripcion del error
+    ///   - error: Descripción del error.
     func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {
         if let err = error {
             print("Error: URLSessionDelegate \(err.localizedDescription)")
