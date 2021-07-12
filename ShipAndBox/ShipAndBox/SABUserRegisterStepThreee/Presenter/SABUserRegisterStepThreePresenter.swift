@@ -12,11 +12,11 @@ class SABUserRegisterStepThreePresenter {
     var router: SABUserRegisterStepThreeRouterProtocol?
 }
 extension SABUserRegisterStepThreePresenter: SABUserRegisterStepThreePresenterProtocol {
-    func goToUserRegisterStepFour() {
-        router?.showViewUserRegisterStepFour()
+    func goToUserRegisterStepFour(customerId:Int) {
+        router?.showViewUserRegisterStepFour(customerId:customerId)
     }
     /// Se envía imagen de la firma y el id de usuario al interactor
-    /// - Parameter parametersCreateSignature: Se envia la firma y el id del usuario
+    /// - Parameter parametersCreateSignature: Se envía la firma y el id del usuario
     func sendSignatureUserSAB(parametersCreateSignature: NSDictionary) {
         interactor?.sendSignatureUserSABInteractor(parametersCreateSignature: parametersCreateSignature)
         view?.showActivity()

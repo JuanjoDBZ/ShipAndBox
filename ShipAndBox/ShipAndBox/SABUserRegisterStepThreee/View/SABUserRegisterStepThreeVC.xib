@@ -3,13 +3,11 @@
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SABUserRegisterStepThreeVC" customModule="ShipAndBox" customModuleProvider="target">
             <connections>
-                <outlet property="activitySAB" destination="ptL-5l-dlE" id="FV1-5v-4ON"/>
                 <outlet property="view" destination="FrL-u8-t98" id="cZP-x4-JXm"/>
                 <outlet property="viewSignatureUser" destination="1oB-dd-8Wa" id="tbl-p9-rQb"/>
             </connections>
@@ -141,15 +139,10 @@ El contrato es prueba</string>
                         <action selector="clearSignatureUser:" destination="-1" eventType="touchUpInside" id="fdh-pn-4YH"/>
                     </connections>
                 </button>
-                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ptL-5l-dlE">
-                    <rect key="frame" x="195.66666666666666" y="444.66666666666669" width="37" height="37"/>
-                    <color key="color" systemColor="systemGreenColor"/>
-                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="l7I-HL-MZU" secondAttribute="trailing" constant="44" id="1iY-Tp-awX"/>
-                <constraint firstItem="ptL-5l-dlE" firstAttribute="centerY" secondItem="FrL-u8-t98" secondAttribute="centerY" id="31X-HW-LQu"/>
                 <constraint firstItem="EeB-oq-PtF" firstAttribute="top" secondItem="iBx-6E-bH2" secondAttribute="bottom" constant="16.329999999999998" id="3B3-rc-TgM"/>
                 <constraint firstItem="1cS-iw-fN9" firstAttribute="leading" secondItem="FrL-u8-t98" secondAttribute="leading" constant="48" id="8On-YE-uhw"/>
                 <constraint firstItem="9GK-aZ-MTG" firstAttribute="top" secondItem="l7I-HL-MZU" secondAttribute="bottom" constant="16" id="C5K-dh-cXZ"/>
@@ -173,7 +166,6 @@ El contrato es prueba</string>
                 <constraint firstItem="JOw-qX-le1" firstAttribute="leading" secondItem="FrL-u8-t98" secondAttribute="leading" constant="57" id="hnI-6P-3Zg"/>
                 <constraint firstAttribute="trailing" secondItem="WK5-Ue-RIA" secondAttribute="trailing" constant="46" id="iMp-EH-Zn5"/>
                 <constraint firstAttribute="trailing" secondItem="1kp-LH-iK6" secondAttribute="trailing" constant="106" id="jnK-Dk-OaK"/>
-                <constraint firstItem="ptL-5l-dlE" firstAttribute="centerX" secondItem="FrL-u8-t98" secondAttribute="centerX" id="lec-fl-9tU"/>
                 <constraint firstItem="1kp-LH-iK6" firstAttribute="leading" secondItem="FrL-u8-t98" secondAttribute="leading" constant="107" id="pUV-kH-yox"/>
                 <constraint firstAttribute="trailing" secondItem="EeB-oq-PtF" secondAttribute="trailing" constant="29" id="r38-3Z-RpT"/>
                 <constraint firstItem="EeB-oq-PtF" firstAttribute="leading" secondItem="FrL-u8-t98" secondAttribute="leading" constant="30" id="wRM-US-BgW"/>
@@ -191,8 +183,5 @@ El contrato es prueba</string>
         <image name="PASO 3" width="28" height="28"/>
         <image name="PASO 4" width="28" height="28"/>
         <image name="logo-color" width="220" height="50"/>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

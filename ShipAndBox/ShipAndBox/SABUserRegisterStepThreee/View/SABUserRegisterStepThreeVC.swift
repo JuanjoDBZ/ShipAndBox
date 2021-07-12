@@ -9,22 +9,17 @@ import Foundation
 import UIKit
 class SABUserRegisterStepThreeVC: UIViewController, YPSignatureDelegate {
     var presenter: SABUserRegisterStepThreePresenterProtocol?
-    /// Obtiene el estatus de la resuesta del ws
-    var statusResponse = 0
     /// Id de usuario registrado
     let customerId = 2
-    /// Parametros que se envian para ejecutar el servicio de generar firma electronica
+    /// Parametros que se envian para ejecutar el servicio de generar firma electrónica
     var parametersCreateSignature: NSDictionary = [:]
     /// Se implementa vista de tipo YPDrawSignatureView para generar la firma
     @IBOutlet weak var viewSignatureUser: YPDrawSignatureView!
-    /// Activity para esperar la caraga de datos
-    @IBOutlet weak var activitySAB: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSignatureUser.delegate = self
         viewSignatureUser.layer.borderWidth = 1
         viewSignatureUser.layer.borderColor = UIColor.gray.cgColor
-        activitySAB.hidesWhenStopped = true
     }
     /// Limpia la vista de la firma
     /// - Parameter sender: Contiene la información del botón que se pulsa
@@ -48,17 +43,17 @@ class SABUserRegisterStepThreeVC: UIViewController, YPSignatureDelegate {
             self.showMessageError(msg:"Tienes que firmar en el recuadro")
         }
     }
-    /// Funcion para generar alerta de aviso satisfactorio
+    /// Función para generar alerta de aviso satisfactorio
     /// - Parameter msg: mensaje que mostrará la alerta
     func showMessageSucces(msg:String) {
         let alert = UIAlertController(title: "Aviso", message: msg, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (alert) in
             self.viewSignatureUser.clear()
-            self.presenter?.goToUserRegisterStepFour()
+            self.presenter?.goToUserRegisterStepFour(customerId:self.customerId)
         }))
         self.present(alert, animated: true, completion: nil)
     }
-    /// Funcion para generar alerta de aviso erroneo
+    /// Función para generar alerta de aviso erroneo
     /// - Parameter msg: mensaje de error
     func showMessageError(msg:String) {
         let alert = UIAlertController(title: "Aviso", message: msg, preferredStyle: UIAlertController.Style.alert)
@@ -81,7 +76,6 @@ extension SABUserRegisterStepThreeVC: SABUserRegisterStepThreeViewProtocol {
     func resposeSuccesRegisterStepThreeView(msg:String) {
         DispatchQueue.main.async {
             self.showMessageSucces(msg: msg)
-            self.presenter?.goToUserRegisterStepFour()
         }
     }
     /// función de error si la respuesta manda 0
@@ -95,14 +89,13 @@ extension SABUserRegisterStepThreeVC: SABUserRegisterStepThreeViewProtocol {
     /// Iniciar activity
     func showActivity() {
         DispatchQueue.main.async {
-            self.activitySAB.startAnimating()
+            self.view.activityStartAnimating(activityColor: UIColor.green, backgroundColor: UIColor.black.withAlphaComponent(0.5))
         }
     }
     /// Parar y ocultar activity
     func hideActivity() {
         DispatchQueue.main.async {
-            self.activitySAB.stopAnimating()
-            self.activitySAB.hidesWhenStopped = true
+            self.view.activityStopAnimating()
         }
     }
 }

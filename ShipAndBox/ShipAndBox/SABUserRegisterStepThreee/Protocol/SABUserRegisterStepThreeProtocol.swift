@@ -25,7 +25,7 @@ protocol SABUserRegisterStepThreeViewProtocol {
 protocol SABUserRegisterStepThreeRouterProtocol {
     // PRESENTER -> ROUTING
     /// Función para ir al paso 4 de registro
-    func showViewUserRegisterStepFour()
+    func showViewUserRegisterStepFour(customerId:Int)
 }
 /// Protocolo que define los métodos y atributos para el Presenter de SABUserRegisterStepThree
 protocol SABUserRegisterStepThreePresenterProtocol {
@@ -34,7 +34,7 @@ protocol SABUserRegisterStepThreePresenterProtocol {
     /// - Parameter parametersCreateSignature: Se envia la firma y el id del usuario
     func sendSignatureUserSAB(parametersCreateSignature: NSDictionary)
     /// Función para decirle al presenter que vamos a  ir al paso 4 de registro
-    func goToUserRegisterStepFour()
+    func goToUserRegisterStepFour(customerId:Int)
 }
 /// Protocolo que define los métodos y atributos para el Interactor de SABUserRegisterStepThree
 protocol SABUserRegisterStepThreeInteractorInputProtocol {
