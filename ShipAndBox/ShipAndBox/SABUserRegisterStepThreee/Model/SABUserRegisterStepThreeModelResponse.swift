@@ -7,16 +7,15 @@
 import Foundation
 /// Estructura para la respuesta del servidor
 struct ToDo: Decodable {
+    /// Resultado de tipo dataResultService que regresa el servidor
     let data: dataResultService?
+    /// Estatus que regresa el servidor(0 o 1)
     let status: Int?
+    /// Mensaje de respuesta del servidor
     let message: Array<String>?
 }
+/// Data que regresa el servidor
 struct dataResultService: Decodable {
+    //nombre usuario
     let names: String?
-    let surnames: String?
-    let typeDocument: String?
-    let validDocument: String?
-    let idNumberDocument: String?
-    let dateExpiration: String?
-    let personalNumber: String?
 }
