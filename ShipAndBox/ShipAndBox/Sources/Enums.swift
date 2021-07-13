@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 public class EnumsRequestAndErrors {
     ////APPError enum which shows all possible errors
     enum APPError: Error {
