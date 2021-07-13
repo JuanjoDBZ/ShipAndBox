@@ -16,7 +16,7 @@ extension SABUserRegisterStepThreeInteractor: SABUserRegisterStepThreeInteractor
     ///   - imageStringSignatureUser: imagen de la firma en base 64
     ///   - customerId: Id del usuario registrado
     func sendSignatureUserSABInteractor(parametersCreateSignature: NSDictionary) {
-        remoteDatamanager.sendSignatureUserSABRemoteData(parametersCreateSignature: parametersCreateSignature, objectType: ToDo.self) { (result: Result) in
+        remoteDatamanager.sendSignatureUserSABRemoteData(parametersCreateSignature: parametersCreateSignature, objectType: ToDo.self) { (result: EnumsRequestAndErrors.Result) in
             switch result {
             case .success(let object):
                 if object.status == 1 {

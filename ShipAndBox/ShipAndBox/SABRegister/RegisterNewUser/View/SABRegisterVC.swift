@@ -120,7 +120,7 @@ extension SABRegisterVC: SABRegisterViewProtocol {
 }
 extension SABRegisterVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             if imageFrontINE.image == nil {
                 imageFrontINE.image = image
                 if let imageBase64 = image.jpegData(compressionQuality: 0.8)?.base64EncodedString() {

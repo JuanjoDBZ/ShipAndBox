@@ -33,6 +33,7 @@
 		F24274DC269D247F0070A4F8 /* SABChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24274D4269D247F0070A4F8 /* SABChangePasswordVC.swift */; };
 		F24274DD269D247F0070A4F8 /* SABChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24274D6269D247F0070A4F8 /* SABChangePasswordInteractor.swift */; };
 		F24274DE269D247F0070A4F8 /* SABChangePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24274D8269D247F0070A4F8 /* SABChangePasswordRouter.swift */; };
+		F24274E3269DFD380070A4F8 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24274E2269DFD380070A4F8 /* Enums.swift */; };
 		F2995ACF269CFA68000F5FB8 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2995ACC269CFA68000F5FB8 /* ActivityIndicator.swift */; };
 		F2995AD0269CFA68000F5FB8 /* urlPathSAB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2995ACD269CFA68000F5FB8 /* urlPathSAB.swift */; };
 		F2995AD1269CFA68000F5FB8 /* YPDrawSignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2995ACE269CFA68000F5FB8 /* YPDrawSignatureView.swift */; };
@@ -83,6 +84,7 @@
 		F24274D4269D247F0070A4F8 /* SABChangePasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABChangePasswordVC.swift; sourceTree = "<group>"; };
 		F24274D6269D247F0070A4F8 /* SABChangePasswordInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABChangePasswordInteractor.swift; sourceTree = "<group>"; };
 		F24274D8269D247F0070A4F8 /* SABChangePasswordRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABChangePasswordRouter.swift; sourceTree = "<group>"; };
+		F24274E2269DFD380070A4F8 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		F2995ACC269CFA68000F5FB8 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		F2995ACD269CFA68000F5FB8 /* urlPathSAB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = urlPathSAB.swift; sourceTree = "<group>"; };
 		F2995ACE269CFA68000F5FB8 /* YPDrawSignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPDrawSignatureView.swift; sourceTree = "<group>"; };
@@ -297,7 +299,7 @@
 			path = ShipAndBox;
 			sourceTree = "<group>";
 		};
-		F24274CD269D247F0070A4F8 /* SABChangePassword */ = {
+		F24274CD269D247F0070A4F8 /* ChangePassword */ = {
 			isa = PBXGroup;
 			children = (
 				F24274CE269D247F0070A4F8 /* Presenter */,
@@ -306,7 +308,7 @@
 				F24274D5269D247F0070A4F8 /* Interactor */,
 				F24274D7269D247F0070A4F8 /* Router */,
 			);
-			path = SABChangePassword;
+			path = ChangePassword;
 			sourceTree = "<group>";
 		};
 		F24274CE269D247F0070A4F8 /* Presenter */ = {
@@ -356,6 +358,7 @@
 				F2995ACC269CFA68000F5FB8 /* ActivityIndicator.swift */,
 				F2995ACD269CFA68000F5FB8 /* urlPathSAB.swift */,
 				F2995ACE269CFA68000F5FB8 /* YPDrawSignatureView.swift */,
+				F24274E2269DFD380070A4F8 /* Enums.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -363,7 +366,7 @@
 		F2995AD3269CFC36000F5FB8 /* SABRegister */ = {
 			isa = PBXGroup;
 			children = (
-				F24274CD269D247F0070A4F8 /* SABChangePassword */,
+				F24274CD269D247F0070A4F8 /* ChangePassword */,
 				E3C55E45269D0C6B00E312A5 /* GenerateElectronicSignature */,
 				F2995AD4269CFC4E000F5FB8 /* RegisterNewUser */,
 				F2995AE2269CFC4E000F5FB8 /* RequestInformation */,
@@ -665,6 +668,7 @@
 				E3C55E56269D0C6B00E312A5 /* SABUserRegisterStepThreePresenter.swift in Sources */,
 				F2995AF3269CFC4E000F5FB8 /* SABRegisterVC.swift in Sources */,
 				E3C55E58269D0C6B00E312A5 /* SABUserRegisterStepThreeModelResponse.swift in Sources */,
+				F24274E3269DFD380070A4F8 /* Enums.swift in Sources */,
 				F24274DD269D247F0070A4F8 /* SABChangePasswordInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -4,23 +4,11 @@
 //
 //  Created by ISITA on 01/07/21.
 //
-//APPError enumeración que muestra todos los posibles errores
-enum APPError: Error {
-    case networkError(Error)
-    case dataNotFound
-    case jsonParsingError(Error)
-    case invalidStatusCode(Int)
-}
-//Result enumeración para mostrar éxito o fracaso
-enum Result<T> {
-    case success(T)
-    case failure(APPError)
-}
 import Foundation
 class SABUserRegisterStepThreeRemoteDataManager:NSObject,URLSessionDelegate {
     /// Función para consultar el ws
     /// - Parameter parametersCreateSignature: Se envia la firma y el id del usuario
-    func sendSignatureUserSABRemoteData<T: Decodable>(parametersCreateSignature: NSDictionary, objectType: T.Type, completion: @escaping (Result<T>) -> Void) {
+    func sendSignatureUserSABRemoteData<T: Decodable>(parametersCreateSignature: NSDictionary, objectType: T.Type, completion: @escaping (EnumsRequestAndErrors.Result<T>) -> Void) {
         /// path para complemetar la url
         let path = "signContract"
         /// Url construida para consumir
@@ -37,18 +25,18 @@ class SABUserRegisterStepThreeRemoteDataManager:NSObject,URLSessionDelegate {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let task = session.dataTask(with: request, completionHandler: { data, response, error in
              guard error == nil else {
-                completion(Result.failure(APPError.networkError(error!)))
+                completion(EnumsRequestAndErrors.Result.failure(EnumsRequestAndErrors.APPError.networkError(error!)))
                  return
              }
              guard let data = data else {
-                 completion(Result.failure(APPError.dataNotFound))
+                completion(EnumsRequestAndErrors.Result.failure(EnumsRequestAndErrors.APPError.dataNotFound))
                  return
              }
              do {
                 let decodedObject = try JSONDecoder().decode(objectType.self, from: data)
-                completion(Result.success(decodedObject))
+                completion(EnumsRequestAndErrors.Result.success(decodedObject))
              } catch let error {
-                 completion(Result.failure(APPError.jsonParsingError(error as! DecodingError)))
+                completion(EnumsRequestAndErrors.Result.failure(EnumsRequestAndErrors.APPError.jsonParsingError(error as! DecodingError)))
              }
          })
         task.resume()
