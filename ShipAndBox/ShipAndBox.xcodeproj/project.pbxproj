@@ -3,12 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		02F30CA9AA80841FA6AF6475 /* Pods_ShipAndBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4963031E43E093E5431B14C6 /* Pods_ShipAndBox.framework */; };
+		043775E2269E21D500BCA086 /* OpenpayKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043775DC269E21B500BCA086 /* OpenpayKit.xcframework */; };
+		043775E3269E21D500BCA086 /* OpenpayKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 043775DC269E21B500BCA086 /* OpenpayKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		047937342694C4B900979654 /* SABLoginRemoteDataManagerInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047937332694C4B900979654 /* SABLoginRemoteDataManagerInputProtocol.swift */; };
+		04A991F4269E113D00F491A6 /* SABRealizaTuPagoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A991E8269E113D00F491A6 /* SABRealizaTuPagoRouter.swift */; };
+		04A991F5269E113D00F491A6 /* SABRealizaTuPagoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A991EA269E113D00F491A6 /* SABRealizaTuPagoVC.xib */; };
+		04A991F6269E113D00F491A6 /* SABRealizaTuPagoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A991EB269E113D00F491A6 /* SABRealizaTuPagoVC.swift */; };
+		04A991F7269E113D00F491A6 /* SABRealizaTuPagoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A991ED269E113D00F491A6 /* SABRealizaTuPagoProtocol.swift */; };
+		04A991F8269E113D00F491A6 /* SABRealizaTuPagoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A991EF269E113D00F491A6 /* SABRealizaTuPagoInteractor.swift */; };
+		04A991F9269E113D00F491A6 /* SABRealizaTuPagoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A991F1269E113D00F491A6 /* SABRealizaTuPagoPresenter.swift */; };
+		04A991FA269E113D00F491A6 /* SABRealizaTuPagoRemoteDataManagerInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A991F3269E113D00F491A6 /* SABRealizaTuPagoRemoteDataManagerInputProtocol.swift */; };
 		04BD476D268D0E860058B77A /* SABLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BD4767268D0E860058B77A /* SABLoginVC.xib */; };
 		04BD476E268D0E860058B77A /* SABLoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD4768268D0E860058B77A /* SABLoginPresenter.swift */; };
 		04BD476F268D0E860058B77A /* SABLoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD4769268D0E860058B77A /* SABLoginRouter.swift */; };
@@ -53,8 +62,30 @@
 		F2995AFD269CFC4E000F5FB8 /* RequestInformationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2995AEF269CFC4E000F5FB8 /* RequestInformationRouter.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		04A99208269E136900F491A6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				043775E3269E21D500BCA086 /* OpenpayKit.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		043775DC269E21B500BCA086 /* OpenpayKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = OpenpayKit.xcframework; sourceTree = "<group>"; };
 		047937332694C4B900979654 /* SABLoginRemoteDataManagerInputProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABLoginRemoteDataManagerInputProtocol.swift; sourceTree = "<group>"; };
+		04A991E8269E113D00F491A6 /* SABRealizaTuPagoRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABRealizaTuPagoRouter.swift; sourceTree = "<group>"; };
+		04A991EA269E113D00F491A6 /* SABRealizaTuPagoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SABRealizaTuPagoVC.xib; sourceTree = "<group>"; };
+		04A991EB269E113D00F491A6 /* SABRealizaTuPagoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABRealizaTuPagoVC.swift; sourceTree = "<group>"; };
+		04A991ED269E113D00F491A6 /* SABRealizaTuPagoProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABRealizaTuPagoProtocol.swift; sourceTree = "<group>"; };
+		04A991EF269E113D00F491A6 /* SABRealizaTuPagoInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABRealizaTuPagoInteractor.swift; sourceTree = "<group>"; };
+		04A991F1269E113D00F491A6 /* SABRealizaTuPagoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABRealizaTuPagoPresenter.swift; sourceTree = "<group>"; };
+		04A991F3269E113D00F491A6 /* SABRealizaTuPagoRemoteDataManagerInputProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABRealizaTuPagoRemoteDataManagerInputProtocol.swift; sourceTree = "<group>"; };
 		04BD4767268D0E860058B77A /* SABLoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SABLoginVC.xib; sourceTree = "<group>"; };
 		04BD4768268D0E860058B77A /* SABLoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABLoginPresenter.swift; sourceTree = "<group>"; };
 		04BD4769268D0E860058B77A /* SABLoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABLoginRouter.swift; sourceTree = "<group>"; };
@@ -110,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02F30CA9AA80841FA6AF6475 /* Pods_ShipAndBox.framework in Frameworks */,
+				043775E2269E21D500BCA086 /* OpenpayKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +152,68 @@
 			isa = PBXGroup;
 			children = (
 				047937332694C4B900979654 /* SABLoginRemoteDataManagerInputProtocol.swift */,
+			);
+			path = RemoteData;
+			sourceTree = "<group>";
+		};
+		04A991E6269E10CA00F491A6 /* MakePayment */ = {
+			isa = PBXGroup;
+			children = (
+				04A991EE269E113D00F491A6 /* Interactor */,
+				04A991F0269E113D00F491A6 /* Presenter */,
+				04A991EC269E113D00F491A6 /* Protocol */,
+				04A991F2269E113D00F491A6 /* RemoteData */,
+				04A991E7269E113D00F491A6 /* Router */,
+				04A991E9269E113D00F491A6 /* View */,
+			);
+			path = MakePayment;
+			sourceTree = "<group>";
+		};
+		04A991E7269E113D00F491A6 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				04A991E8269E113D00F491A6 /* SABRealizaTuPagoRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		04A991E9269E113D00F491A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04A991EA269E113D00F491A6 /* SABRealizaTuPagoVC.xib */,
+				04A991EB269E113D00F491A6 /* SABRealizaTuPagoVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04A991EC269E113D00F491A6 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				04A991ED269E113D00F491A6 /* SABRealizaTuPagoProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		04A991EE269E113D00F491A6 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				04A991EF269E113D00F491A6 /* SABRealizaTuPagoInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		04A991F0269E113D00F491A6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				04A991F1269E113D00F491A6 /* SABRealizaTuPagoPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		04A991F2269E113D00F491A6 /* RemoteData */ = {
+			isa = PBXGroup;
+			children = (
+				04A991F3269E113D00F491A6 /* SABRealizaTuPagoRemoteDataManagerInputProtocol.swift */,
 			);
 			path = RemoteData;
 			sourceTree = "<group>";
@@ -181,6 +275,7 @@
 		551D6365ED2054368CD4247A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				043775DC269E21B500BCA086 /* OpenpayKit.xcframework */,
 				4963031E43E093E5431B14C6 /* Pods_ShipAndBox.framework */,
 			);
 			name = Frameworks;
@@ -366,6 +461,7 @@
 		F2995AD3269CFC36000F5FB8 /* SABRegister */ = {
 			isa = PBXGroup;
 			children = (
+				04A991E6269E10CA00F491A6 /* MakePayment */,
 				F24274CD269D247F0070A4F8 /* ChangePassword */,
 				E3C55E45269D0C6B00E312A5 /* GenerateElectronicSignature */,
 				F2995AD4269CFC4E000F5FB8 /* RegisterNewUser */,
@@ -511,6 +607,7 @@
 				F233E156268CFF6A00D44AFD /* Resources */,
 				A83F65EB96A511C4A22170C3 /* [CP] Embed Pods Frameworks */,
 				58D7B8C47056EF04DB09C251 /* [CP] Copy Pods Resources */,
+				04A99208269E136900F491A6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -564,6 +661,7 @@
 				F233E168268CFF6B00D44AFD /* LaunchScreen.storyboard in Resources */,
 				F233E165268CFF6B00D44AFD /* Assets.xcassets in Resources */,
 				F2995AF4269CFC4E000F5FB8 /* SABRegisterVC.xib in Resources */,
+				04A991F5269E113D00F491A6 /* SABRealizaTuPagoVC.xib in Resources */,
 				04BD476D268D0E860058B77A /* SABLoginVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,6 +732,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A991F8269E113D00F491A6 /* SABRealizaTuPagoInteractor.swift in Sources */,
 				F2995AD1269CFA68000F5FB8 /* YPDrawSignatureView.swift in Sources */,
 				F24274DC269D247F0070A4F8 /* SABChangePasswordVC.swift in Sources */,
 				F2995AF2269CFC4E000F5FB8 /* SABRegisterProtocol.swift in Sources */,
@@ -643,14 +742,19 @@
 				F24274DE269D247F0070A4F8 /* SABChangePasswordRouter.swift in Sources */,
 				04BD476F268D0E860058B77A /* SABLoginRouter.swift in Sources */,
 				04BD476E268D0E860058B77A /* SABLoginPresenter.swift in Sources */,
+				04A991FA269E113D00F491A6 /* SABRealizaTuPagoRemoteDataManagerInputProtocol.swift in Sources */,
 				047937342694C4B900979654 /* SABLoginRemoteDataManagerInputProtocol.swift in Sources */,
 				04BD4772268D0E860058B77A /* SABLoginVC.swift in Sources */,
 				E3C55E55269D0C6B00E312A5 /* SABUserRegisterStepThreeRemoteDataManager.swift in Sources */,
 				E3C55E5C269D0C6B00E312A5 /* SABUserRegisterStepThreeRouter.swift in Sources */,
 				04BD4770268D0E860058B77A /* SABLoginInteractor.swift in Sources */,
 				F2995AF1269CFC4E000F5FB8 /* SABRegisterPresenter.swift in Sources */,
+				04A991F9269E113D00F491A6 /* SABRealizaTuPagoPresenter.swift in Sources */,
 				F24274D9269D247F0070A4F8 /* SABChangePasswordPresenter.swift in Sources */,
 				F2995AF5269CFC4E000F5FB8 /* SABRegisterInteractor.swift in Sources */,
+				04A991F7269E113D00F491A6 /* SABRealizaTuPagoProtocol.swift in Sources */,
+				04A991F4269E113D00F491A6 /* SABRealizaTuPagoRouter.swift in Sources */,
+				04A991F6269E113D00F491A6 /* SABRealizaTuPagoVC.swift in Sources */,
 				F2995AFB269CFC4E000F5FB8 /* RequestInformationVC.swift in Sources */,
 				F2995AFD269CFC4E000F5FB8 /* RequestInformationRouter.swift in Sources */,
 				E3C55E57269D0C6B00E312A5 /* SABUserRegisterStepThreeProtocol.swift in Sources */,
@@ -811,6 +915,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ABJLZ98S9L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ShipAndBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -832,6 +940,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ABJLZ98S9L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ShipAndBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
