@@ -6,8 +6,8 @@
 //  
 //
 import Foundation
-struct ToDoRegister: Decodable {
-    let data: dataResultServiceRegister?
+struct ToDoRegisterResponse: Decodable {
+    let data: [dataResultServiceRegister]?
     let status: Int?
     let message: Array<String>?
 }
@@ -30,7 +30,7 @@ extension SABRegisterInteractor: SABRegisterInteractorInputProtocol {
         presenter?.receiveData()
     }
     func validateDocuments(documents: [String: String]) {
-        externalDataManager.autenticar(with: documents, objectType: ToDoRegister.self) { (result: EnumsRequestAndErrors.Result) in
+        externalDataManager.autenticar(with: documents, objectType: ToDoRegisterResponse.self) { (result: EnumsRequestAndErrors.Result) in
             switch result {
             case .success(let object):
                 print(object)

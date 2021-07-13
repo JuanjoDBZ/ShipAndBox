@@ -58,6 +58,7 @@ class RequestInformationVC: UIViewController {
             dataUserRegister.idNumberIne = idNumberIne
             dataUserRegister.cellPhone = cellPhone
             dataUserRegister.phone = phoneNumber
+            
         }
     }
     func setupSearchController() {

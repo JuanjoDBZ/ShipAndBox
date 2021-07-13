@@ -121,28 +121,47 @@ extension SABRegisterVC: SABRegisterViewProtocol {
 extension SABRegisterVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            if imageFrontINE.image == nil {
-                imageFrontINE.image = image
-                if let imageBase64 = image.jpegData(compressionQuality: 0.8)?.base64EncodedString() {
-                    let imageBase = "data:image/jpeg;base64,\(imageBase64)"
-                    ineFront = imageBase
-                    dictIneImages["IneFront"] = imageBase
-                    lblInstructions.text = "Tome la foto de la parte trasera del INE."
-                }
-            } else if imageBackINE.image == nil {
-                imageBackINE.image = image
-                if let imageBase64 = image.jpegData(compressionQuality: 0.8)?.base64EncodedString() {
-                    let imageBase =  "data:image/jpeg;base64,\(imageBase64)"
-                    ineBack = imageBase
-                    dictIneImages["IneBack"] = imageBase
-                    lblInstructions.text = "Tome la foto de su rostro para validar la informacion."
+            if dropDownIdentification.selectedIndex == 0 {
+                if imageFrontINE.image == nil {
+                    imageFrontINE.image = image
+                    if let imageBase64 = image.jpegData(compressionQuality: 0.8)?.base64EncodedString() {
+                        let imageBase = "data:image/jpeg;base64,\(imageBase64)"
+                        ineFront = imageBase
+                        dictIneImages["IneFront"] = imageBase
+                        lblInstructions.text = "Tome la foto de la parte trasera del INE."
+                    }
+                } else if imageBackINE.image == nil {
+                    imageBackINE.image = image
+                    if let imageBase64 = image.jpegData(compressionQuality: 0.8)?.base64EncodedString() {
+                        let imageBase =  "data:image/jpeg;base64,\(imageBase64)"
+                        ineBack = imageBase
+                        dictIneImages["IneBack"] = imageBase
+                        lblInstructions.text = "Tome la foto de su rostro para validar la informacion."
+                    }
+                } else {
+                    if let imageBase64 = image.jpegData(compressionQuality: 0.8)?.base64EncodedString() {
+                        let imageBase =  "data:image/jpeg;base64,\(imageBase64)"
+                        faceCustomer = imageBase
+                        dictIneImages["FaceCustomer"] = imageBase
+                        lblInstructions.text = "Pulse siguiente para continuar con el registro."
+                    }
                 }
             } else {
-                if let imageBase64 = image.jpegData(compressionQuality: 0.8)?.base64EncodedString() {
-                    let imageBase =  "data:image/jpeg;base64,\(imageBase64)"
-                    faceCustomer = imageBase
-                    dictIneImages["FaceCustomer"] = imageBase
-                    lblInstructions.text = "Pulse siguiente para continuar con el registro."
+                if imageFrontINE.image == nil {
+                    imageFrontINE.image = image
+                    if let imageBase64 = image.jpegData(compressionQuality: 0.8)?.base64EncodedString() {
+                        let imageBase = "data:image/jpeg;base64,\(imageBase64)"
+                        ineFront = imageBase
+                        dictIneImages["IneFront"] = imageBase
+                        lblInstructions.text = "Tome la foto de su rostro para validar la informacion."
+                    }
+                } else {
+                    if let imageBase64 = image.jpegData(compressionQuality: 0.8)?.base64EncodedString() {
+                        let imageBase =  "data:image/jpeg;base64,\(imageBase64)"
+                        faceCustomer = imageBase
+                        dictIneImages["FaceCustomer"] = imageBase
+                        lblInstructions.text = "Pulse siguiente para continuar con el registro."
+                    }
                 }
             }
         }
