@@ -6,6 +6,21 @@
 //  
 //
 import Foundation
+/// Estructura para la respuesta del servidor
+struct ToDoGenerateSignature: Decodable {
+    /// Resultado de tipo dataResultService que regresa el servidor
+    let data: dataResultServiceGenerateSignature?
+    /// Estatus que regresa el servidor(0 o 1)
+    let status: Int?
+    /// Mensaje de respuesta del servidor
+    let message: Array<String>?
+}
+/// Data que regresa el servidor
+struct dataResultServiceGenerateSignature: Decodable {
+    //nombre usuario
+    let names: String?
+}
+
 class SABUserRegisterStepThreeInteractor {
     var presenter: SABUserRegisterStepThreeInteractorOutputProtocol?
     var remoteDatamanager = SABUserRegisterStepThreeRemoteDataManager()
@@ -16,7 +31,7 @@ extension SABUserRegisterStepThreeInteractor: SABUserRegisterStepThreeInteractor
     ///   - imageStringSignatureUser: imagen de la firma en base 64
     ///   - customerId: Id del usuario registrado
     func sendSignatureUserSABInteractor(parametersCreateSignature: NSDictionary) {
-        remoteDatamanager.sendSignatureUserSABRemoteData(parametersCreateSignature: parametersCreateSignature, objectType: ToDo.self) { (result: EnumsRequestAndErrors.Result) in
+        remoteDatamanager.sendSignatureUserSABRemoteData(parametersCreateSignature: parametersCreateSignature, objectType: ToDoGenerateSignature.self) { (result: EnumsRequestAndErrors.Result) in
             switch result {
             case .success(let object):
                 if object.status == 1 {
