@@ -45,6 +45,7 @@ class SABLoginVC: UIViewController {
     /// Función para ingresar a vistas para el registro ala aplicación.
     /// - Parameter sender: Objeto del programa.
     @IBAction func buttonMakeYourPaymnet(_ sender: UIButton) {
+        presenter?.registerNewUser()
     }
 }
 ///Protocolo para recibir datos de presenter.

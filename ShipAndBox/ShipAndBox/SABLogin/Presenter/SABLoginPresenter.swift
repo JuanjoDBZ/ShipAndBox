@@ -12,6 +12,11 @@ class SABLoginPresenter {
     var router: SABLoginRouterProtocol?
 }
 extension SABLoginPresenter: SABLoginPresenterProtocol {
+    /// Ir a la pantalla de registro de usuario
+    func registerNewUser() {
+        router?.registerNewUserRouter()
+    }
+    
     /// Funcion que permite la interacción entre el presenter y el interactor.
     /// - Parameters:
     ///   - usrEmail: Correo usuario.

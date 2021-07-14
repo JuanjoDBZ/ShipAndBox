@@ -25,5 +25,11 @@ class SABLoginRouter {
     }
 }
 extension SABLoginRouter: SABLoginRouterProtocol {
+    /// ir a la pantalla de registro
+    func registerNewUserRouter() {
+        let registerVC = SABRegisterRouter().view
+        self.view.navigationController?.pushViewController(registerVC, animated: true)
+    }
+    
 }
 
