@@ -13,11 +13,12 @@ class RequestInformationRouter {
     var view: RequestInformationVC
     private var presenter: RequestInformationPresenter
     private var interactor: RequestInformationInteractor
-    init(/*documents: [String: String]*/) {
+    init(data:DataUserRegister) {
         self.view = RequestInformationVC()
         self.presenter = RequestInformationPresenter()
         self.interactor = RequestInformationInteractor()
         view.presenter = self.presenter
+        view.dataUserRegister = data
         presenter.view = self.view
         presenter.interactor = self.interactor
         presenter.router = self

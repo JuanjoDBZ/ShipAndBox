@@ -7,7 +7,7 @@
 //
 import Foundation
 struct ToDoRegisterResponse: Decodable {
-    let data: [dataResultServiceRegister]?
+    let data: dataResultServiceRegister?
     let status: Int?
     let message: Array<String>?
 }
@@ -33,9 +33,26 @@ extension SABRegisterInteractor: SABRegisterInteractorInputProtocol {
         externalDataManager.autenticar(with: documents, objectType: ToDoRegisterResponse.self) { (result: EnumsRequestAndErrors.Result) in
             switch result {
             case .success(let object):
-                print(object)
+                if object.status == 1 {
+                    if let data =  object.data{
+                        var dataUserRegister: DataUserRegister = DataUserRegister()
+                        dataUserRegister.names = data.names ?? ""
+                        dataUserRegister.surnames = data.surnames ?? ""
+                        dataUserRegister.typeDocument = data.typeDocument ?? ""
+                        dataUserRegister.idNumberIne = data.idNumberDocument ?? ""
+                        dataUserRegister.dateExpirationIne = data.dateExpiration ?? ""
+                        dataUserRegister.frontIne = documents["IneFront"] ?? ""
+                        dataUserRegister.backIne = documents["IneBack"] ?? ""
+                        dataUserRegister.facePhoto = documents["FaceCustomer"] ?? ""
+                        self.presenter?.succesResponseRegisterNewUser(data:dataUserRegister)
+                    }
+                } else {
+                    if let error = object.message?[0]{
+                        self.presenter?.errorResponseRegisterNewUser(error: error)
+                    }
+                }
             case .failure(let error):
-                print(error)
+                self.presenter?.errorResponseRegisterNewUser(error: error.localizedDescription)
             }
         }
     }

@@ -12,11 +12,18 @@ import UIKit
 protocol SABRegisterViewProtocol {
     // PRESENTER -> VIEW
     func loadInfo()
+    /// Funcion de respuesta satisfactoría
+    /// - Parameter data: arreglo con los datos del response
+    func succesResponseRegisterNewUser(data: DataUserRegister)
+    /// Funcion de respuesta de error
+    /// - Parameter error: mensaje de error
+    func errorResponseRegisterNewUser(error: String)
 }
 /// Protocolo que define los métodos y atributos para el routing de SABRegister
 protocol SABRegisterRouterProtocol {
     // PRESENTER -> ROUTING
 //    func showRequestInformation(documents: [String: String])
+    func goToStepTwoUserRegisterR(data: DataUserRegister)
 }
 /// Protocolo que define los métodos y atributos para el Presenter de SABRegister
 protocol SABRegisterPresenterProtocol {
@@ -24,6 +31,9 @@ protocol SABRegisterPresenterProtocol {
     func getInitialInfo()
     func validateDocuments(documents: [String: String])
     func showRequestInformation()
+    /// Función para ir al paso 2 de registro
+    /// - Parameter data: datos de respuesta del servidor
+    func goToStepTwoRegisterNewUser(data:DataUserRegister)
 }
 /// Protocolo que define los métodos y atributos para el Interactor de SABRegister
 protocol SABRegisterInteractorInputProtocol {
@@ -36,4 +46,10 @@ protocol SABRegisterInteractorInputProtocol {
 protocol SABRegisterInteractorOutputProtocol {
     // INTERACTOR -> PRESENTER
     func receiveData()
+    /// Funcion de respuesta satisfactoría
+    /// - Parameter data: arreglo con los datos del response
+    func succesResponseRegisterNewUser(data: DataUserRegister)
+    /// Funcion de respuesta de error
+    /// - Parameter error: mensaje de error
+    func errorResponseRegisterNewUser(error: String)
 }
