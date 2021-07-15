@@ -12,11 +12,12 @@ class SABUserRegisterStepThreeRouter {
     public var view: SABUserRegisterStepThreeVC
     private var presenter: SABUserRegisterStepThreePresenter
     private var interactor: SABUserRegisterStepThreeInteractor
-    init() {
+    init(customerId: Int) {
         self.view = SABUserRegisterStepThreeVC()
         self.presenter = SABUserRegisterStepThreePresenter()
         self.interactor = SABUserRegisterStepThreeInteractor()
         view.presenter = self.presenter
+        view.customerId = customerId
         presenter.view = self.view
         presenter.interactor = self.interactor
         presenter.router = self

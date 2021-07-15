@@ -33,6 +33,7 @@ extension SABRegisterInteractor: SABRegisterInteractorInputProtocol {
         externalDataManager.autenticar(with: documents, objectType: ToDoRegisterResponse.self) { (result: EnumsRequestAndErrors.Result) in
             switch result {
             case .success(let object):
+                print("succes :) \(object)")
                 if object.status == 1 {
                     if let data =  object.data{
                         var dataUserRegister: DataUserRegister = DataUserRegister()
@@ -52,6 +53,7 @@ extension SABRegisterInteractor: SABRegisterInteractorInputProtocol {
                     }
                 }
             case .failure(let error):
+                print("este es el error \(error)")
                 self.presenter?.errorResponseRegisterNewUser(error: error.localizedDescription)
             }
         }

@@ -16,12 +16,29 @@ class RequestInformationPresenter {
     
 }
 extension RequestInformationPresenter: RequestInformationPresenterProtocol {
+    func goToStepThreeRegister(customerId: Int) {
+        router?.showViewStepThreeRegister(customerId: customerId)
+    }
+    
+    /// Funcion crear usuario
+    /// - Parameter data: datos para crear usuario
+    func createNewUserView(data: DataUserRegister) {
+        interactor?.createNewUserPresenter(data: data)
+    }
     //Uso y nombre opcional
     func getInitialInfo() {
         interactor?.processInfo()
     }
 }
 extension RequestInformationPresenter: RequestInformationInteractorOutputProtocol {
+    func sendSuccesResponseToInteractor(customerId:Int) {
+        view?.sendSuccesResponseToView(customerId:customerId)
+    }
+    
+    func sendErrorResponseToInteractor(msgError: String) {
+        view?.sendErrorResponseToView(msgError: msgError)
+    }
+    
     //Uso y nombre opcional
     func receiveData() {
         view?.loadInfo()

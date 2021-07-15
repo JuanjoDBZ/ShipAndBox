@@ -26,11 +26,9 @@ class RequestInformationRouter {
     }
 }
 extension RequestInformationRouter: RequestInformationRouterProtocol {
-    /* Para mostrar una nueva pantalla con navigation controller.
-    func showNewView() {
-        Crea una instancia del router de la vista que quieres mostrar
-        let newView = NewViewRouter(in: window)
-        newView.showView()
-    }*/
+    func showViewStepThreeRegister(customerId: Int) {
+        let RegisterGenerateSignatureVC = SABUserRegisterStepThreeRouter(customerId:customerId).view
+        self.view.navigationController?.pushViewController(RegisterGenerateSignatureVC, animated: true)
+    }
 }
 

@@ -24,6 +24,8 @@
 		04BD4770268D0E860058B77A /* SABLoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD476A268D0E860058B77A /* SABLoginInteractor.swift */; };
 		04BD4771268D0E860058B77A /* SABLoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD476B268D0E860058B77A /* SABLoginProtocol.swift */; };
 		04BD4772268D0E860058B77A /* SABLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD476C268D0E860058B77A /* SABLoginVC.swift */; };
+		E381289626A091370086E1E5 /* RequestIformationRemoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E381289526A091370086E1E5 /* RequestIformationRemoteData.swift */; };
+		E38341AF26A0A91B00D80F55 /* validationsRegisterNewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38341AE26A0A91B00D80F55 /* validationsRegisterNewUser.swift */; };
 		E3C55E55269D0C6B00E312A5 /* SABUserRegisterStepThreeRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C55E47269D0C6B00E312A5 /* SABUserRegisterStepThreeRemoteDataManager.swift */; };
 		E3C55E56269D0C6B00E312A5 /* SABUserRegisterStepThreePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C55E49269D0C6B00E312A5 /* SABUserRegisterStepThreePresenter.swift */; };
 		E3C55E57269D0C6B00E312A5 /* SABUserRegisterStepThreeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C55E4B269D0C6B00E312A5 /* SABUserRegisterStepThreeProtocol.swift */; };
@@ -43,7 +45,7 @@
 		F24274DE269D247F0070A4F8 /* SABChangePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24274D8269D247F0070A4F8 /* SABChangePasswordRouter.swift */; };
 		F24274E3269DFD380070A4F8 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24274E2269DFD380070A4F8 /* Enums.swift */; };
 		F2995ACF269CFA68000F5FB8 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2995ACC269CFA68000F5FB8 /* ActivityIndicator.swift */; };
-		F2995AD0269CFA68000F5FB8 /* urlPathSAB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2995ACD269CFA68000F5FB8 /* urlPathSAB.swift */; };
+		F2995AD0269CFA68000F5FB8 /* UtilitiesSAB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2995ACD269CFA68000F5FB8 /* UtilitiesSAB.swift */; };
 		F2995AD1269CFA68000F5FB8 /* YPDrawSignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2995ACE269CFA68000F5FB8 /* YPDrawSignatureView.swift */; };
 		F2995AF0269CFC4E000F5FB8 /* ExternalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2995AD6269CFC4E000F5FB8 /* ExternalDataManager.swift */; };
 		F2995AF1269CFC4E000F5FB8 /* SABRegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2995AD8269CFC4E000F5FB8 /* SABRegisterPresenter.swift */; };
@@ -94,6 +96,8 @@
 		4963031E43E093E5431B14C6 /* Pods_ShipAndBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShipAndBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A99A200C05E9681CD057E0F /* Pods-ShipAndBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShipAndBox.release.xcconfig"; path = "Target Support Files/Pods-ShipAndBox/Pods-ShipAndBox.release.xcconfig"; sourceTree = "<group>"; };
 		C3073B5E52CFF9FF879248F7 /* Pods-ShipAndBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShipAndBox.debug.xcconfig"; path = "Target Support Files/Pods-ShipAndBox/Pods-ShipAndBox.debug.xcconfig"; sourceTree = "<group>"; };
+		E381289526A091370086E1E5 /* RequestIformationRemoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestIformationRemoteData.swift; sourceTree = "<group>"; };
+		E38341AE26A0A91B00D80F55 /* validationsRegisterNewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validationsRegisterNewUser.swift; sourceTree = "<group>"; };
 		E3C55E47269D0C6B00E312A5 /* SABUserRegisterStepThreeRemoteDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABUserRegisterStepThreeRemoteDataManager.swift; sourceTree = "<group>"; };
 		E3C55E49269D0C6B00E312A5 /* SABUserRegisterStepThreePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABUserRegisterStepThreePresenter.swift; sourceTree = "<group>"; };
 		E3C55E4B269D0C6B00E312A5 /* SABUserRegisterStepThreeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABUserRegisterStepThreeProtocol.swift; sourceTree = "<group>"; };
@@ -115,7 +119,7 @@
 		F24274D8269D247F0070A4F8 /* SABChangePasswordRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABChangePasswordRouter.swift; sourceTree = "<group>"; };
 		F24274E2269DFD380070A4F8 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		F2995ACC269CFA68000F5FB8 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
-		F2995ACD269CFA68000F5FB8 /* urlPathSAB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = urlPathSAB.swift; sourceTree = "<group>"; };
+		F2995ACD269CFA68000F5FB8 /* UtilitiesSAB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilitiesSAB.swift; sourceTree = "<group>"; };
 		F2995ACE269CFA68000F5FB8 /* YPDrawSignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPDrawSignatureView.swift; sourceTree = "<group>"; };
 		F2995AD6269CFC4E000F5FB8 /* ExternalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExternalDataManager.swift; sourceTree = "<group>"; };
 		F2995AD8269CFC4E000F5FB8 /* SABRegisterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABRegisterPresenter.swift; sourceTree = "<group>"; };
@@ -288,6 +292,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E381289426A090970086E1E5 /* RemoteData */ = {
+			isa = PBXGroup;
+			children = (
+				E381289526A091370086E1E5 /* RequestIformationRemoteData.swift */,
+			);
+			path = RemoteData;
+			sourceTree = "<group>";
+		};
 		E3C55E45269D0C6B00E312A5 /* GenerateElectronicSignature */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,9 +452,10 @@
 			isa = PBXGroup;
 			children = (
 				F2995ACC269CFA68000F5FB8 /* ActivityIndicator.swift */,
-				F2995ACD269CFA68000F5FB8 /* urlPathSAB.swift */,
+				F2995ACD269CFA68000F5FB8 /* UtilitiesSAB.swift */,
 				F2995ACE269CFA68000F5FB8 /* YPDrawSignatureView.swift */,
 				F24274E2269DFD380070A4F8 /* Enums.swift */,
+				E38341AE26A0A91B00D80F55 /* validationsRegisterNewUser.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -524,6 +537,7 @@
 		F2995AE2269CFC4E000F5FB8 /* RequestInformation */ = {
 			isa = PBXGroup;
 			children = (
+				E381289426A090970086E1E5 /* RemoteData */,
 				F2995AE3269CFC4E000F5FB8 /* Entity */,
 				F2995AE5269CFC4E000F5FB8 /* Presenter */,
 				F2995AE7269CFC4E000F5FB8 /* Protocol */,
@@ -752,8 +766,9 @@
 				04BD4771268D0E860058B77A /* SABLoginProtocol.swift in Sources */,
 				F233E15C268CFF6A00D44AFD /* AppDelegate.swift in Sources */,
 				F233E15E268CFF6A00D44AFD /* SceneDelegate.swift in Sources */,
-				F2995AD0269CFA68000F5FB8 /* urlPathSAB.swift in Sources */,
+				F2995AD0269CFA68000F5FB8 /* UtilitiesSAB.swift in Sources */,
 				F2995AF9269CFC4E000F5FB8 /* RequestInformationProtocol.swift in Sources */,
+				E381289626A091370086E1E5 /* RequestIformationRemoteData.swift in Sources */,
 				F24274DA269D247F0070A4F8 /* SABChangePasswordProtocol.swift in Sources */,
 				F2995AF7269CFC4E000F5FB8 /* SABRequestInformationEntity.swift in Sources */,
 				F2995AF8269CFC4E000F5FB8 /* RequestInformationPresenter.swift in Sources */,
@@ -762,6 +777,7 @@
 				F2995AF3269CFC4E000F5FB8 /* SABRegisterVC.swift in Sources */,
 				F24274E3269DFD380070A4F8 /* Enums.swift in Sources */,
 				F24274DD269D247F0070A4F8 /* SABChangePasswordInteractor.swift in Sources */,
+				E38341AF26A0A91B00D80F55 /* validationsRegisterNewUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,7 +918,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ABJLZ98S9L;
+				DEVELOPMENT_TEAM = 4U7GZPW9DW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -913,7 +929,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appViper.2com;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appViper.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -927,7 +943,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ABJLZ98S9L;
+				DEVELOPMENT_TEAM = 4U7GZPW9DW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -938,7 +954,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appViper.2com;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appViper.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

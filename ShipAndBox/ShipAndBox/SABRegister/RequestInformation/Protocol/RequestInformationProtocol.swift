@@ -12,25 +12,37 @@ import UIKit
 protocol RequestInformationViewProtocol {
     // PRESENTER -> VIEW
     func loadInfo()
+    func sendSuccesResponseToView(customerId:Int)
+    func sendErrorResponseToView(msgError:String)
 }
 /// Protocolo que define los métodos y atributos para el routing de RequestInformation
 protocol RequestInformationRouterProtocol {
     // PRESENTER -> ROUTING
     //func showNewView()
+    func showViewStepThreeRegister(customerId:Int)
 }
 /// Protocolo que define los métodos y atributos para el Presenter de RequestInformation
 protocol RequestInformationPresenterProtocol {
     // VIEW -> PRESENTER
     func getInitialInfo()
+    /// Función para decirle al presenter que vamos a crear un nuevo usuario
+    /// - Parameter data: datos para crear usuario
+    func createNewUserView(data:DataUserRegister)
+    func goToStepThreeRegister(customerId:Int)
 }
 /// Protocolo que define los métodos y atributos para el Interactor de RequestInformation
 protocol RequestInformationInteractorInputProtocol {
     // PRESENTER -> INTERACTOR
     func processInfo()
+    /// Función para decirle al presenter que vamos a crear un nuevo usuario
+    /// - Parameter data: datos para crear usuario
+    func createNewUserPresenter(data:DataUserRegister)
 }
 /// Protocolo que define los métodos y atributos para el Interactor de RequestInformation
 protocol RequestInformationInteractorOutputProtocol {
     // INTERACTOR -> PRESENTER
     func receiveData()
+    func sendSuccesResponseToInteractor(customerId:Int)
+    func sendErrorResponseToInteractor(msgError:String)
 }
 

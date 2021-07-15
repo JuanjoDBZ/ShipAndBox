@@ -11,9 +11,7 @@ import UIKit
 import MapKit
 import GooglePlaces
 import CoreLocation
-
 class RequestInformationVC: UIViewController {
-
     @IBOutlet weak var textFieldEmail: UITextField!
     @IBOutlet weak var textFieldPassword: UITextField!
     @IBOutlet weak var textFieldConfirmPassword: UITextField!
@@ -37,7 +35,6 @@ class RequestInformationVC: UIViewController {
         setupSearchController()
         //presenter?.getInitialInfo()
     }
-    
     @IBAction func actionContinue(_ sender: UIButton) {
         if let names = textFieldName.text, let email = textFieldEmail.text, let password = textFieldPassword.text,
            let repeatPassword  = textFieldConfirmPassword.text, let lastName = textFieldLastName.text,
@@ -58,7 +55,10 @@ class RequestInformationVC: UIViewController {
             dataUserRegister.idNumberIne = idNumberIne
             dataUserRegister.cellPhone = cellPhone
             dataUserRegister.phone = phoneNumber
-            
+            if validationsRegisterNewUser.validate.validateFormRegister(Controller: self, email: textFieldEmail, password: textFieldPassword, passwordConfirm: textFieldConfirmPassword, name: textFieldName, surname: textFieldLastName, identificationNumber: textFieldNumberIdentification, mobile: textFieldMobileNumber, phone: textFieldPhoneNumber) {
+                self.view.activityStartAnimating(activityColor: UIColor.green, backgroundColor: UIColor.black.withAlphaComponent(0.5))
+                presenter?.createNewUserView(data: dataUserRegister)
+            }
         }
     }
     func setupSearchController() {
@@ -76,6 +76,18 @@ class RequestInformationVC: UIViewController {
 }
 ///Protocolo para recibir datos de presenter.
 extension RequestInformationVC: RequestInformationViewProtocol {
+    func sendSuccesResponseToView(customerId: Int) {
+        DispatchQueue.main.async {
+            self.presenter?.goToStepThreeRegister(customerId: customerId)
+            self.view.activityStopAnimating()
+        }
+    }
+    func sendErrorResponseToView(msgError: String) {
+        DispatchQueue.main.async {
+            self.view.activityStopAnimating()
+            UtilitiesSAB.api.showMessageError(msg: msgError, controller: self)
+        }
+    }
     func loadInfo(){
         print("Solicitar informacion")
     }
