@@ -19,6 +19,16 @@ extension SABLoginPresenter: SABLoginPresenterProtocol {
     func loginUser(usrEmail: String, usrPassword: String) {
         interactor?.loginUserInteractor(usrEmail: usrEmail, usrPassword: usrPassword)
     }
+    /// Funcion para mostrar la vista Home
+    func showHome() {
+        router?.showHomeRouting()
+    }
 }
 extension SABLoginPresenter: SABLoginInteractorOutputProtocol {
+    /// Función que trae los datos del servicio login del presenter al vista
+    /// - Parameter resultLogin: Datos del servicio
+    func resulSetLogin(resultLogin: dataLoginResultSerive) {
+        view?.resulSetLoginView(resultLogin: resultLogin)
+    }
+    
 }

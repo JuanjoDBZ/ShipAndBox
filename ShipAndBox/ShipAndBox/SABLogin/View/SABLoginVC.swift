@@ -16,13 +16,14 @@ class SABLoginVC: UIViewController {
     @IBOutlet weak var buttonSignIn: UIButton!
     @IBOutlet weak var buttonLogin: UIButton!
     var presenter: SABLoginPresenterProtocol?
+    var protocolView: SABLoginViewProtocol?
     var email:String = ""
     var password:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     /// Función para envió de parámetros para el consumo de servicio de login.
-    func loginUser(){     
+    func loginUser(){
         if  txtPassword.text == "" || txtUserName.text == "" {
             let alert = UIAlertController(title: "Alert", message: "Usuario y/o Contraseña no validos.", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
@@ -46,7 +47,29 @@ class SABLoginVC: UIViewController {
     /// - Parameter sender: Objeto del programa.
     @IBAction func buttonMakeYourPaymnet(_ sender: UIButton) {
     }
+    class secondViewContrller: UIViewController {
+        override func viewDidLoad(){
+            super.viewDidLoad()
+            view.backgroundColor = .blue
+        }
+    }
+    class thirdViewContrller: UIViewController {
+        override func viewDidLoad(){
+            super.viewDidLoad()
+            view.backgroundColor = .green
+        }
+    }
 }
 ///Protocolo para recibir datos de presenter.
 extension SABLoginVC: SABLoginViewProtocol {
+    /// Función que trae los datos del servicio login y permite acceso a vista home
+    /// - Parameter resultLogin: Datos Decodable para su uso
+    func resulSetLoginView(resultLogin: dataLoginResultSerive) {
+        print(resultLogin)
+        DispatchQueue.main.async {
+            if  resultLogin.email == self.email {
+                self.presenter?.showHome()
+            }
+        }
+    }
 }
