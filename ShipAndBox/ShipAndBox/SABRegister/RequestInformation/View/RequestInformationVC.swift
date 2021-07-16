@@ -11,7 +11,7 @@ import UIKit
 import MapKit
 import GooglePlaces
 import CoreLocation
-class RequestInformationVC: UIViewController {
+class RequestInformationVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var textFieldEmail: UITextField!
     @IBOutlet weak var textFieldPassword: UITextField!
     @IBOutlet weak var textFieldConfirmPassword: UITextField!
@@ -28,10 +28,19 @@ class RequestInformationVC: UIViewController {
     var presenter: RequestInformationPresenterProtocol?
     var locationLatitude: Double = Double()
     var locationLongitude: Double =  Double()
+    var locationManager:CLLocationManager!
     /// Inicio de ciclo de vida de la app.
     override func viewDidLoad() {
         super.viewDidLoad()
         //Opcional
+        locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+
+            if CLLocationManager.locationServicesEnabled(){
+                locationManager.startUpdatingLocation()
+            }
         setupSearchController()
         //presenter?.getInitialInfo()
     }
@@ -73,6 +82,46 @@ class RequestInformationVC: UIViewController {
         definesPresentationContext = true
         searchController?.hidesNavigationBarDuringPresentation = false
     }
+    
+    //MARK: - location delegate methods
+func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    let userLocation :CLLocation = locations[0] as CLLocation
+    let pLat = userLocation.coordinate.latitude
+    let pLong = userLocation.coordinate.longitude
+    let center = CLLocationCoordinate2D(latitude: pLat, longitude: pLong)
+    let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+    let addAnotation = MKPointAnnotation()
+        addAnotation.title = "Mi ubicación"
+        addAnotation.coordinate = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+        self.mapView.addAnnotation(addAnotation)
+    self.mapView.setRegion(region, animated: true)
+    let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(userLocation) { (placemarks, error) in
+            if (error != nil){
+                print("error in reverseGeocode")
+            }
+            let placemark = placemarks! as [CLPlacemark]
+            if placemark.count>0{
+                let placemark = placemarks![0]
+                if let addres = placemark.name, let zipCode = placemark.postalCode,
+                   let subUrb = placemark.subLocality, let city = placemark.subAdministrativeArea,
+                   let state = placemark.administrativeArea, let country = placemark.country {
+                    self.dataUserRegister.address = addres
+                    self.dataUserRegister.zipCode = zipCode
+                    self.dataUserRegister.suburb = subUrb
+                    self.dataUserRegister.city = city
+                    self.dataUserRegister.state = state
+                    self.dataUserRegister.country = country
+                    self.dataUserRegister.longitude = String(userLocation.coordinate.longitude)
+                    self.dataUserRegister.latitude = String(userLocation.coordinate.latitude)
+                }
+            }
+        }
+
+}
+func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    print("Error \(error)")
+}
 }
 ///Protocolo para recibir datos de presenter.
 extension RequestInformationVC: RequestInformationViewProtocol {
