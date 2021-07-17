@@ -19,6 +19,8 @@ class SABLoginVC: UIViewController {
     var email:String = ""
     var password:String = ""
     override func viewDidLoad() {
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tapGesture)
         super.viewDidLoad()
     }
     /// Función para envió de parámetros para el consumo de servicio de login.

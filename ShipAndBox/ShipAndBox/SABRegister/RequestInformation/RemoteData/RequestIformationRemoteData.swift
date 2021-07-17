@@ -10,29 +10,33 @@ class RequestIformationRemoteData:NSObject,URLSessionDelegate {
     /// Función para consultar el ws
     /// - Parameter parametersCreateSignature: Se envia la firma y el id del usuario
     func registerNewUser<T: Decodable>(params: DataUserRegister, objectType: T.Type, completion: @escaping (EnumsRequestAndErrors.Result<T>) -> Void) {
-        let params = [
-            "TypeDocument":"I",
-            "email":"treravi@hotmail.com",
-            "password":"123456789",
-            "RepeatPassword":"123456789",
-            "Names":"erik del jesus",
-            "Surnames":"avilez trujillo",
-            "Phone":"8118541105",
-            "CellPhone":"8118541105",
-            "IdNumberIne":"14778",
-            "DateExpirationIne":"2029/12/31",
-            "Address":"calle",
-            "Zipcode":"65470",
-            "Suburb":"obrera",
-            "City":"monterrey",
-            "State":"nuevo leon",
-            "Country":"Mexico",
-            "Latitude":"54644654645",
-            "Longitude":"5644654545",
-            "ProofAddress":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj",
-            "FrontIne":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/",
-            "BackIne":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/",
-            "FacePhoto":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/"
+        var BackIne = ""
+        if params.typeDocument == "I" {
+            BackIne = params.backIne
+        }
+        let params_register = [
+            "TypeDocument":params.typeDocument,
+            "email":params.email,
+            "password":params.password,
+            "RepeatPassword":params.repeatPassword,
+            "Names":params.names,
+            "Surnames":params.surnames,
+            "Phone":params.phone,
+            "CellPhone":params.cellPhone,
+            "IdNumberIne":params.idNumberIne,
+            "DateExpirationIne":"2022-01-01",
+            "Address":params.address,
+            "Zipcode":params.zipCode,
+            "Suburb":params.suburb,
+            "City":params.city,
+            "State":params.state,
+            "Country":params.country,
+            "Latitude":params.latitude,
+            "Longitude":params.longitude,
+            "ProofAddress":params.proofAddress,
+            "FrontIne":params.frontIne,
+            "BackIne":BackIne,
+            "FacePhoto":params.facePhoto
         ]
         /// path para complemetar la url
         let path = "registerCustomer"
@@ -43,7 +47,7 @@ class RequestIformationRemoteData:NSObject,URLSessionDelegate {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
+            request.httpBody = try JSONSerialization.data(withJSONObject: params_register, options: .prettyPrinted)
         } catch let error {
             print(error.localizedDescription)
         }

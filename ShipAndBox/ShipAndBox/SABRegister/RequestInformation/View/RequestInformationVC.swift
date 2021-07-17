@@ -29,18 +29,24 @@ class RequestInformationVC: UIViewController, CLLocationManagerDelegate {
     var locationLatitude: Double = Double()
     var locationLongitude: Double =  Double()
     var locationManager:CLLocationManager!
+    /// Parar la geolicalización
+    private var didPerformGeocode = false
     /// Inicio de ciclo de vida de la app.
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Opcional
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tapGesture)
+        textFieldName.text = dataUserRegister.names
+        textFieldLastName.text = dataUserRegister.surnames
+        textFieldNumberIdentification.text = dataUserRegister.idNumberIne
         locationManager = CLLocationManager()
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestAlwaysAuthorization()
-
-            if CLLocationManager.locationServicesEnabled(){
-                locationManager.startUpdatingLocation()
-            }
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled(){
+            locationManager.startUpdatingLocation()
+        }
         setupSearchController()
         //presenter?.getInitialInfo()
     }
@@ -50,7 +56,7 @@ class RequestInformationVC: UIViewController, CLLocationManagerDelegate {
            let idNumberIne = textFieldNumberIdentification.text, let cellPhone = textFieldMobileNumber.text, let phoneNumber = textFieldPhoneNumber.text {
             let render = UIGraphicsImageRenderer(size: self.mapView.bounds.size)
             let image = render.image { ctx in
-              self.mapView.drawHierarchy(in: self.mapView.bounds, afterScreenUpdates: true)
+                self.mapView.drawHierarchy(in: self.mapView.bounds, afterScreenUpdates: true)
             }
             if let imageBase64 = image.jpegData(compressionQuality: 0.8)?.base64EncodedString() {
                 let imageBase = "data:image/jpeg;base64,\(imageBase64)"
@@ -84,19 +90,22 @@ class RequestInformationVC: UIViewController, CLLocationManagerDelegate {
     }
     
     //MARK: - location delegate methods
-func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    let userLocation :CLLocation = locations[0] as CLLocation
-    let pLat = userLocation.coordinate.latitude
-    let pLong = userLocation.coordinate.longitude
-    let center = CLLocationCoordinate2D(latitude: pLat, longitude: pLong)
-    let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-    let addAnotation = MKPointAnnotation()
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first, location.horizontalAccuracy >= 0 else { return }
+        guard !didPerformGeocode else { return }
+        didPerformGeocode = true
+        locationManager.stopUpdatingLocation()
+        let pLat = location.coordinate.latitude
+        let pLong = location.coordinate.longitude
+        let center = CLLocationCoordinate2D(latitude: pLat, longitude: pLong)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        let addAnotation = MKPointAnnotation()
         addAnotation.title = "Mi ubicación"
-        addAnotation.coordinate = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+        addAnotation.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         self.mapView.addAnnotation(addAnotation)
-    self.mapView.setRegion(region, animated: true)
-    let geocoder = CLGeocoder()
-        geocoder.reverseGeocodeLocation(userLocation) { (placemarks, error) in
+        self.mapView.setRegion(region, animated: true)
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
             if (error != nil){
                 print("error in reverseGeocode")
             }
@@ -112,16 +121,33 @@ func locationManager(_ manager: CLLocationManager, didUpdateLocations locations:
                     self.dataUserRegister.city = city
                     self.dataUserRegister.state = state
                     self.dataUserRegister.country = country
-                    self.dataUserRegister.longitude = String(userLocation.coordinate.longitude)
-                    self.dataUserRegister.latitude = String(userLocation.coordinate.latitude)
+                    self.dataUserRegister.longitude = String(location.coordinate.longitude)
+                    self.dataUserRegister.latitude = String(location.coordinate.latitude)
                 }
             }
         }
-
-}
-func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-    print("Error \(error)")
-}
+        CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+            let placemark = placemarks?.first
+            guard error == nil && placemark != nil else {
+                return
+            }
+            if let addres = placemark?.name, let zipCode = placemark?.postalCode,
+               let subUrb = placemark?.subLocality, let city = placemark?.subAdministrativeArea,
+               let state = placemark?.administrativeArea, let country = placemark?.country {
+                self.dataUserRegister.address = addres
+                self.dataUserRegister.zipCode = zipCode
+                self.dataUserRegister.suburb = subUrb
+                self.dataUserRegister.city = city
+                self.dataUserRegister.state = state
+                self.dataUserRegister.country = country
+                self.dataUserRegister.longitude = String(location.coordinate.longitude)
+                self.dataUserRegister.latitude = String(location.coordinate.latitude)
+            }
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error \(error)")
+    }
 }
 ///Protocolo para recibir datos de presenter.
 extension RequestInformationVC: RequestInformationViewProtocol {

@@ -19,7 +19,13 @@ struct ToDoGenerateUser: Decodable {
 /// Data que regresa el servidor
 struct dataResultServiceGenerateUser: Decodable {
     //nombre usuario
-    let names: String?
+    let token: String?
+    let contractText: String?
+    let contractTextPdf: String?
+    let poboxName: String?
+    let dateExpiration: String?
+    let poboxAddress: String?
+    let customerId: Int?
 }
 class RequestInformationInteractor {
     var presenter: RequestInformationInteractorOutputProtocol?
@@ -31,11 +37,9 @@ extension RequestInformationInteractor: RequestInformationInteractorInputProtoco
         remoteDatamanager.registerNewUser(params: data, objectType: ToDoGenerateUser.self) { (result: EnumsRequestAndErrors.Result) in
             switch result {
             case .success(let object):
-                print(object)
                 if object.status == 1 {
-                    if let msgSucces = object.message?[0]{
-                        print(msgSucces)
-                        self.presenter?.sendSuccesResponseToInteractor(customerId: 2)
+                    if let customerId = object.data?.customerId {
+                        self.presenter?.sendSuccesResponseToInteractor(customerId: customerId)
                     }
                 } else  {
                     if let msgError = object.message?[0]{
