@@ -26,10 +26,10 @@ class SABUserRegisterStepThreeRouter {
 }
 extension SABUserRegisterStepThreeRouter: SABUserRegisterStepThreeRouterProtocol {
     /// Mandar a la siguiente vista del paso 4 del registro
+    /// - Parameter customerId: id del usuario
     func showViewUserRegisterStepFour(customerId:Int) {
-        print("ir paso 4 customerId = \(customerId)")
-        //let loginVC = SABLoginRouter().view
-        //self.view.navigationController?.pushViewController(loginVC, animated: true)
+        let RegisterStepFourVC = SABUserRegisterStepThreeRouter(customerId:customerId).view
+        self.view.navigationController?.pushViewController(RegisterStepFourVC, animated: true)
     }
 }
 

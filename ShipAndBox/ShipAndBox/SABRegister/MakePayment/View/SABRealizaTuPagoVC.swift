@@ -32,6 +32,8 @@ class SABRealizaTuPagoVC: UIViewController {
     var expMonthCardForm:String = ""
     var expYearCardForm:String = ""
     var cardNumberForm:String = ""
+    /// Id de usuario registrado
+    var customerId = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         getServicesTypeMember()
