@@ -40,7 +40,11 @@ class ExternalDataManager: NSObject, URLSessionDelegate {
                  return
              }
              do {
-                 //create decodable object from data
+                 /*/create decodable object from data
+                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
+                    print(json)
+                    // handle json...
+                }*/
                 let decodedObject = try JSONDecoder().decode(objectType.self, from: data)
                 completion(EnumsRequestAndErrors.Result.success(decodedObject))
              } catch let error {

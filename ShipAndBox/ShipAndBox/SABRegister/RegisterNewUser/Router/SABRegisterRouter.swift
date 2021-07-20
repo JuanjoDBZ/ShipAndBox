@@ -25,6 +25,11 @@ class SABRegisterRouter {
     }
 }
 extension SABRegisterRouter: SABRegisterRouterProtocol {
+    func goToStepTwoUserRegisterR(data: DataUserRegister) {
+        let RegisterStepTwoVC = RequestInformationRouter(data: data).view
+        self.view.navigationController?.pushViewController(RegisterStepTwoVC, animated: true)
+    }
+    
     /* Para mostrar una nueva pantalla con navigation controller.*/
 //    func showRequestInformation(documents: [String: String]) {
 //        let requestInformationVC = RequestInformationRouter(documents: documents).view

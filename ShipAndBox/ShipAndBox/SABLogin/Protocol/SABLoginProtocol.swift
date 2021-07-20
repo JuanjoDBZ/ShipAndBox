@@ -17,6 +17,8 @@ protocol SABLoginViewProtocol {
 /// Protocolo que define los métodos y atributos para el routing de SABLogin
 protocol SABLoginRouterProtocol {
     // PRESENTER -> ROUTING
+    ///Ir a la pantalla de registro de usuario
+    func registerNewUserRouter()
     /// funcion que muestra la vista Home
     func showHomeRouting()
 }
@@ -28,6 +30,8 @@ protocol SABLoginPresenterProtocol {
     ///   - usrEmail: Correo del usuario.
     ///   - usrPassword: Contraseña del usuario.
     func loginUser(usrEmail: String, usrPassword: String)
+    /// Crear nuevo usuario
+    func registerNewUser()
     /// Funcion para mostrar la vista Home
     func showHome()
 }

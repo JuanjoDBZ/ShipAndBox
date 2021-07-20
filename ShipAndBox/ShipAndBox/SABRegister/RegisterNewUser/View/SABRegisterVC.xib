@@ -207,7 +207,7 @@
                         <action selector="takePhotoAddImages:" destination="-1" eventType="touchDown" id="wQe-Uv-sCp"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2W-yH-eMb">
+                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i2W-yH-eMb">
                     <rect key="frame" x="100" y="727.33333333333337" width="228" height="30"/>
                     <color key="backgroundColor" red="0.30496507880000001" green="0.65084582570000005" blue="0.15372934939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal">

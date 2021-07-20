@@ -10,7 +10,7 @@ import UIKit
 class SABUserRegisterStepThreeVC: UIViewController, YPSignatureDelegate {
     var presenter: SABUserRegisterStepThreePresenterProtocol?
     /// Id de usuario registrado
-    let customerId = 2
+    var customerId:Int = 0
     /// Parametros que se envian para ejecutar el servicio de generar firma electrónica
     var parametersCreateSignature: NSDictionary = [:]
     /// Se implementa vista de tipo YPDrawSignatureView para generar la firma
@@ -40,7 +40,7 @@ class SABUserRegisterStepThreeVC: UIViewController, YPSignatureDelegate {
                 presenter?.sendSignatureUserSAB(parametersCreateSignature: parametersCreateSignature)
             }
         } else {
-            self.showMessageError(msg:"Tienes que firmar en el recuadro")
+            UtilitiesSAB.api.showMessageError(msg: "Tienes que firmar en el recuadro", controller: self)
         }
     }
     /// Función para generar alerta de aviso satisfactorio
@@ -51,13 +51,6 @@ class SABUserRegisterStepThreeVC: UIViewController, YPSignatureDelegate {
             self.viewSignatureUser.clear()
             self.presenter?.goToUserRegisterStepFour(customerId:self.customerId)
         }))
-        self.present(alert, animated: true, completion: nil)
-    }
-    /// Función para generar alerta de aviso erroneo
-    /// - Parameter msg: mensaje de error
-    func showMessageError(msg:String) {
-        let alert = UIAlertController(title: "Aviso", message: msg, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     /// Permite verificar si se empieza a escribir en la vista de firma
@@ -83,7 +76,7 @@ extension SABUserRegisterStepThreeVC: SABUserRegisterStepThreeViewProtocol {
     func resposeErrorRegisterStepThreeView(msgError:String) {
         DispatchQueue.main.async {
             self.viewSignatureUser.clear()
-            self.showMessageError(msg: msgError)
+            UtilitiesSAB.api.showMessageError(msg: msgError, controller: self)
         }
     }
     /// Iniciar activity

@@ -1,23 +1,52 @@
 //
-//  SABUserRegisterStepThreeRemoteDataManager.swift
+//  RequestIformationRemoteData.swift
 //  ShipAndBox
 //
-//  Created by ISITA on 01/07/21.
+//  Created by ISITA on 15/07/21.
 //
+
 import Foundation
-class SABUserRegisterStepThreeRemoteDataManager:NSObject,URLSessionDelegate {
+class RequestIformationRemoteData:NSObject,URLSessionDelegate {
     /// Función para consultar el ws
     /// - Parameter parametersCreateSignature: Se envia la firma y el id del usuario
-    func sendSignatureUserSABRemoteData<T: Decodable>(parametersCreateSignature: NSDictionary, objectType: T.Type, completion: @escaping (EnumsRequestAndErrors.Result<T>) -> Void) {
+    func registerNewUser<T: Decodable>(params: DataUserRegister, objectType: T.Type, completion: @escaping (EnumsRequestAndErrors.Result<T>) -> Void) {
+        var BackIne = ""
+        if params.typeDocument == "I" {
+            BackIne = params.backIne
+        }
+        let params_register = [
+            "TypeDocument":params.typeDocument,
+            "email":params.email,
+            "password":params.password,
+            "RepeatPassword":params.repeatPassword,
+            "Names":params.names,
+            "Surnames":params.surnames,
+            "Phone":params.phone,
+            "CellPhone":params.cellPhone,
+            "IdNumberIne":params.idNumberIne,
+            "DateExpirationIne":"2021-01-01",
+            "Address":params.address,
+            "Zipcode":params.zipCode,
+            "Suburb":params.suburb,
+            "City":params.city,
+            "State":params.state,
+            "Country":params.country,
+            "Latitude":params.latitude,
+            "Longitude":params.longitude,
+            "ProofAddress":params.proofAddress,
+            "FrontIne":params.frontIne,
+            "BackIne":BackIne,
+            "FacePhoto":params.facePhoto
+        ]
         /// path para complemetar la url
-        let path = "signContract"
+        let path = "registerCustomer"
         /// Url construida para consumir
         let url = UtilitiesSAB.api.urlComposerApi(path: path)
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: parametersCreateSignature, options: .prettyPrinted)
+            request.httpBody = try JSONSerialization.data(withJSONObject: params_register, options: .prettyPrinted)
         } catch let error {
             print(error.localizedDescription)
         }

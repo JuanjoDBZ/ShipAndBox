@@ -23,6 +23,7 @@ class SABRegisterVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var imageFrontINE: UIImageView!
     @IBOutlet weak var imageBackINE: UIImageView!
     @IBOutlet weak var segmentCameraArchive: UISegmentedControl!
+    var dataUserRegister: DataUserRegister = DataUserRegister()
     var imageBase64 = Data()
     var dictIneImages: [String: String] = [:]
     let arrayDrowDownOption = ["INE", "PASAPORTE"]
@@ -109,11 +110,29 @@ class SABRegisterVC: UIViewController, UITextFieldDelegate {
         }
     }
     @IBAction func actionContinue(_ sender: UIButton) {
+        self.view.activityStartAnimating(activityColor: UIColor.green, backgroundColor: UIColor.black.withAlphaComponent(0.5))
         presenter?.validateDocuments(documents: dictIneImages)
     }
 }
 ///Protocolo para recibir datos de presenter.
 extension SABRegisterVC: SABRegisterViewProtocol {
+    /// Función en caso de que haya un error
+    /// - Parameter error: Mensaje de error
+    func errorResponseRegisterNewUser(error: String) {
+        DispatchQueue.main.async {
+            self.view.activityStopAnimating()
+            UtilitiesSAB.api.showMessageError(msg: error, controller: self)
+        }
+    }
+    /// Función en caso de respuesta verdadera
+    /// - Parameter data: Datos para enviar a la siguiente pantalla
+    func succesResponseRegisterNewUser(data: DataUserRegister) {
+        DispatchQueue.main.async {
+            self.presenter?.goToStepTwoRegisterNewUser(data: data)
+            self.view.activityStopAnimating()
+        }
+        
+    }
     func loadInfo() {
         print("Realizar acciones de repintado de la vista")
     }
@@ -124,24 +143,27 @@ extension SABRegisterVC: UIImagePickerControllerDelegate, UINavigationController
             if dropDownIdentification.selectedIndex == 0 {
                 if imageFrontINE.image == nil {
                     imageFrontINE.image = image
-                    if let imageBase64 = image.jpegData(compressionQuality: 0.8)?.base64EncodedString() {
+                    if let imageBase64 = image.jpegData(compressionQuality: 1)?.base64EncodedString() {
                         let imageBase = "data:image/jpeg;base64,\(imageBase64)"
+                        dataUserRegister.frontIne = imageBase
                         ineFront = imageBase
                         dictIneImages["IneFront"] = imageBase
                         lblInstructions.text = "Tome la foto de la parte trasera del INE."
                     }
                 } else if imageBackINE.image == nil {
                     imageBackINE.image = image
-                    if let imageBase64 = image.jpegData(compressionQuality: 0.8)?.base64EncodedString() {
+                    if let imageBase64 = image.jpegData(compressionQuality: 1)?.base64EncodedString() {
                         let imageBase =  "data:image/jpeg;base64,\(imageBase64)"
                         ineBack = imageBase
+                        dataUserRegister.backIne = imageBase
                         dictIneImages["IneBack"] = imageBase
                         lblInstructions.text = "Tome la foto de su rostro para validar la informacion."
                     }
                 } else {
-                    if let imageBase64 = image.jpegData(compressionQuality: 0.8)?.base64EncodedString() {
+                    if let imageBase64 = image.jpegData(compressionQuality: 1)?.base64EncodedString() {
                         let imageBase =  "data:image/jpeg;base64,\(imageBase64)"
                         faceCustomer = imageBase
+                        dataUserRegister.facePhoto = imageBase
                         dictIneImages["FaceCustomer"] = imageBase
                         lblInstructions.text = "Pulse siguiente para continuar con el registro."
                     }
@@ -149,14 +171,14 @@ extension SABRegisterVC: UIImagePickerControllerDelegate, UINavigationController
             } else {
                 if imageFrontINE.image == nil {
                     imageFrontINE.image = image
-                    if let imageBase64 = image.jpegData(compressionQuality: 0.8)?.base64EncodedString() {
+                    if let imageBase64 = image.jpegData(compressionQuality: 1)?.base64EncodedString() {
                         let imageBase = "data:image/jpeg;base64,\(imageBase64)"
                         ineFront = imageBase
                         dictIneImages["IneFront"] = imageBase
                         lblInstructions.text = "Tome la foto de su rostro para validar la informacion."
                     }
                 } else {
-                    if let imageBase64 = image.jpegData(compressionQuality: 0.8)?.base64EncodedString() {
+                    if let imageBase64 = image.jpegData(compressionQuality: 1)?.base64EncodedString() {
                         let imageBase =  "data:image/jpeg;base64,\(imageBase64)"
                         faceCustomer = imageBase
                         dictIneImages["FaceCustomer"] = imageBase

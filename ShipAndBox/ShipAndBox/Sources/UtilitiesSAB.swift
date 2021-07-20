@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import UIKit
 /// Clase para crear una url
-class urlPathSAB {
-    static let api = urlPathSAB()
+class UtilitiesSAB {
+    static let api = UtilitiesSAB()
     /// Esquema
     let scheme = "https://"
     /// Url del servidor
@@ -20,5 +21,11 @@ class urlPathSAB {
         let urlPathApi = URL(string: "\(scheme)\(host)\(path)")
         return urlPathApi!
     }
-    
+    /// Función para generar alerta de aviso erroneo
+    /// - Parameter msg: mensaje de error
+    func showMessageError(msg:String, controller:UIViewController) {
+        let alert = UIAlertController(title: "Aviso", message: msg, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        controller.present(alert, animated: true, completion: nil)
+    }
 }

@@ -11,11 +11,12 @@ class SABRealizaTuPagoRouter {
     public var view: SABRealizaTuPagoVC
     private var presenter: SABRealizaTuPagoPresenter
     private var interactor: SABRealizaTuPagoInteractor
-    init() {
+    init(customerId: Int) {
         self.view = SABRealizaTuPagoVC()
         self.presenter = SABRealizaTuPagoPresenter()
         self.interactor = SABRealizaTuPagoInteractor()
         view.presenter = self.presenter
+        view.customerId = customerId
         presenter.view = self.view
         presenter.interactor = self.interactor
         presenter.router = self

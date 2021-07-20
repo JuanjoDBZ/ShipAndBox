@@ -13,11 +13,12 @@ class RequestInformationRouter {
     var view: RequestInformationVC
     private var presenter: RequestInformationPresenter
     private var interactor: RequestInformationInteractor
-    init(/*documents: [String: String]*/) {
+    init(data:DataUserRegister) {
         self.view = RequestInformationVC()
         self.presenter = RequestInformationPresenter()
         self.interactor = RequestInformationInteractor()
         view.presenter = self.presenter
+        view.dataUserRegister = data
         presenter.view = self.view
         presenter.interactor = self.interactor
         presenter.router = self
@@ -25,11 +26,9 @@ class RequestInformationRouter {
     }
 }
 extension RequestInformationRouter: RequestInformationRouterProtocol {
-    /* Para mostrar una nueva pantalla con navigation controller.
-    func showNewView() {
-        Crea una instancia del router de la vista que quieres mostrar
-        let newView = NewViewRouter(in: window)
-        newView.showView()
-    }*/
+    func showViewStepThreeRegister(customerId: Int) {
+        let RegisterGenerateSignatureVC = SABUserRegisterStepThreeRouter(customerId:customerId).view
+        self.view.navigationController?.pushViewController(RegisterGenerateSignatureVC, animated: true)
+    }
 }
 
