@@ -24,7 +24,7 @@
 		04BD4770268D0E860058B77A /* SABLoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD476A268D0E860058B77A /* SABLoginInteractor.swift */; };
 		04BD4771268D0E860058B77A /* SABLoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD476B268D0E860058B77A /* SABLoginProtocol.swift */; };
 		04BD4772268D0E860058B77A /* SABLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD476C268D0E860058B77A /* SABLoginVC.swift */; };
-		E381289626A091370086E1E5 /* RequestIformationRemoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E381289526A091370086E1E5 /* RequestIformationRemoteData.swift */; };
+		E357185726A72E0F007E5DE9 /* RequestIformationRemoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E357185626A72E0F007E5DE9 /* RequestIformationRemoteData.swift */; };
 		E38341AF26A0A91B00D80F55 /* validationsRegisterNewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38341AE26A0A91B00D80F55 /* validationsRegisterNewUser.swift */; };
 		E3C55E55269D0C6B00E312A5 /* SABUserRegisterStepThreeRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C55E47269D0C6B00E312A5 /* SABUserRegisterStepThreeRemoteDataManager.swift */; };
 		E3C55E56269D0C6B00E312A5 /* SABUserRegisterStepThreePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C55E49269D0C6B00E312A5 /* SABUserRegisterStepThreePresenter.swift */; };
@@ -96,7 +96,7 @@
 		4963031E43E093E5431B14C6 /* Pods_ShipAndBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShipAndBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A99A200C05E9681CD057E0F /* Pods-ShipAndBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShipAndBox.release.xcconfig"; path = "Target Support Files/Pods-ShipAndBox/Pods-ShipAndBox.release.xcconfig"; sourceTree = "<group>"; };
 		C3073B5E52CFF9FF879248F7 /* Pods-ShipAndBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShipAndBox.debug.xcconfig"; path = "Target Support Files/Pods-ShipAndBox/Pods-ShipAndBox.debug.xcconfig"; sourceTree = "<group>"; };
-		E381289526A091370086E1E5 /* RequestIformationRemoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestIformationRemoteData.swift; sourceTree = "<group>"; };
+		E357185626A72E0F007E5DE9 /* RequestIformationRemoteData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestIformationRemoteData.swift; sourceTree = "<group>"; };
 		E38341AE26A0A91B00D80F55 /* validationsRegisterNewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validationsRegisterNewUser.swift; sourceTree = "<group>"; };
 		E3C55E47269D0C6B00E312A5 /* SABUserRegisterStepThreeRemoteDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABUserRegisterStepThreeRemoteDataManager.swift; sourceTree = "<group>"; };
 		E3C55E49269D0C6B00E312A5 /* SABUserRegisterStepThreePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABUserRegisterStepThreePresenter.swift; sourceTree = "<group>"; };
@@ -292,10 +292,10 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		E381289426A090970086E1E5 /* RemoteData */ = {
+		E357185526A72E0F007E5DE9 /* RemoteData */ = {
 			isa = PBXGroup;
 			children = (
-				E381289526A091370086E1E5 /* RequestIformationRemoteData.swift */,
+				E357185626A72E0F007E5DE9 /* RequestIformationRemoteData.swift */,
 			);
 			path = RemoteData;
 			sourceTree = "<group>";
@@ -537,7 +537,7 @@
 		F2995AE2269CFC4E000F5FB8 /* RequestInformation */ = {
 			isa = PBXGroup;
 			children = (
-				E381289426A090970086E1E5 /* RemoteData */,
+				E357185526A72E0F007E5DE9 /* RemoteData */,
 				F2995AE3269CFC4E000F5FB8 /* Entity */,
 				F2995AE5269CFC4E000F5FB8 /* Presenter */,
 				F2995AE7269CFC4E000F5FB8 /* Protocol */,
@@ -768,7 +768,6 @@
 				F233E15E268CFF6A00D44AFD /* SceneDelegate.swift in Sources */,
 				F2995AD0269CFA68000F5FB8 /* UtilitiesSAB.swift in Sources */,
 				F2995AF9269CFC4E000F5FB8 /* RequestInformationProtocol.swift in Sources */,
-				E381289626A091370086E1E5 /* RequestIformationRemoteData.swift in Sources */,
 				F24274DA269D247F0070A4F8 /* SABChangePasswordProtocol.swift in Sources */,
 				F2995AF7269CFC4E000F5FB8 /* SABRequestInformationEntity.swift in Sources */,
 				F2995AF8269CFC4E000F5FB8 /* RequestInformationPresenter.swift in Sources */,
@@ -778,6 +777,7 @@
 				F24274E3269DFD380070A4F8 /* Enums.swift in Sources */,
 				F24274DD269D247F0070A4F8 /* SABChangePasswordInteractor.swift in Sources */,
 				E38341AF26A0A91B00D80F55 /* validationsRegisterNewUser.swift in Sources */,
+				E357185726A72E0F007E5DE9 /* RequestIformationRemoteData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
