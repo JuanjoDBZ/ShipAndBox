@@ -10,12 +10,6 @@
 		02F30CA9AA80841FA6AF6475 /* Pods_ShipAndBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4963031E43E093E5431B14C6 /* Pods_ShipAndBox.framework */; };
 		043775E2269E21D500BCA086 /* OpenpayKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043775DC269E21B500BCA086 /* OpenpayKit.xcframework */; };
 		043775E3269E21D500BCA086 /* OpenpayKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 043775DC269E21B500BCA086 /* OpenpayKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0448A793269F988F00B83524 /* SABHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0448A78D269F988F00B83524 /* SABHomeVC.xib */; };
-		0448A794269F988F00B83524 /* SABHomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A78E269F988F00B83524 /* SABHomePresenter.swift */; };
-		0448A795269F988F00B83524 /* SABHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A78F269F988F00B83524 /* SABHomeRouter.swift */; };
-		0448A796269F988F00B83524 /* SABHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A790269F988F00B83524 /* SABHomeInteractor.swift */; };
-		0448A797269F988F00B83524 /* SABHomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A791269F988F00B83524 /* SABHomeProtocol.swift */; };
-		0448A798269F988F00B83524 /* SABHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A792269F988F00B83524 /* SABHomeVC.swift */; };
 		0448A7A526A0E6CE00B83524 /* SABTabBarHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0448A79F26A0E6CE00B83524 /* SABTabBarHomeVC.xib */; };
 		0448A7A626A0E6CE00B83524 /* SABTabBarHomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A7A026A0E6CE00B83524 /* SABTabBarHomePresenter.swift */; };
 		0448A7A726A0E6CE00B83524 /* SABTabBarHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A7A126A0E6CE00B83524 /* SABTabBarHomeRouter.swift */; };
@@ -91,12 +85,6 @@
 
 /* Begin PBXFileReference section */
 		043775DC269E21B500BCA086 /* OpenpayKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = OpenpayKit.xcframework; sourceTree = "<group>"; };
-		0448A78D269F988F00B83524 /* SABHomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SABHomeVC.xib; sourceTree = "<group>"; };
-		0448A78E269F988F00B83524 /* SABHomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABHomePresenter.swift; sourceTree = "<group>"; };
-		0448A78F269F988F00B83524 /* SABHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABHomeRouter.swift; sourceTree = "<group>"; };
-		0448A790269F988F00B83524 /* SABHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABHomeInteractor.swift; sourceTree = "<group>"; };
-		0448A791269F988F00B83524 /* SABHomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABHomeProtocol.swift; sourceTree = "<group>"; };
-		0448A792269F988F00B83524 /* SABHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABHomeVC.swift; sourceTree = "<group>"; };
 		0448A79F26A0E6CE00B83524 /* SABTabBarHomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SABTabBarHomeVC.xib; sourceTree = "<group>"; };
 		0448A7A026A0E6CE00B83524 /* SABTabBarHomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABTabBarHomePresenter.swift; sourceTree = "<group>"; };
 		0448A7A126A0E6CE00B83524 /* SABTabBarHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABTabBarHomeRouter.swift; sourceTree = "<group>"; };
@@ -174,59 +162,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0448A78C269F929400B83524 /* SABHome */ = {
-			isa = PBXGroup;
-			children = (
-				0448A799269F989800B83524 /* Interactor */,
-				0448A79A269F98A900B83524 /* Presenter */,
-				0448A79B269F98BB00B83524 /* Protocol */,
-				0448A79C269F98C600B83524 /* Router */,
-				0448A79D269F98D900B83524 /* View */,
-			);
-			path = SABHome;
-			sourceTree = "<group>";
-		};
-		0448A799269F989800B83524 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				0448A790269F988F00B83524 /* SABHomeInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		0448A79A269F98A900B83524 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				0448A78E269F988F00B83524 /* SABHomePresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		0448A79B269F98BB00B83524 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				0448A791269F988F00B83524 /* SABHomeProtocol.swift */,
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
-		0448A79C269F98C600B83524 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				0448A78F269F988F00B83524 /* SABHomeRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		0448A79D269F98D900B83524 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				0448A78D269F988F00B83524 /* SABHomeVC.xib */,
-				0448A792269F988F00B83524 /* SABHomeVC.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		0448A79E26A0E67C00B83524 /* SABTabbarhome */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,7 +449,6 @@
 			isa = PBXGroup;
 			children = (
 				0448A79E26A0E67C00B83524 /* SABTabbarhome */,
-				0448A78C269F929400B83524 /* SABHome */,
 				F2995ACB269CFA3A000F5FB8 /* Sources */,
 				F2995AD3269CFC36000F5FB8 /* SABRegister */,
 				04BD4761268D0DF10058B77A /* SABLogin */,
@@ -795,7 +729,6 @@
 				E3C55E59269D0C6B00E312A5 /* SABUserRegisterStepThreeVC.xib in Resources */,
 				F2995AFA269CFC4E000F5FB8 /* RequestInformationVC.xib in Resources */,
 				F233E168268CFF6B00D44AFD /* LaunchScreen.storyboard in Resources */,
-				0448A793269F988F00B83524 /* SABHomeVC.xib in Resources */,
 				F233E165268CFF6B00D44AFD /* Assets.xcassets in Resources */,
 				F2995AF4269CFC4E000F5FB8 /* SABRegisterVC.xib in Resources */,
 				04A991F5269E113D00F491A6 /* SABRealizaTuPagoVC.xib in Resources */,
@@ -870,7 +803,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0448A7A726A0E6CE00B83524 /* SABTabBarHomeRouter.swift in Sources */,
-				0448A794269F988F00B83524 /* SABHomePresenter.swift in Sources */,
 				04A991F8269E113D00F491A6 /* SABRealizaTuPagoInteractor.swift in Sources */,
 				F2995AD1269CFA68000F5FB8 /* YPDrawSignatureView.swift in Sources */,
 				F24274DC269D247F0070A4F8 /* SABChangePasswordVC.swift in Sources */,
@@ -883,12 +815,10 @@
 				04BD476E268D0E860058B77A /* SABLoginPresenter.swift in Sources */,
 				04A991FA269E113D00F491A6 /* SABRealizaTuPagoRemoteDataManagerInputProtocol.swift in Sources */,
 				0448A7A626A0E6CE00B83524 /* SABTabBarHomePresenter.swift in Sources */,
-				0448A798269F988F00B83524 /* SABHomeVC.swift in Sources */,
 				047937342694C4B900979654 /* SABLoginRemoteDataManagerInputProtocol.swift in Sources */,
 				04BD4772268D0E860058B77A /* SABLoginVC.swift in Sources */,
 				E3C55E55269D0C6B00E312A5 /* SABUserRegisterStepThreeRemoteDataManager.swift in Sources */,
 				E3C55E5C269D0C6B00E312A5 /* SABUserRegisterStepThreeRouter.swift in Sources */,
-				0448A797269F988F00B83524 /* SABHomeProtocol.swift in Sources */,
 				04BD4770268D0E860058B77A /* SABLoginInteractor.swift in Sources */,
 				F2995AF1269CFC4E000F5FB8 /* SABRegisterPresenter.swift in Sources */,
 				04A991F9269E113D00F491A6 /* SABRealizaTuPagoPresenter.swift in Sources */,
@@ -903,7 +833,6 @@
 				0448A7A826A0E6CE00B83524 /* SABTabBarHomeInteractor.swift in Sources */,
 				E3C55E57269D0C6B00E312A5 /* SABUserRegisterStepThreeProtocol.swift in Sources */,
 				E3C55E5B269D0C6B00E312A5 /* SABUserRegisterStepThreeInteractor.swift in Sources */,
-				0448A796269F988F00B83524 /* SABHomeInteractor.swift in Sources */,
 				F2995AF6269CFC4E000F5FB8 /* SABRegisterRouter.swift in Sources */,
 				04BD4771268D0E860058B77A /* SABLoginProtocol.swift in Sources */,
 				F233E15C268CFF6A00D44AFD /* AppDelegate.swift in Sources */,
@@ -911,7 +840,6 @@
 				F2995AD0269CFA68000F5FB8 /* UtilitiesSAB.swift in Sources */,
 				F2995AF9269CFC4E000F5FB8 /* RequestInformationProtocol.swift in Sources */,
 				F24274DA269D247F0070A4F8 /* SABChangePasswordProtocol.swift in Sources */,
-				0448A795269F988F00B83524 /* SABHomeRouter.swift in Sources */,
 				F2995AF7269CFC4E000F5FB8 /* SABRequestInformationEntity.swift in Sources */,
 				F2995AF8269CFC4E000F5FB8 /* RequestInformationPresenter.swift in Sources */,
 				E3C55E5A269D0C6B00E312A5 /* SABUserRegisterStepThreeVC.swift in Sources */,
