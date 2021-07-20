@@ -10,7 +10,7 @@ import UIKit
 class SABUserRegisterStepThreeVC: UIViewController, YPSignatureDelegate {
     var presenter: SABUserRegisterStepThreePresenterProtocol?
     /// Id de usuario registrado
-    var customerId = 0
+    var customerId:Int = 0
     /// Parametros que se envian para ejecutar el servicio de generar firma electrónica
     var parametersCreateSignature: NSDictionary = [:]
     /// Se implementa vista de tipo YPDrawSignatureView para generar la firma

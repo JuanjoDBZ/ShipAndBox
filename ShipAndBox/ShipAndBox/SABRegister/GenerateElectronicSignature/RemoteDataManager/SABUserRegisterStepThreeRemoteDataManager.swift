@@ -13,7 +13,6 @@ class SABUserRegisterStepThreeRemoteDataManager:NSObject,URLSessionDelegate {
         let path = "signContract"
         /// Url construida para consumir
         let url = UtilitiesSAB.api.urlComposerApi(path: path)
-        print(url)
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

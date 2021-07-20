@@ -116,13 +116,16 @@ class SABRegisterVC: UIViewController, UITextFieldDelegate {
 }
 ///Protocolo para recibir datos de presenter.
 extension SABRegisterVC: SABRegisterViewProtocol {
+    /// Función en caso de que haya un error
+    /// - Parameter error: Mensaje de error
     func errorResponseRegisterNewUser(error: String) {
         DispatchQueue.main.async {
             self.view.activityStopAnimating()
             UtilitiesSAB.api.showMessageError(msg: error, controller: self)
         }
     }
-    
+    /// Función en caso de respuesta verdadera
+    /// - Parameter data: Datos para enviar a la siguiente pantalla
     func succesResponseRegisterNewUser(data: DataUserRegister) {
         DispatchQueue.main.async {
             self.presenter?.goToStepTwoRegisterNewUser(data: data)
@@ -130,7 +133,6 @@ extension SABRegisterVC: SABRegisterViewProtocol {
         }
         
     }
-    
     func loadInfo() {
         print("Realizar acciones de repintado de la vista")
     }

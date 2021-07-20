@@ -13,6 +13,8 @@ class SABRegisterPresenter {
     var documentsValidate: [String:String] = [:]
 }
 extension SABRegisterPresenter: SABRegisterPresenterProtocol {
+    ///Función para crear nuevo usuario
+    /// - Parameter data: Datos del nuevo usuario
     func goToStepTwoRegisterNewUser(data: DataUserRegister) {
         router?.goToStepTwoUserRegisterR(data: data)
     }
@@ -30,10 +32,13 @@ extension SABRegisterPresenter: SABRegisterPresenterProtocol {
     }
 }
 extension SABRegisterPresenter: SABRegisterInteractorOutputProtocol {
+    /// Función para mostar error
+    /// - Parameter error: Mensaje de error
     func errorResponseRegisterNewUser(error: String) {
         view?.errorResponseRegisterNewUser(error: error)
     }
-    
+    /// Función para mostar error
+    /// - Parameter data: Datos para mostar en la vista
     func succesResponseRegisterNewUser(data: DataUserRegister) {
         view?.succesResponseRegisterNewUser(data: data)
     }

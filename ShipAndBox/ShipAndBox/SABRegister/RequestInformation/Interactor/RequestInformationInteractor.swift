@@ -33,6 +33,8 @@ class RequestInformationInteractor {
     
 }
 extension RequestInformationInteractor: RequestInformationInteractorInputProtocol {
+    /// Función para prrocesar respuesta del servico
+    /// - Parameter data: Datos necesarios para la sugiente pantalla
     func createNewUserPresenter(data: DataUserRegister) {
         remoteDatamanager.registerNewUser(params: data, objectType: ToDoGenerateUser.self) { (result: EnumsRequestAndErrors.Result) in
             switch result {
@@ -51,8 +53,6 @@ extension RequestInformationInteractor: RequestInformationInteractorInputProtoco
             }
         }
     }
-    
-    //Uso y nombre opcional
     func processInfo() {
         presenter?.receiveData()
     }
