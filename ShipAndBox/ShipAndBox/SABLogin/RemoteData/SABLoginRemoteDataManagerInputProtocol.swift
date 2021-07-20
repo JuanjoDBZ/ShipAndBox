@@ -9,33 +9,33 @@ import Foundation
 class SABLoginRemoteDataManagerInputProtocol:NSObject  {
     /// Función que llama el servicio de login.
     /// - Parameter params: Parámetros que se enviaran al servicio.
-    func GetDatalogin( params: NSDictionary){
-        let url = "https://ec2-3-136-112-167.us-east-2.compute.amazonaws.com:4443/Api/login"
-        var request = URLRequest(url: URL(string: url)!)
-        request.httpMethod = "POST"
+    func GetDatalogin<T: Decodable>( objectType: T.Type, params: NSDictionary, completion: @escaping (EnumsRequestAndErrors.Result<T>) -> Void) {
+        let url = URL(string: "https://ec2-3-136-112-167.us-east-2.compute.amazonaws.com:4443/Api/login")!
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
         let jsonData = try? JSONSerialization.data(withJSONObject: params)
         request.httpBody = jsonData
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        session.dataTask(with: request){(data,respose,error) in
-            guard let data = data, error == nil, let respuesta = respose as?
-                    HTTPURLResponse else{
-                print(" error: \(String(describing: error))")
+        let task = session.dataTask(with: request, completionHandler: { data, response, error in
+            guard error == nil else {
+                completion(EnumsRequestAndErrors.Result.failure(EnumsRequestAndErrors.APPError.networkError(error!)))
                 return
             }
-            if respuesta.statusCode == 200 {
-                print("traemos datos:\(data)")
-                do{
-                    if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
-                        print(json)
-                    }
-                }catch{
-                    print("error:\(error.localizedDescription)")
-                }
-            }else{
-                print("error:\(respuesta.statusCode)")
+            guard let data = data else {
+                completion(EnumsRequestAndErrors.Result.failure(EnumsRequestAndErrors.APPError.dataNotFound))
+                return
             }
-        }.resume()
+            do {
+                let jsonDecoder = JSONDecoder()
+                let decodedResponse = try jsonDecoder.decode(objectType.self,from: data)
+                print(decodedResponse)
+                completion(EnumsRequestAndErrors.Result.success(decodedResponse))
+            } catch let error {
+                completion(EnumsRequestAndErrors.Result.failure(EnumsRequestAndErrors.APPError.jsonParsingError(error as! DecodingError)))
+            }
+        })
+        task.resume()
     }
 }
 extension SABLoginRemoteDataManagerInputProtocol:URLSessionDelegate {
