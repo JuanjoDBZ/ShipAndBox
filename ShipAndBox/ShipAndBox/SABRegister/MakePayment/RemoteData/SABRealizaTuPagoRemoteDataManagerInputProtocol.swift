@@ -7,20 +7,34 @@
 import UIKit
 import OpenpayKit
 class SABRealizaTuPagoRemoteDataManagerInputProtocol: NSObject {
-    /// Variables para los consumos de servicios
+    /// MERCHANT_ID
     static let MERCHANT_ID = "mehujw2houaa7pzmqc9f"
+    /// API_KEY
     static let API_KEY = "pk_4e224c9395034a79a5a1d2b6c8d573e4"
+    /// FramWork
     var openpay : Openpay!
+    /// Id Session
     var sessionID: String!
+    /// Token session
     var sessionParam:String = ""
+    /// Token
     var tokenParam:String = ""
+    /// Token Id
     var tokenID: String!
-    var TokenCard: NSDictionary = [:]
+    /// Entity
+    var TokenCard: DataMakePayment = DataMakePayment()
+    /// cardNumberForm
     var cardNumberForm = "cardNumber"
+    /// expYearCardForm
     var expYearCardForm = "expirationYear"
+    /// expMonthCardForm
     var expMonthCardForm = "expirationMonth"
+    /// cvvCardForm
     var cvvCardForm = "cvv"
+    /// nameForm
     var nameForm = "holderName"
+    /// customerId
+    var customerId: Int = 0
     /// Funcion para el llamado de servicio getTypePaysMemberships y nos traega los tipos de membrecias
     /// - Parameters:
     ///   - objectType: Nos regresara el tipo de resultado adquirido
@@ -54,7 +68,7 @@ class SABRealizaTuPagoRemoteDataManagerInputProtocol: NSObject {
     }
     /// Funcion para inicializar openPay y crear  la sessionID
     /// - Parameter parametersCreateToken: Datos del usuario para el consumo de servicios
-    func inicializarOpenPay(parametersCreateToken: NSDictionary) {
+    func inicializarOpenPay(parametersCreateToken: DataMakePayment) {
         TokenCard = parametersCreateToken
         openpay = Openpay(withMerchantId: SABRealizaTuPagoRemoteDataManagerInputProtocol.MERCHANT_ID, andApiKey: SABRealizaTuPagoRemoteDataManagerInputProtocol.API_KEY, isProductionMode: false, isDebug: false,countryCode: "MX")
         openpay.createDeviceSessionId(successFunction: successSessionID, failureFunction: failSessionID)
@@ -79,23 +93,29 @@ class SABRealizaTuPagoRemoteDataManagerInputProtocol: NSObject {
         var dictionaryexpMonthCardForm = ""
         var dictionarycvvCardForm = ""
         var dictionarynameForm = ""
-        for item in TokenCard {
-            if item.key as! String == cardNumberForm{
-                dictionaryCardNumberForm = item.value as! String
-            }
-            if item.key as! String == expYearCardForm{
-                dictionaryexpYearCardForm = item.value as! String
-            }
-            if item.key as! String == expMonthCardForm{
-                dictionaryexpMonthCardForm = item.value as! String
-            }
-            if item.key as! String == cvvCardForm{
-                dictionarycvvCardForm = item.value as! String
-            }
-            if item.key as! String == nameForm{
-                dictionarynameForm = item.value as! String
-            }
-        }
+        dictionaryCardNumberForm = TokenCard.cardNumber
+        dictionaryexpYearCardForm = TokenCard.expirationYear
+        dictionaryexpMonthCardForm = TokenCard.expirationMonth
+        dictionarycvvCardForm = TokenCard.cvv
+        dictionarynameForm = TokenCard.holderName
+        customerId = TokenCard.customerId
+//        for item in TokenCard {
+//            if item.key as! String == cardNumberForm{
+//                dictionaryCardNumberForm = item.value as! String
+//            }
+//            if item.key as! String == expYearCardForm{
+//                dictionaryexpYearCardForm = item.value as! String
+//            }
+//            if item.key as! String == expMonthCardForm{
+//                dictionaryexpMonthCardForm = item.value as! String
+//            }
+//            if item.key as! String == cvvCardForm{
+//                dictionarycvvCardForm = item.value as! String
+//            }
+//            if item.key as! String == nameForm{
+//                dictionarynameForm = item.value as! String
+//            }
+//        }
         let card = TokenizeCardRequest(cardNumber: dictionaryCardNumberForm,holderName:dictionarynameForm, expirationYear: dictionaryexpYearCardForm, expirationMonth: dictionaryexpMonthCardForm, cvv2: dictionarycvvCardForm)
         openpay.tokenizeCard(card: card) { (OPToken) in
             print("token de tarjeta")

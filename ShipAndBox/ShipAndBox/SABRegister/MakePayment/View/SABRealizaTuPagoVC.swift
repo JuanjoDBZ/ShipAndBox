@@ -5,35 +5,51 @@
 //  Created by IsitaFS003 on 02/07/21.
 //  
 //
-
 import Foundation
 import UIKit
 class SABRealizaTuPagoVC: UIViewController {
-    /// Declaracion de IBOutlet de la vista
+    /// Textfield de la membresía
     @IBOutlet weak var txtTypeMemberShip: UITextField!
+    /// Textfield de monto
     @IBOutlet weak var txtAmount: UITextField!
-    @IBOutlet weak var labelName: UITextField!
-    @IBOutlet weak var labelNumber: UITextField!
-    @IBOutlet weak var labelYear: UITextField!
-    @IBOutlet weak var labelMonth: UITextField!
-    @IBOutlet weak var labelCVV: UITextField!
-    @IBOutlet weak var labelStreet: UITextField!
-    @IBOutlet weak var labelColony: UITextField!
-    @IBOutlet weak var labelCode: UITextField!
-    @IBOutlet weak var labelTown: UITextField!
-    @IBOutlet weak var labelState: UITextField!
-    @IBOutlet weak var labelMembership: UITextField!
-    @IBOutlet weak var labelAmount: UITextField!
-    /// Declaracion de variables  para logica de integracion de datos para consumo de servicios 
+    /// Textfield nombre del usuario
+    @IBOutlet weak var txtName: UITextField!
+    /// Textfield numero de tarjeta
+    @IBOutlet weak var txtNumber: UITextField!
+    /// Textfield año de expiración de tarjeta
+    @IBOutlet weak var txtYear: UITextField!
+    /// Textfield mes de expiración de mes
+    @IBOutlet weak var txtMonth: UITextField!
+    /// Textfield  para ingresar  CVV
+    @IBOutlet weak var txtCVV: UITextField!
+    /// Textfield para ingresar  calle
+    @IBOutlet weak var txtStreet: UITextField!
+    /// Textfield para ingresar colonia
+    @IBOutlet weak var txtColony: UITextField!
+    /// Textfield para codigo postal
+    @IBOutlet weak var txtCode: UITextField!
+    /// Textfield para ingresar ciudad
+    @IBOutlet weak var txtTown: UITextField!
+    /// Textfield para ingresar estado
+    @IBOutlet weak var txtState: UITextField!
+    /// Textfield para ingresar tipo de membresía
+    @IBOutlet weak var txtMembership: UITextField!
+    /// Declaracion de variables  para logica de integracion de datos para consumo de servicios
     var presenter: SABRealizaTuPagoPresenterProtocol?
-    var parametersCreateToken: NSDictionary = [:]
-    var cvvCardForm:String = ""
-    var nameForm:String = ""
-    var expMonthCardForm:String = ""
-    var expYearCardForm:String = ""
-    var cardNumberForm:String = ""
+    /// Entity de pago 
+    var dataPayment: DataMakePayment = DataMakePayment()
+    /// Cvv de la tarjeta
+    var cvvCardForm: String = ""
+    /// Nombre de titular
+    var nameForm: String = ""
+    /// Mes de expiración
+    var expMonthCardForm: String = ""
+    /// Año de expiración
+    var expYearCardForm: String = ""
+    /// Formulario de número de tarjeta
+    var cardNumberForm: String = ""
     /// Id de usuario registrado
-    var customerId = 0
+    var customerId: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         getServicesTypeMember()
@@ -44,29 +60,28 @@ class SABRealizaTuPagoVC: UIViewController {
     }
     /// Funcion para pasar los datos de la tarjeta y consumir servicos para OpenPay
     func openPay() {
-        if let cvv = labelCVV.text {
+        if let cvv = txtCVV.text {
             cvvCardForm = cvv
         }
-        if let holderName = labelName.text {
+        if let holderName = txtName.text {
             nameForm = holderName
         }
-        if let expirationMonth = labelMonth.text{
+        if let expirationMonth = txtMonth.text{
             expMonthCardForm = expirationMonth
         }
-        if let expirationYear = labelYear.text{
+        if let expirationYear = txtYear.text{
             expYearCardForm = expirationYear
         }
-        if let cardNumber = labelNumber.text{
+        if let cardNumber = txtNumber.text{
             cardNumberForm = cardNumber
         }
-        parametersCreateToken = [
-            "cardNumber": cardNumberForm,
-            "holderName": nameForm,
-            "expirationYear":expYearCardForm,
-            "expirationMonth":expMonthCardForm,
-            "cvv":cvvCardForm
-        ]
-        presenter?.openpay(parametersCreateToken: parametersCreateToken)
+        dataPayment.cardNumber = cardNumberForm
+        dataPayment.expirationYear = expYearCardForm
+        dataPayment.holderName = nameForm
+        dataPayment.expirationMonth = expMonthCardForm
+        dataPayment.cvv = cvvCardForm
+        dataPayment.customerId = customerId
+        presenter?.openpay(parametersCreateToken: dataPayment)
     }
     /// Boton que manda llamar metodo para activar la logica de openpay``
     /// - Parameter sender: Objeto boton del sistema

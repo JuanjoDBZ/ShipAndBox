@@ -23,7 +23,7 @@ protocol SABRealizaTuPagoPresenterProtocol {
     // VIEW -> PRESENTER
     /// Funcion que lleva los datos de la tarjeta del view al presenter 
     /// - Parameter parametersCreateToken: Datos de tarjeta para la creacion de Token
-    func openpay(parametersCreateToken: NSDictionary)
+    func openpay(parametersCreateToken: DataMakePayment)
     func getTypeMember()
 }
 /// Protocolo que define los métodos y atributos para el Interactor de SABRealizaTuPago
@@ -31,7 +31,7 @@ protocol SABRealizaTuPagoInteractorInputProtocol {
     // PRESENTER -> INTERACTOR
     /// Funcion que lleva los datos de la tarjeta del presentar al interactor
     /// - Parameter parametersCreateToken: Datos de tarjeta para la creacion de Token
-    func openpayInteractor(parametersCreateToken: NSDictionary)
+    func openpayInteractor(parametersCreateToken: DataMakePayment)
     func getTypeMemberInteractor()
 }
 /// Protocolo que define los métodos y atributos para el Interactor de SABRealizaTuPago

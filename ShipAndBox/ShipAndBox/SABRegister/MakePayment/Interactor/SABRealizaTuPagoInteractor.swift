@@ -25,7 +25,7 @@ class SABRealizaTuPagoInteractor {
 extension SABRealizaTuPagoInteractor: SABRealizaTuPagoInteractorInputProtocol {
     /// Funcion que consume el servicio para OpenPay
     /// - Parameter parametersCreateToken: Datos de tarjeta para la creacion de Token
-    func openpayInteractor(parametersCreateToken: NSDictionary) {
+    func openpayInteractor(parametersCreateToken: DataMakePayment) {
         externalDataManager.inicializarOpenPay(parametersCreateToken: parametersCreateToken)
     }
     /// Funcion que consume el servicio getTypePaysMemberships y responde la llamada

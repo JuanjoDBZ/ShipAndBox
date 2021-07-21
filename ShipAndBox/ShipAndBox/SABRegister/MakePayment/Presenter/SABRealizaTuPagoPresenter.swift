@@ -14,7 +14,7 @@ class SABRealizaTuPagoPresenter {
 extension SABRealizaTuPagoPresenter: SABRealizaTuPagoPresenterProtocol {
     /// Funcion que pasa la informacion del presenter al interactor para el consumo del servicio
     /// - Parameter parametersCreateToken: Datos de tarjeta para la creacion de Token
-    func openpay(parametersCreateToken: NSDictionary) {
+    func openpay(parametersCreateToken: DataMakePayment) {
         interactor?.openpayInteractor(parametersCreateToken: parametersCreateToken)
     }
     /// Funcion que manda llamar metodo para el consumo del servicio getTypePaysMemberships
