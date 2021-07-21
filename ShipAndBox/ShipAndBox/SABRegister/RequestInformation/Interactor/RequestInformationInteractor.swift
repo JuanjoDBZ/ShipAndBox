@@ -40,8 +40,8 @@ extension RequestInformationInteractor: RequestInformationInteractorInputProtoco
             switch result {
             case .success(let object):
                 if object.status == 1 {
-                    if let customerId = object.data?.customerId {
-                        self.presenter?.sendSuccesResponseToInteractor(customerId: customerId)
+                    if let customerId = object.data?.customerId, let dateExpiration = object.data?.dateExpiration {
+                        self.presenter?.sendSuccesResponseToInteractor(customerId: customerId, dateExpiration: dateExpiration)
                     }
                 } else  {
                     if let msgError = object.message?[0]{

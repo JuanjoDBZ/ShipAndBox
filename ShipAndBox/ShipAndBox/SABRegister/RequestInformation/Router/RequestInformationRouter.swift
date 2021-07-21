@@ -26,8 +26,8 @@ class RequestInformationRouter {
     }
 }
 extension RequestInformationRouter: RequestInformationRouterProtocol {
-    func showViewStepThreeRegister(customerId: Int) {
-        let RegisterGenerateSignatureVC = SABUserRegisterStepThreeRouter(customerId:customerId).view
+    func showViewStepThreeRegister(customerId: Int, dateExpiration: String) {
+        let RegisterGenerateSignatureVC = SABUserRegisterStepThreeRouter(customerId:customerId, dateExpiration:dateExpiration).view
         self.view.navigationController?.pushViewController(RegisterGenerateSignatureVC, animated: true)
     }
 }

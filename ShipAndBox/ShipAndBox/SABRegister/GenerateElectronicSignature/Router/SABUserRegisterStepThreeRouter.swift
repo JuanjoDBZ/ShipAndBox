@@ -12,11 +12,12 @@ class SABUserRegisterStepThreeRouter {
     public var view: SABUserRegisterStepThreeVC
     private var presenter: SABUserRegisterStepThreePresenter
     private var interactor: SABUserRegisterStepThreeInteractor
-    init(customerId: Int) {
+    init(customerId: Int, dateExpiration:String) {
         self.view = SABUserRegisterStepThreeVC()
         self.presenter = SABUserRegisterStepThreePresenter()
         self.interactor = SABUserRegisterStepThreeInteractor()
         view.presenter = self.presenter
+        view.dateExpiration = dateExpiration
         view.customerId = customerId
         presenter.view = self.view
         presenter.interactor = self.interactor
@@ -28,7 +29,7 @@ extension SABUserRegisterStepThreeRouter: SABUserRegisterStepThreeRouterProtocol
     /// Mandar a la siguiente vista del paso 4 del registro
     /// - Parameter customerId: id del usuario
     func showViewUserRegisterStepFour(customerId:Int) {
-        let RegisterStepFourVC = SABUserRegisterStepThreeRouter(customerId:customerId).view
+        let RegisterStepFourVC = SABRealizaTuPagoRouter(customerId:customerId).view
         self.view.navigationController?.pushViewController(RegisterStepFourVC, animated: true)
     }
 }

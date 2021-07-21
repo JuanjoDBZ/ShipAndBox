@@ -151,9 +151,9 @@ class RequestInformationVC: UIViewController, CLLocationManagerDelegate {
 }
 ///Protocolo para recibir datos de presenter.
 extension RequestInformationVC: RequestInformationViewProtocol {
-    func sendSuccesResponseToView(customerId: Int) {
+    func sendSuccesResponseToView(customerId: Int, dateExpiration: String) {
         DispatchQueue.main.async {
-            self.presenter?.goToStepThreeRegister(customerId: customerId)
+            self.presenter?.goToStepThreeRegister(customerId: customerId, dateExpiration: dateExpiration)
             self.view.activityStopAnimating()
         }
     }
