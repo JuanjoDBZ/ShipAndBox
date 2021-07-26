@@ -9,48 +9,71 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SABCoOwnerVC" customModule="ShipAndBox" customModuleProvider="target">
             <connections>
-                <outlet property="collectionCoOwner" destination="QG5-K8-Xdi" id="Q5B-B6-EQE"/>
+                <outlet property="collectionCoOwner" destination="W4E-eF-4fV" id="X74-hR-OvA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JpW-Ti-PBe">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2d-0z-6zY">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                     <subviews>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="QG5-K8-Xdi">
-                            <rect key="frame" x="67" y="8" width="240" height="651"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Plu-9L-Akg">
-                                <size key="itemSize" width="128" height="128"/>
-                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            </collectionViewFlowLayout>
-                            <connections>
-                                <outlet property="dataSource" destination="-1" id="y6Q-CE-N2L"/>
-                                <outlet property="delegate" destination="-1" id="s6X-xX-Xbq"/>
-                            </connections>
-                        </collectionView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ukz-Vq-cGI">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
+                            <subviews>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="W4E-eF-4fV">
+                                    <rect key="frame" x="48" y="8" width="279" height="684"/>
+                                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pVx-bs-OID">
+                                        <size key="itemSize" width="208" height="323"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="uxo-zg-7zs"/>
+                                    </connections>
+                                </collectionView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemGray4Color"/>
+                            <constraints>
+                                <constraint firstItem="W4E-eF-4fV" firstAttribute="top" secondItem="ukz-Vq-cGI" secondAttribute="top" constant="8" id="24X-qm-cWu"/>
+                                <constraint firstAttribute="trailing" secondItem="W4E-eF-4fV" secondAttribute="trailing" constant="48" id="AEe-HI-aLB"/>
+                                <constraint firstAttribute="bottom" secondItem="W4E-eF-4fV" secondAttribute="bottom" constant="8" id="TCK-rf-8NX"/>
+                                <constraint firstItem="W4E-eF-4fV" firstAttribute="leading" secondItem="ukz-Vq-cGI" secondAttribute="leading" constant="48" id="yWG-B3-u94"/>
+                            </constraints>
+                        </view>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemGray5Color"/>
-                </view>
+                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                    <constraints>
+                        <constraint firstItem="ukz-Vq-cGI" firstAttribute="top" secondItem="z2d-0z-6zY" secondAttribute="top" id="0w7-QA-kiF"/>
+                        <constraint firstAttribute="bottom" secondItem="ukz-Vq-cGI" secondAttribute="bottom" id="3zl-qf-uvV"/>
+                        <constraint firstItem="ukz-Vq-cGI" firstAttribute="height" secondItem="z2d-0z-6zY" secondAttribute="height" id="S19-iF-iWW"/>
+                        <constraint firstAttribute="trailing" secondItem="ukz-Vq-cGI" secondAttribute="trailing" id="ng5-w6-cwC"/>
+                        <constraint firstItem="ukz-Vq-cGI" firstAttribute="leading" secondItem="z2d-0z-6zY" secondAttribute="leading" id="rC6-N8-rBJ"/>
+                        <constraint firstItem="ukz-Vq-cGI" firstAttribute="width" secondItem="z2d-0z-6zY" secondAttribute="width" id="zVD-Ld-Cme"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="Zsn-Lv-7eD"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="fRp-7m-zAO"/>
+                </scrollView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="96.799999999999997" y="103.89805097451276"/>
+            <color key="backgroundColor" systemColor="systemGray4Color"/>
+            <constraints>
+                <constraint firstItem="z2d-0z-6zY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="17d-si-chr"/>
+                <constraint firstAttribute="trailing" secondItem="z2d-0z-6zY" secondAttribute="trailing" id="JOh-zQ-0sq"/>
+                <constraint firstItem="z2d-0z-6zY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QVb-mR-IHd"/>
+                <constraint firstAttribute="bottom" secondItem="z2d-0z-6zY" secondAttribute="bottom" id="TUW-xP-Tmd"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="96.799999999999997" y="103.44827586206897"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

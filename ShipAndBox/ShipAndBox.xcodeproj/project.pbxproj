@@ -24,8 +24,24 @@
 		0448A80126A8BB3C00B83524 /* SABCoOwnerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A7FB26A8BB3C00B83524 /* SABCoOwnerInteractor.swift */; };
 		0448A80226A8BB3C00B83524 /* SABCoOwnerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A7FC26A8BB3C00B83524 /* SABCoOwnerProtocol.swift */; };
 		0448A80326A8BB3C00B83524 /* SABCoOwnerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A7FD26A8BB3C00B83524 /* SABCoOwnerVC.swift */; };
-		0448A80C26A8CE3100B83524 /* SABCoOwnerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A80A26A8CE3100B83524 /* SABCoOwnerCollectionViewCell.swift */; };
-		0448A80D26A8CE3100B83524 /* SABCoOwnerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0448A80B26A8CE3100B83524 /* SABCoOwnerCollectionViewCell.xib */; };
+		0448A82526A9E1D400B83524 /* PlaceHolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A82326A9E1D400B83524 /* PlaceHolderCollectionViewCell.swift */; };
+		0448A82626A9E1D400B83524 /* PlaceHolderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0448A82426A9E1D400B83524 /* PlaceHolderCollectionViewCell.xib */; };
+		0448A82A26A9E3BB00B83524 /* CoOwnerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A82826A9E3BB00B83524 /* CoOwnerCollectionViewCell.swift */; };
+		0448A82B26A9E3BB00B83524 /* CoOwnerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0448A82926A9E3BB00B83524 /* CoOwnerCollectionViewCell.xib */; };
+		0448A83C26AB108300B83524 /* CoOwnerCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A83B26AB108300B83524 /* CoOwnerCollectionViewCellProtocol.swift */; };
+		0448A83F26AB10FB00B83524 /* CoOwnerCollectionViewCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A83E26AB10FB00B83524 /* CoOwnerCollectionViewCellInteractor.swift */; };
+		0448A84226AB119F00B83524 /* CoOwnerCollectionViewCellRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A84126AB119F00B83524 /* CoOwnerCollectionViewCellRouter.swift */; };
+		0448A84526AB14B600B83524 /* CoOwnerCollectionViewCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A84426AB14B600B83524 /* CoOwnerCollectionViewCellPresenter.swift */; };
+		0448A84926AB23C500B83524 /* PlaceHolderCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A84826AB23C500B83524 /* PlaceHolderCollectionViewCellProtocol.swift */; };
+		0448A84C26AB24F100B83524 /* PlaceHolderCollectionViewCellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A84B26AB24F100B83524 /* PlaceHolderCollectionViewCellInteractor.swift */; };
+		0448A84F26AB290500B83524 /* PlaceHolderCollectionViewCellRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A84E26AB290500B83524 /* PlaceHolderCollectionViewCellRouter.swift */; };
+		0448A85226AB29B300B83524 /* PlaceHolderCollectionViewCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A85126AB29B300B83524 /* PlaceHolderCollectionViewCellPresenter.swift */; };
+		0448AA1C26AF24C800B83524 /* SABNewCoOwnerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0448AA1626AF24C700B83524 /* SABNewCoOwnerVC.xib */; };
+		0448AA1D26AF24C800B83524 /* SABNewCoOwnerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448AA1726AF24C700B83524 /* SABNewCoOwnerPresenter.swift */; };
+		0448AA1E26AF24C800B83524 /* SABNewCoOwnerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448AA1826AF24C700B83524 /* SABNewCoOwnerRouter.swift */; };
+		0448AA1F26AF24C800B83524 /* SABNewCoOwnerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448AA1926AF24C700B83524 /* SABNewCoOwnerInteractor.swift */; };
+		0448AA2026AF24C800B83524 /* SABNewCoOwnerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448AA1A26AF24C700B83524 /* SABNewCoOwnerProtocol.swift */; };
+		0448AA2126AF24C800B83524 /* SABNewCoOwnerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448AA1B26AF24C700B83524 /* SABNewCoOwnerVC.swift */; };
 		047937342694C4B900979654 /* SABLoginRemoteDataManagerInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047937332694C4B900979654 /* SABLoginRemoteDataManagerInputProtocol.swift */; };
 		04A991F4269E113D00F491A6 /* SABRealizaTuPagoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A991E8269E113D00F491A6 /* SABRealizaTuPagoRouter.swift */; };
 		04A991F5269E113D00F491A6 /* SABRealizaTuPagoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A991EA269E113D00F491A6 /* SABRealizaTuPagoVC.xib */; };
@@ -109,8 +125,24 @@
 		0448A7FB26A8BB3C00B83524 /* SABCoOwnerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABCoOwnerInteractor.swift; sourceTree = "<group>"; };
 		0448A7FC26A8BB3C00B83524 /* SABCoOwnerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABCoOwnerProtocol.swift; sourceTree = "<group>"; };
 		0448A7FD26A8BB3C00B83524 /* SABCoOwnerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABCoOwnerVC.swift; sourceTree = "<group>"; };
-		0448A80A26A8CE3100B83524 /* SABCoOwnerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABCoOwnerCollectionViewCell.swift; sourceTree = "<group>"; };
-		0448A80B26A8CE3100B83524 /* SABCoOwnerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SABCoOwnerCollectionViewCell.xib; sourceTree = "<group>"; };
+		0448A82326A9E1D400B83524 /* PlaceHolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderCollectionViewCell.swift; sourceTree = "<group>"; };
+		0448A82426A9E1D400B83524 /* PlaceHolderCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceHolderCollectionViewCell.xib; sourceTree = "<group>"; };
+		0448A82826A9E3BB00B83524 /* CoOwnerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoOwnerCollectionViewCell.swift; sourceTree = "<group>"; };
+		0448A82926A9E3BB00B83524 /* CoOwnerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoOwnerCollectionViewCell.xib; sourceTree = "<group>"; };
+		0448A83B26AB108300B83524 /* CoOwnerCollectionViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoOwnerCollectionViewCellProtocol.swift; sourceTree = "<group>"; };
+		0448A83E26AB10FB00B83524 /* CoOwnerCollectionViewCellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoOwnerCollectionViewCellInteractor.swift; sourceTree = "<group>"; };
+		0448A84126AB119F00B83524 /* CoOwnerCollectionViewCellRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoOwnerCollectionViewCellRouter.swift; sourceTree = "<group>"; };
+		0448A84426AB14B600B83524 /* CoOwnerCollectionViewCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoOwnerCollectionViewCellPresenter.swift; sourceTree = "<group>"; };
+		0448A84826AB23C500B83524 /* PlaceHolderCollectionViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderCollectionViewCellProtocol.swift; sourceTree = "<group>"; };
+		0448A84B26AB24F100B83524 /* PlaceHolderCollectionViewCellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderCollectionViewCellInteractor.swift; sourceTree = "<group>"; };
+		0448A84E26AB290500B83524 /* PlaceHolderCollectionViewCellRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderCollectionViewCellRouter.swift; sourceTree = "<group>"; };
+		0448A85126AB29B300B83524 /* PlaceHolderCollectionViewCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderCollectionViewCellPresenter.swift; sourceTree = "<group>"; };
+		0448AA1626AF24C700B83524 /* SABNewCoOwnerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SABNewCoOwnerVC.xib; sourceTree = "<group>"; };
+		0448AA1726AF24C700B83524 /* SABNewCoOwnerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABNewCoOwnerPresenter.swift; sourceTree = "<group>"; };
+		0448AA1826AF24C700B83524 /* SABNewCoOwnerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABNewCoOwnerRouter.swift; sourceTree = "<group>"; };
+		0448AA1926AF24C700B83524 /* SABNewCoOwnerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABNewCoOwnerInteractor.swift; sourceTree = "<group>"; };
+		0448AA1A26AF24C700B83524 /* SABNewCoOwnerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABNewCoOwnerProtocol.swift; sourceTree = "<group>"; };
+		0448AA1B26AF24C700B83524 /* SABNewCoOwnerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABNewCoOwnerVC.swift; sourceTree = "<group>"; };
 		047937332694C4B900979654 /* SABLoginRemoteDataManagerInputProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABLoginRemoteDataManagerInputProtocol.swift; sourceTree = "<group>"; };
 		04A991E8269E113D00F491A6 /* SABRealizaTuPagoRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABRealizaTuPagoRouter.swift; sourceTree = "<group>"; };
 		04A991EA269E113D00F491A6 /* SABRealizaTuPagoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SABRealizaTuPagoVC.xib; sourceTree = "<group>"; };
@@ -259,7 +291,9 @@
 		0448A80426A8BB8B00B83524 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0448A80926A8CDFB00B83524 /* CollectionViewCell */,
+				0448AA1526AF248400B83524 /* NewCoOwner */,
+				0448A82726A9E36300B83524 /* CoOwnerCollectionViewCell */,
+				0448A80926A8CDFB00B83524 /* PlaceHolderCollectionViewCell */,
 				0448A7F826A8BB3C00B83524 /* SABCoOwnerVC.xib */,
 				0448A7FD26A8BB3C00B83524 /* SABCoOwnerVC.swift */,
 			);
@@ -298,13 +332,123 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		0448A80926A8CDFB00B83524 /* CollectionViewCell */ = {
+		0448A80926A8CDFB00B83524 /* PlaceHolderCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				0448A80A26A8CE3100B83524 /* SABCoOwnerCollectionViewCell.swift */,
-				0448A80B26A8CE3100B83524 /* SABCoOwnerCollectionViewCell.xib */,
+				0448A85026AB298300B83524 /* Presenter */,
+				0448A84D26AB28EE00B83524 /* Router */,
+				0448A84A26AB249E00B83524 /* Interactor */,
+				0448A84726AB237F00B83524 /* Protocol */,
+				0448A84626AB236A00B83524 /* View */,
 			);
-			path = CollectionViewCell;
+			path = PlaceHolderCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		0448A82726A9E36300B83524 /* CoOwnerCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0448A84326AB148900B83524 /* Presenter */,
+				0448A84026AB117300B83524 /* Router */,
+				0448A83D26AB10D400B83524 /* Interactor */,
+				0448A83A26AB101B00B83524 /* Protocol */,
+				0448A83926AB100C00B83524 /* View */,
+			);
+			path = CoOwnerCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		0448A83926AB100C00B83524 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0448A82826A9E3BB00B83524 /* CoOwnerCollectionViewCell.swift */,
+				0448A82926A9E3BB00B83524 /* CoOwnerCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0448A83A26AB101B00B83524 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				0448A83B26AB108300B83524 /* CoOwnerCollectionViewCellProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		0448A83D26AB10D400B83524 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				0448A83E26AB10FB00B83524 /* CoOwnerCollectionViewCellInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		0448A84026AB117300B83524 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				0448A84126AB119F00B83524 /* CoOwnerCollectionViewCellRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		0448A84326AB148900B83524 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0448A84426AB14B600B83524 /* CoOwnerCollectionViewCellPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0448A84626AB236A00B83524 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0448A82326A9E1D400B83524 /* PlaceHolderCollectionViewCell.swift */,
+				0448A82426A9E1D400B83524 /* PlaceHolderCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0448A84726AB237F00B83524 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				0448A84826AB23C500B83524 /* PlaceHolderCollectionViewCellProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		0448A84A26AB249E00B83524 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				0448A84B26AB24F100B83524 /* PlaceHolderCollectionViewCellInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		0448A84D26AB28EE00B83524 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				0448A84E26AB290500B83524 /* PlaceHolderCollectionViewCellRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		0448A85026AB298300B83524 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0448A85126AB29B300B83524 /* PlaceHolderCollectionViewCellPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0448AA1526AF248400B83524 /* NewCoOwner */ = {
+			isa = PBXGroup;
+			children = (
+				0448AA1626AF24C700B83524 /* SABNewCoOwnerVC.xib */,
+				0448AA1726AF24C700B83524 /* SABNewCoOwnerPresenter.swift */,
+				0448AA1826AF24C700B83524 /* SABNewCoOwnerRouter.swift */,
+				0448AA1926AF24C700B83524 /* SABNewCoOwnerInteractor.swift */,
+				0448AA1A26AF24C700B83524 /* SABNewCoOwnerProtocol.swift */,
+				0448AA1B26AF24C700B83524 /* SABNewCoOwnerVC.swift */,
+			);
+			path = NewCoOwner;
 			sourceTree = "<group>";
 		};
 		047937312694C41000979654 /* RemoteData */ = {
@@ -826,8 +970,10 @@
 				F233E168268CFF6B00D44AFD /* LaunchScreen.storyboard in Resources */,
 				F233E165268CFF6B00D44AFD /* Assets.xcassets in Resources */,
 				F2995AF4269CFC4E000F5FB8 /* SABRegisterVC.xib in Resources */,
+				0448A82626A9E1D400B83524 /* PlaceHolderCollectionViewCell.xib in Resources */,
 				04A991F5269E113D00F491A6 /* SABRealizaTuPagoVC.xib in Resources */,
-				0448A80D26A8CE3100B83524 /* SABCoOwnerCollectionViewCell.xib in Resources */,
+				0448A82B26A9E3BB00B83524 /* CoOwnerCollectionViewCell.xib in Resources */,
+				0448AA1C26AF24C800B83524 /* SABNewCoOwnerVC.xib in Resources */,
 				04BD476D268D0E860058B77A /* SABLoginVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -904,42 +1050,56 @@
 				F24274DC269D247F0070A4F8 /* SABChangePasswordVC.swift in Sources */,
 				F2995AF2269CFC4E000F5FB8 /* SABRegisterProtocol.swift in Sources */,
 				F2995AF0269CFC4E000F5FB8 /* ExternalDataManager.swift in Sources */,
+				0448AA1D26AF24C800B83524 /* SABNewCoOwnerPresenter.swift in Sources */,
 				F2995AFC269CFC4E000F5FB8 /* RequestInformationInteractor.swift in Sources */,
 				0448A7F626A8B33700B83524 /* SABTypePaysMembershipsInformationRequestEntity.swift in Sources */,
 				F2995ACF269CFA68000F5FB8 /* ActivityIndicator.swift in Sources */,
+				0448A82A26A9E3BB00B83524 /* CoOwnerCollectionViewCell.swift in Sources */,
 				0448A80026A8BB3C00B83524 /* SABCoOwnerRouter.swift in Sources */,
 				F24274DE269D247F0070A4F8 /* SABChangePasswordRouter.swift in Sources */,
+				0448A84926AB23C500B83524 /* PlaceHolderCollectionViewCellProtocol.swift in Sources */,
 				04BD476F268D0E860058B77A /* SABLoginRouter.swift in Sources */,
+				0448A84226AB119F00B83524 /* CoOwnerCollectionViewCellRouter.swift in Sources */,
 				04BD476E268D0E860058B77A /* SABLoginPresenter.swift in Sources */,
 				04A991FA269E113D00F491A6 /* SABRealizaTuPagoRemoteDataManagerInputProtocol.swift in Sources */,
+				0448A83F26AB10FB00B83524 /* CoOwnerCollectionViewCellInteractor.swift in Sources */,
+				0448AA2026AF24C800B83524 /* SABNewCoOwnerProtocol.swift in Sources */,
 				0448A7A626A0E6CE00B83524 /* SABTabBarHomePresenter.swift in Sources */,
 				047937342694C4B900979654 /* SABLoginRemoteDataManagerInputProtocol.swift in Sources */,
 				0448A80326A8BB3C00B83524 /* SABCoOwnerVC.swift in Sources */,
 				04BD4772268D0E860058B77A /* SABLoginVC.swift in Sources */,
 				E3C55E55269D0C6B00E312A5 /* SABUserRegisterStepThreeRemoteDataManager.swift in Sources */,
+				0448AA1E26AF24C800B83524 /* SABNewCoOwnerRouter.swift in Sources */,
 				E3C55E5C269D0C6B00E312A5 /* SABUserRegisterStepThreeRouter.swift in Sources */,
 				04BD4770268D0E860058B77A /* SABLoginInteractor.swift in Sources */,
+				0448A84C26AB24F100B83524 /* PlaceHolderCollectionViewCellInteractor.swift in Sources */,
 				F2995AF1269CFC4E000F5FB8 /* SABRegisterPresenter.swift in Sources */,
 				04A991F9269E113D00F491A6 /* SABRealizaTuPagoPresenter.swift in Sources */,
+				0448A85226AB29B300B83524 /* PlaceHolderCollectionViewCellPresenter.swift in Sources */,
 				F24274D9269D247F0070A4F8 /* SABChangePasswordPresenter.swift in Sources */,
 				F2995AF5269CFC4E000F5FB8 /* SABRegisterInteractor.swift in Sources */,
 				04A991F7269E113D00F491A6 /* SABRealizaTuPagoProtocol.swift in Sources */,
 				04A991F4269E113D00F491A6 /* SABRealizaTuPagoRouter.swift in Sources */,
 				0448A80126A8BB3C00B83524 /* SABCoOwnerInteractor.swift in Sources */,
+				0448AA1F26AF24C800B83524 /* SABNewCoOwnerInteractor.swift in Sources */,
 				0448A7A926A0E6CE00B83524 /* SABTabBarHomeProtocol.swift in Sources */,
 				04A991F6269E113D00F491A6 /* SABRealizaTuPagoVC.swift in Sources */,
 				F2995AFB269CFC4E000F5FB8 /* RequestInformationVC.swift in Sources */,
 				F2995AFD269CFC4E000F5FB8 /* RequestInformationRouter.swift in Sources */,
+				0448AA2126AF24C800B83524 /* SABNewCoOwnerVC.swift in Sources */,
 				0448A7A826A0E6CE00B83524 /* SABTabBarHomeInteractor.swift in Sources */,
 				E3C55E57269D0C6B00E312A5 /* SABUserRegisterStepThreeProtocol.swift in Sources */,
 				E3C55E5B269D0C6B00E312A5 /* SABUserRegisterStepThreeInteractor.swift in Sources */,
-				0448A80C26A8CE3100B83524 /* SABCoOwnerCollectionViewCell.swift in Sources */,
+				0448A83C26AB108300B83524 /* CoOwnerCollectionViewCellProtocol.swift in Sources */,
 				F2995AF6269CFC4E000F5FB8 /* SABRegisterRouter.swift in Sources */,
 				04BD4771268D0E860058B77A /* SABLoginProtocol.swift in Sources */,
 				0448A7FF26A8BB3C00B83524 /* SABCoOwnerPresenter.swift in Sources */,
+				0448A82526A9E1D400B83524 /* PlaceHolderCollectionViewCell.swift in Sources */,
 				0448A7F426A8876C00B83524 /* SABPaymentInformationRequestEntity.swift in Sources */,
 				F233E15C268CFF6A00D44AFD /* AppDelegate.swift in Sources */,
+				0448A84F26AB290500B83524 /* PlaceHolderCollectionViewCellRouter.swift in Sources */,
 				F233E15E268CFF6A00D44AFD /* SceneDelegate.swift in Sources */,
+				0448A84526AB14B600B83524 /* CoOwnerCollectionViewCellPresenter.swift in Sources */,
 				F2995AD0269CFA68000F5FB8 /* UtilitiesSAB.swift in Sources */,
 				F2995AF9269CFC4E000F5FB8 /* RequestInformationProtocol.swift in Sources */,
 				F24274DA269D247F0070A4F8 /* SABChangePasswordProtocol.swift in Sources */,

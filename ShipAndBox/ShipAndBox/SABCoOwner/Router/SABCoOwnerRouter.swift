@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 class SABCoOwnerRouter {
-    private var view: SABCoOwnerVC
+    public var view: SABCoOwnerVC
     private var presenter: SABCoOwnerPresenter
     private var interactor: SABCoOwnerInteractor
     private var window: UIWindow?
-    init(in window: UIWindow?) {
+    init() {
         self.view = SABCoOwnerVC()
         self.presenter = SABCoOwnerPresenter()
         self.interactor = SABCoOwnerInteractor()
@@ -23,11 +23,6 @@ class SABCoOwnerRouter {
         presenter.interactor = self.interactor
         presenter.router = self
         interactor.presenter = self.presenter
-        self.window = window
-    }
-    func showView() {
-        window?.rootViewController = UINavigationController(rootViewController: view)
-        window?.makeKeyAndVisible()
     }
 }
 extension SABCoOwnerRouter: SABCoOwnerRouterProtocol {
