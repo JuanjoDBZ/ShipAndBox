@@ -16,14 +16,15 @@ class SABProfilePresenter {
     
 }
 extension SABProfilePresenter: SABProfilePresenterProtocol {
-    //Uso y nombre opcional
-    func getInitialInfo() {
-        interactor?.processInfo()
+    /// Función para solicitar la información del usuario
+    func getInfoUserProfile() {
+        interactor?.getInfoUserProfileIntercator()
     }
 }
 extension SABProfilePresenter: SABProfileInteractorOutputProtocol {
-    //Uso y nombre opcional
-    func receiveData() {
-        view?.loadInfo()
+    func setDataSucces(data: DataUserProfile) {
+        view?.setDataSuccesInView(data: data)
     }
+    
+    //Uso y nombre opcional
 }
