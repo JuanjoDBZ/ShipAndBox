@@ -9,9 +9,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SABNewCoOwnerVC" customModule="ShipAndBox" customModuleProvider="target">
             <connections>
+                <outlet property="txtAddress" destination="cqY-nF-GNj" id="a5b-HP-mdq"/>
+                <outlet property="txtCP" destination="z1w-10-VVG" id="Opi-aq-RJF"/>
+                <outlet property="txtCity" destination="5GF-Wj-JUE" id="kl8-rv-ZCo"/>
                 <outlet property="txtEmail" destination="wUP-8Z-AHA" id="pLQ-8u-hm7"/>
                 <outlet property="txtFullName" destination="5Pq-Gs-DlH" id="PgH-aY-9gw"/>
                 <outlet property="txtProfile" destination="Dcc-su-p15" id="sAh-US-0VN"/>
+                <outlet property="txtState" destination="I2r-1z-t8P" id="cXx-1S-I1n"/>
                 <outlet property="view" destination="RFp-cz-ZyJ" id="755-b3-aW7"/>
             </connections>
         </placeholder>

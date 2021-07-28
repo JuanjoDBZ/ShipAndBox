@@ -11,7 +11,6 @@ import UIKit
 /// Protocolo que define los métodos y atributos para el view de SABCoOwner
 protocol SABCoOwnerViewProtocol {
     // PRESENTER -> VIEW
-    func prueba2(newPerson: newPersonModel)
 }
 /// Protocolo que define los métodos y atributos para el routing de SABCoOwner
 protocol SABCoOwnerRouterProtocol {
@@ -30,8 +29,4 @@ protocol SABCoOwnerInteractorInputProtocol {
 /// Protocolo que define los métodos y atributos para el Interactor de SABCoOwner
 protocol SABCoOwnerInteractorOutputProtocol {
     // INTERACTOR -> PRESENTER
-}
-protocol SABCoOwnerRouterOutputProtocol {
-    // ROUTING -> PRESENTER
-    func pruebaProtocolo(newPerson:newPersonModel)
 }

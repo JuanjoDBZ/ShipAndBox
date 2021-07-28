@@ -8,38 +8,30 @@
 
 import Foundation
 import UIKit
-protocol NewPersonProtocol: class {
-    func saveNewPerson(persona:newPersonModel)
-}
-
 class SABNewCoOwnerVC: UIViewController {
 
     @IBOutlet weak var txtFullName: UITextField!
     @IBOutlet weak var txtProfile: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtAddress: UITextField!
+    @IBOutlet weak var txtCity: UITextField!
+    @IBOutlet weak var txtState: UITextField!
+    @IBOutlet weak var txtCP: UITextField!
     var presenter: SABNewCoOwnerPresenterProtocol?
-    var delegate:NewPersonProtocol?
     var arrayPerson = [String]()
     var newPerson: newPersonModel = newPersonModel()
-
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
     @IBAction func buttonSavePerson(_ sender: Any) {
 
         newPerson.name = txtFullName.text
         newPerson.email = txtEmail.text
         newPerson.profile = txtProfile.text
-//        let name = txtFullName.text
-//        let profile = txtProfile.text
-//        let email = txtEmail.text
-//        arrayPerson.append(name!)
-//        arrayPerson.append(profile!)
-//        arrayPerson.append(email!)
-        delegate?.saveNewPerson(persona: newPerson)
+        newPerson.address = txtAddress.text
+        newPerson.city = txtCity.text
+        newPerson.cp = txtCP.text
+        newPerson.state = txtState.text
         self.navigationController?.popViewController(animated: true)
     }
 }

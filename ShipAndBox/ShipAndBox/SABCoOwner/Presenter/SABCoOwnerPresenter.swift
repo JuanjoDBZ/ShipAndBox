@@ -22,8 +22,3 @@ extension SABCoOwnerPresenter: SABCoOwnerPresenterProtocol {
 }
 extension SABCoOwnerPresenter: SABCoOwnerInteractorOutputProtocol {
 }
-extension SABCoOwnerPresenter: SABCoOwnerRouterOutputProtocol{
-    func pruebaProtocolo(newPerson: newPersonModel) {
-        view?.prueba2(newPerson: newPerson)
-    } 
-}
