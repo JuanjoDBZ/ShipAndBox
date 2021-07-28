@@ -11,9 +11,10 @@ import UIKit
 class SABCoOwnerVC: UIViewController {
     /// Objeto CollectionView
     @IBOutlet weak var collectionCoOwner: UICollectionView!
-    var arrayCoOwner: Array<Any> = ["",""]
-    var arrayPlaceHolderOwner: Array = ["",""]
-    var arrayNewCoOwner: newPersonModel = newPersonModel()
+    var arrayCoOwner: Array<Any> = []
+    var modelNewCoOwner = [newPersonModel]()
+
+    var arrayPlaceHolderOwner: Array = [""]
     var presenter: SABCoOwnerPresenterProtocol?
 
     override func viewDidLoad() {
@@ -31,53 +32,73 @@ class SABCoOwnerVC: UIViewController {
 ///Protocolo para recibir datos de presenter.
 extension SABCoOwnerVC: SABCoOwnerViewProtocol {
     func prueba2(newPerson: newPersonModel) {
-        arrayNewCoOwner = newPerson
+        modelNewCoOwner.append(newPerson)
+        arrayCoOwner.append(newPerson)
         collectionCoOwner.reloadData()
-
     }
 }
 extension SABCoOwnerVC: UICollectionViewDelegate,UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return arrayCoOwner.count
-      }
+        return 4
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return arrayCoOwner.count
-        }
-        else if section == 1 {
-            return arrayPlaceHolderOwner.count
+        if arrayCoOwner.count == 0 {
+            if section == 0 {
+                return arrayPlaceHolderOwner.count
+            }else if section == 1 {
+                return arrayCoOwner.count
+            }
+        }else{
+            if section == 0 {
+                return arrayCoOwner.count
+            }else if section == 1 {
+                return arrayPlaceHolderOwner.count
+            }
         }
         return 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell:UICollectionViewCell? = nil
         let section = indexPath.section
         if section == 0 {
-            let cellCo = collectionView.dequeueReusableCell(withReuseIdentifier:"CoOwnerCollectionViewCell", for: indexPath) as! CoOwnerCollectionViewCell
-            cellCo.labelEmail.text = arrayNewCoOwner.email
-            cellCo.labelName.text = arrayNewCoOwner.name
-            cellCo.labelPlace.text = arrayNewCoOwner.profile
-            return cellCo
+            if arrayCoOwner.count == 0 {
+               let cellPlaceHolder = collectionView.dequeueReusableCell(withReuseIdentifier:"PlaceHolderCollectionViewCell", for: indexPath)
+                return cellPlaceHolder
+            }else{
+                let cellCo = collectionView.dequeueReusableCell(withReuseIdentifier:"CoOwnerCollectionViewCell", for: indexPath) as! CoOwnerCollectionViewCell
+                let coOwnerList = modelNewCoOwner[indexPath.row]
+                let names:String = coOwnerList.name!
+                let email:String = coOwnerList.email!
+                let profile:String = coOwnerList.profile!
+                cellCo.labelName.text = names
+                cellCo.labelEmail.text = email
+                cellCo.labelPlace.text = profile
+                return cellCo
+            }
+        }else if section == 1{
+            if arrayCoOwner.count <= 2 {
+                let cellPlaceHolder = collectionView.dequeueReusableCell(withReuseIdentifier:"PlaceHolderCollectionViewCell", for: indexPath)
+                return cellPlaceHolder
+            }else{
+                let cellPlaceHolder = collectionView.dequeueReusableCell(withReuseIdentifier:"PlaceHolderCollectionViewCell", for: indexPath)
+                cellPlaceHolder.isHidden = true
+                return cellPlaceHolder
+            }
+        }else{
+            let cellPlaceHolder = collectionView.dequeueReusableCell(withReuseIdentifier:"PlaceHolderCollectionViewCell", for: indexPath)
+            cellPlaceHolder.isHidden = true
+            return cellPlaceHolder
         }
-        else if section == 1{
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier:"PlaceHolderCollectionViewCell", for: indexPath)
-            return cell!
-        }
-        return cell!
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath)
         let section = indexPath.section
         if section == 0{
-            print("CoOwner")
-        }else if section == 1{
-            print("place")
+            if arrayCoOwner.count == 0 {
+                presenter?.newCoOwner()
+            }
+        }
+        if section == 1{
             presenter?.newCoOwner()
         }
-    }
-}
-extension SABCoOwnerVC: NewPersonProtocol{
-    func saveNewPerson(persona: newPersonModel) {
-        print("prirmjrnokenfowenf")
     }
 }
