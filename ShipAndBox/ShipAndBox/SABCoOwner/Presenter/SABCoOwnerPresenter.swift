@@ -16,6 +16,14 @@ class SABCoOwnerPresenter {
     
 }
 extension SABCoOwnerPresenter: SABCoOwnerPresenterProtocol {
+    func newCoOwner() {
+        router?.createNewCoOwner()
+    }
 }
 extension SABCoOwnerPresenter: SABCoOwnerInteractorOutputProtocol {
+}
+extension SABCoOwnerPresenter: SABCoOwnerRouterOutputProtocol{
+    func pruebaProtocolo(newPerson: newPersonModel) {
+        view?.prueba2(newPerson: newPerson)
+    } 
 }

@@ -6,7 +6,6 @@
 //
 import UIKit
 class PlaceHolderCollectionViewCell: UICollectionViewCell {
-    var presenter: PlaceHolderCollectionViewCellPresenterProtocol?
     @IBOutlet weak var viewConteiner: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,12 +20,5 @@ class PlaceHolderCollectionViewCell: UICollectionViewCell {
         yourViewBorder.path = UIBezierPath(rect: viewConteiner.bounds).cgPath
         viewConteiner.layer.addSublayer(yourViewBorder)
     }
-    @IBAction func buttonAddCoOwner(_ sender: UIButton) {
-        print("boton co owner entro")
-            presenter?.newCoOwner()
-        
-    }
 }
-///Protocolo para recibir datos de presenter.
-extension PlaceHolderCollectionViewCell: PlaceHolderCollectionViewCellViewProtocol {
-}
+

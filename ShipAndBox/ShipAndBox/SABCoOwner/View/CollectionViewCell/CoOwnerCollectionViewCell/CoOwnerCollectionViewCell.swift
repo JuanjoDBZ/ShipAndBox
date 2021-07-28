@@ -9,7 +9,9 @@ import UIKit
 
 class CoOwnerCollectionViewCell: UICollectionViewCell {
 
-    var presenter: CoOwnerCollectionViewCellPresenterProtocol?
+    @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var labelPlace: UILabel!
+    @IBOutlet weak var labelEmail: UILabel!
     @IBOutlet weak var buttonGroup: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,6 +22,4 @@ class CoOwnerCollectionViewCell: UICollectionViewCell {
         print("entro")
     }
 }
-///Protocolo para recibir datos de presenter.
-extension CoOwnerCollectionViewCell: CoOwnerCollectionViewCellViewProtocol {
-}
+

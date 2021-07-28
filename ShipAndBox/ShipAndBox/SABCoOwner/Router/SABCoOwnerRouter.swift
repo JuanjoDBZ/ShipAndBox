@@ -13,7 +13,7 @@ class SABCoOwnerRouter {
     public var view: SABCoOwnerVC
     private var presenter: SABCoOwnerPresenter
     private var interactor: SABCoOwnerInteractor
-    private var window: UIWindow?
+    private var window: UIWindow?    
     init() {
         self.view = SABCoOwnerVC()
         self.presenter = SABCoOwnerPresenter()
@@ -26,5 +26,16 @@ class SABCoOwnerRouter {
     }
 }
 extension SABCoOwnerRouter: SABCoOwnerRouterProtocol {
+    func createNewCoOwner() {
+        let newCoOwner = SABNewCoOwnerRouter().view
+        newCoOwner.delegate = self
+        self.view.navigationController?.pushViewController(newCoOwner, animated: true)
+    }
 }
-
+extension SABCoOwnerRouter: NewPersonProtocol{
+    func saveNewPerson(persona: newPersonModel) {
+        print("dededededed")
+        print(persona)
+        self.presenter.pruebaProtocolo(newPerson: persona)
+    }
+}

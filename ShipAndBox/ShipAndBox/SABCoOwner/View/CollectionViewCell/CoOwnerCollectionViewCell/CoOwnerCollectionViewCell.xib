@@ -145,6 +145,9 @@
             </constraints>
             <connections>
                 <outlet property="buttonGroup" destination="fN5-Zb-Iiu" id="RfX-fv-GZ1"/>
+                <outlet property="labelEmail" destination="Les-Rc-bB0" id="ckO-CA-dTB"/>
+                <outlet property="labelName" destination="nsN-g3-yeN" id="1Y4-Wk-se8"/>
+                <outlet property="labelPlace" destination="lqc-Si-HTh" id="KvY-yc-wYs"/>
             </connections>
             <point key="canvasLocation" x="95.652173913043484" y="76.674107142857139"/>
         </collectionViewCell>
