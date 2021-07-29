@@ -5,10 +5,8 @@
 //  Created by IsitaFS003 on 21/07/21.
 //  
 //
-
 import Foundation
 import UIKit
-
 class SABCoOwnerRouter {
     public var view: SABCoOwnerVC
     private var presenter: SABCoOwnerPresenter
@@ -26,6 +24,7 @@ class SABCoOwnerRouter {
     }
 }
 extension SABCoOwnerRouter: SABCoOwnerRouterProtocol {
+    /// Ir ala pantalla Datos nuevo administrador 
     func createNewCoOwner() {
         let newCoOwner = SABNewCoOwnerRouter().view
         self.view.navigationController?.pushViewController(newCoOwner, animated: true)

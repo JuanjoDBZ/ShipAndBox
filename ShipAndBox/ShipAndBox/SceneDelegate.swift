@@ -19,10 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
                 window = UIWindow(frame: windowScene.coordinateSpace.bounds)
                 window?.windowScene = windowScene
-        let login = SABLoginRouter()
-        let CoOwnerRouter = SABCoOwnerRouter()
-        
-        let navigationController = UINavigationController(rootViewController: CoOwnerRouter.view)
+        let login = SABLoginRouter()        
+        let navigationController = UINavigationController(rootViewController: login.view)
                 navigationController.modalPresentationStyle = .fullScreen
                 window?.rootViewController = navigationController
                 window?.makeKeyAndVisible()

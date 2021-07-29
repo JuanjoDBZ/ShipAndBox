@@ -5,15 +5,12 @@
 //  Created by IsitaFS003 on 27/07/21.
 //  
 //
-
 import Foundation
 import UIKit
-
 class SABNewCoOwnerRouter {
     public var view: SABNewCoOwnerVC
     private var presenter: SABNewCoOwnerPresenter
     private var interactor: SABNewCoOwnerInteractor
-   
     init() {
         self.view = SABNewCoOwnerVC()
         self.presenter = SABNewCoOwnerPresenter()

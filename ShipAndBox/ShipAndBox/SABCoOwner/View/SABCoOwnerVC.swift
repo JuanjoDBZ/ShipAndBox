@@ -11,16 +11,19 @@ import UIKit
 class SABCoOwnerVC: UIViewController {
     /// Objeto CollectionView
     @IBOutlet weak var collectionCoOwner: UICollectionView!
+    /// Arreglo de cotitular
     var arrayCoOwner: Array<Any> = []
+    /// Arreglo de tipo modelo
     var modelNewCoOwner = [newPersonModel]()
-
+    /// Array PlaceHolder cotitular
     var arrayPlaceHolderOwner: Array = [""]
+    /// Declaracion de variables  para logica de integracion de datos para consumo de servicios
     var presenter: SABCoOwnerPresenterProtocol?
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCollectionView()
     }
+    /// Configuración del collectionview
     func setUpCollectionView() {
         collectionCoOwner.dataSource = self
         collectionCoOwner.delegate = self
@@ -38,9 +41,17 @@ extension SABCoOwnerVC: SABCoOwnerViewProtocol {
     }
 }
 extension SABCoOwnerVC: UICollectionViewDelegate,UICollectionViewDataSource {
+    /// Devuelva el número de secciones en la vista
+    /// - Parameter collectionView: Un objeto que representa la vista
+    /// - Returns: El número de secciones
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 4
     }
+    /// Pregunta a su objeto de fuente de datos la cantidad de elementos en la sección especificada
+    /// - Parameters:
+    ///   - collectionView: La vista de la colección que solicita esta información.
+    ///   - section: Un número de índice que identifica una sección en .
+    /// - Returns: El número de elementos en section.
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if arrayCoOwner.count == 0 {
             if section == 0 {
@@ -57,6 +68,11 @@ extension SABCoOwnerVC: UICollectionViewDelegate,UICollectionViewDataSource {
         }
         return 0
     }
+    ///  Este método es responsable de crear, configurar y devolver la celda apropiada para el elemento dado.
+    /// - Parameters:
+    ///   - collectionView: La vista de la colección que solicita esta información.
+    ///   - indexPath: La ruta del índice que especifica la ubicación del elemento.
+    /// - Returns: Un objeto de celda configurado. No debe regresar nilde este método.
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let section = indexPath.section
         if section == 0 {
@@ -89,6 +105,10 @@ extension SABCoOwnerVC: UICollectionViewDelegate,UICollectionViewDataSource {
             return cellPlaceHolder
         }
     }
+    /// Le dice al delegado que se seleccionó el elemento en la ruta de índice especificada.
+    /// - Parameters:
+    ///   - collectionView: El objeto de vista de colección que le notifica el cambio de selección.
+    ///   - indexPath: La ruta de índice de la celda que se seleccionó.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath)
         let section = indexPath.section
