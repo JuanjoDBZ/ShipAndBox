@@ -7,6 +7,10 @@
 
 import Foundation
 class SABProfileRemoteData:NSObject,URLSessionDelegate {
+    /// Obtener los datos del usuario
+    /// - Parameters:
+    ///   - objectType: Objeto obtenido
+    ///   - completion: Función a ejecutar
     func getDataUserProfile<T: Decodable>(objectType: T.Type, completion: @escaping (EnumsRequestAndErrors.Result<T>) -> Void) {
         /// path para complemetar la url
         let path = "getProfileCustomer"
@@ -16,7 +20,7 @@ class SABProfileRemoteData:NSObject,URLSessionDelegate {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxMDM1IiwiZW1haWwiOiJ5b2dhcm9hbEBnbWFpbC5jb20iLCJ1bmlxdWVfbmFtZSI6IkFMRUpBTkRSTyBHQUxJTkRPIFJPSkFTIiwicm9sZSI6IkMiLCJuYmYiOjE2MjczMTAyOTgsImV4cCI6MTYyNzM5NjY5OCwiaWF0IjoxNjI3MzEwMjk4fQ.AFa5Du9G9dXXvtxjKIktxmjApb-R6FciFMN5ZNTq3kA", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxMDM1IiwiZW1haWwiOiJ5b2dhcm9hbEBnbWFpbC5jb20iLCJ1bmlxdWVfbmFtZSI6IkFMRUpBTkRSTyBHQUxJTkRPIFJPSkFTIiwicm9sZSI6IkMiLCJuYmYiOjE2Mjc1MDA5MDMsImV4cCI6MTYyNzU4NzMwMywiaWF0IjoxNjI3NTAwOTAzfQ.6qGo-XSE8av8qIkOrEZ4N_pf05FNxZoSIwfn-bfdc2M", forHTTPHeaderField: "Authorization")
         let task = session.dataTask(with: request, completionHandler: { data, response, error in
              guard error == nil else {
                 completion(EnumsRequestAndErrors.Result.failure(EnumsRequestAndErrors.APPError.networkError(error!)))

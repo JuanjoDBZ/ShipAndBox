@@ -16,15 +16,20 @@ class SABProfilePresenter {
     
 }
 extension SABProfilePresenter: SABProfilePresenterProtocol {
+    /// Ir a la pantalla de editar datos de usuario
+    /// - Parameter data: Datos del usuario
+    func editUserProfile(data: DataUserProfile) {
+        router?.editUserProfileRouter(data: data)
+    }
     /// Función para solicitar la información del usuario
     func getInfoUserProfile() {
         interactor?.getInfoUserProfileIntercator()
     }
 }
 extension SABProfilePresenter: SABProfileInteractorOutputProtocol {
+    /// Pasar a la vista datos del usuario
+    /// - Parameter data: Datos del usuario
     func setDataSucces(data: DataUserProfile) {
         view?.setDataSuccesInView(data: data)
     }
-    
-    //Uso y nombre opcional
 }

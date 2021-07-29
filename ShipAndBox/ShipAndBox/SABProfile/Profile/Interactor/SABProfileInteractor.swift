@@ -5,7 +5,6 @@
 //  Created by ISITA on 21/07/21.
 //  
 //
-
 import Foundation
 /// Estructura para la respuesta del servidor
 struct ToDoGetUserProfileData: Decodable {
@@ -27,9 +26,9 @@ struct dataResultUserProfile: Decodable {
     /// Email del usuario
     let email: String?
     /// Direcciones del usuario
-    let addressTax: [dataResultUserProfileAddress]?
+    let addressTax: [dataResultUserProfileAddressTax]?
     /// Direcciones del usuario
-    let address: [dataResultUserProfileAddress]?
+    let addrees: [dataResultUserProfileAddress]?
     /// Direcciones del usuario
     let pobox: dataResultUserProfilePobox?
 }
@@ -58,6 +57,38 @@ struct dataResultUserProfileAddress: Decodable {
     /// Estatus
     let status: String?
 }
+
+/// Direcciones del usuario
+struct dataResultUserProfileAddressTax: Decodable {
+    /// Id dirección
+    let id: Int?
+    /// Dirección Calle
+    let businessName: String?
+    /// Colonia
+    let rfc: String?
+    /// Código postal
+    let cfdi: String?
+    /// Ciudad
+    let address: String?
+    /// Estado
+    let numberInterior: String?
+    /// Pais
+    let numberExterior: String?
+    /// Tipo de usuario
+    let suburb: String?
+    /// Latitud
+    let zipcode: String?
+    /// Longitud
+    let city: String?
+    /// Estatus
+    let state: String?
+    /// Estatus
+    let typePerson: String?
+    /// Estatus
+    let typeUser: String?
+    /// Estatus
+    let status: String?
+}
 /// Direcciones del usuario
 struct dataResultUserProfilePobox: Decodable {
     /// Id pobox
@@ -78,13 +109,15 @@ extension SABProfileInteractor: SABProfileInteractorInputProtocol {
             switch result {
             case .success(let object):
                 if object.status == 1 {
-                    if let data =  object.data, let names = data.names, let surnames = data.surnames, let email = data.email{
+                    if let data =  object.data, let names = data.names, let surnames = data.surnames, let email = data.email, let address = data.addrees, let addressTax = data.addressTax{
                         if let customerId = data.customerId {
                             var dataUserProfile: DataUserProfile = DataUserProfile()
                             dataUserProfile.customerId = customerId
                             dataUserProfile.names = names
                             dataUserProfile.surnames = surnames
                             dataUserProfile.email = email
+                            dataUserProfile.addressTax = addressTax
+                            dataUserProfile.address = address
                             self.presenter?.setDataSucces(data: dataUserProfile)
                         }
                     }

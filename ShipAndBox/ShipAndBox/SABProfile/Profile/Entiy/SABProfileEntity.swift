@@ -14,5 +14,9 @@ struct DataUserProfile {
     var surnames: String = ""
     ///Correo de usuario
     var email: String = ""
+    /// Datos fiscales
+    var addressTax = [dataResultUserProfileAddressTax]()
+    /// Direccion del usuario
+    var address = [dataResultUserProfileAddress]()
     public init() {}
 }
