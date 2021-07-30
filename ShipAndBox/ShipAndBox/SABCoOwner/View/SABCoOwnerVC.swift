@@ -79,12 +79,15 @@ extension SABCoOwnerVC: UICollectionViewDelegate,UICollectionViewDataSource {
             }else{
                 guard let cellCo = collectionView.dequeueReusableCell(withReuseIdentifier: "CoOwnerCollectionViewCell", for: indexPath) as? CoOwnerCollectionViewCell else { return UICollectionViewCell() }
                 let coOwnerList = modelNewCoOwner[indexPath.row]
-                let names:String = coOwnerList.name!
-                let email:String = coOwnerList.email!
-                let profile:String = coOwnerList.profile!
-                cellCo.labelName.text = names
-                cellCo.labelEmail.text = email
-                cellCo.labelPlace.text = profile
+                if let coOwnerName = coOwnerList.name {
+                    cellCo.labelName.text = coOwnerName
+                }
+                if let coOwnerEmail = coOwnerList.email {
+                    cellCo.labelEmail.text = coOwnerEmail
+                }
+                if let coOwnerProfile = coOwnerList.profile {
+                    cellCo.labelPlace.text = coOwnerProfile
+                }
                 return cellCo
             }
         }else if section == 1{
