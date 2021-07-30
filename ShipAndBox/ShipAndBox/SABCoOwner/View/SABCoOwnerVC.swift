@@ -31,7 +31,7 @@ class SABCoOwnerVC: UIViewController {
 }
 ///Protocolo para recibir datos de presenter.
 extension SABCoOwnerVC: SABCoOwnerViewProtocol {
-    func prueba2(newPerson: newPersonModel) {
+    func newPersonReloadCollection(newPerson: newPersonModel) {
         modelNewCoOwner.append(newPerson)
         arrayCoOwner.append(newPerson)
         collectionCoOwner.reloadData()
