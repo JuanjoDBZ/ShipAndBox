@@ -3,13 +3,13 @@
 //  Created by IsitaFS003 on 06/07/21.
 import Foundation
 /// Estructura de los datos que recivismos en el servicio
-struct ToDoPayDecodable:Decodable {
+struct ToDoPayDecodable: Codable {
     let data : [dataResultSerive]?
     let status: Int?
     let message: Array<String>
 }
 /// Estructura de los informacion recibidos dentro de data
-struct dataResultSerive:Decodable  {
+struct dataResultSerive: Codable  {
     let id : Int?
     let name : String?
     let cost : Int?

@@ -1,9 +1,6 @@
-//
 //  SABRealizaTuPagoRemoteDataManagerInputProtocol.swift
 //  ShipAndBox
-//
 //  Created by IsitaFS003 on 06/07/21.
-//
 import UIKit
 import OpenpayKit
 class SABRealizaTuPagoRemoteDataManagerInputProtocol: NSObject {
@@ -19,12 +16,6 @@ class SABRealizaTuPagoRemoteDataManagerInputProtocol: NSObject {
     var tokenID: String = ""
     /// Modelo de pago de datos.
     var TokenCard: DataMakePayment = DataMakePayment()
-    /// CVV de tarjeta de usuario.
-    var cvvCardForm = "cvv"
-    /// Nombre de titular de la tarjeta.
-    var nameForm = "holderName"
-    /// customerId para obtener token de tarjeta.
-    var customerId: Int = 0
     /// Funcion para el llamado de servicio getTypePaysMemberships y nos traega los tipos de membrecias.
     /// - Parameters:
     ///   - objectType: Nos regresara el tipo de resultado adquirido.
@@ -78,33 +69,25 @@ class SABRealizaTuPagoRemoteDataManagerInputProtocol: NSObject {
     /// - Returns: Regresa el token.
     func tokenizarTarjeta() -> Void {
         /// Número de la tarjeta.
-        var dataCardNumberForm = ""
+        let dataCardNumberForm = TokenCard.cardNumber
         /// Año de expiración de la tarjeta.
-        var dataExpYearCardForm = ""
+        let dataExpYearCardForm = TokenCard.expirationYear
         /// Mes de expiración de la tarjeta.
-        var dataExpMonthCardForm = ""
+        let dataExpMonthCardForm = TokenCard.expirationMonth
         /// Cvv de la tarjeta.
-        var dataCvvCardForm = ""
+        let dataCvvCardForm = TokenCard.cvv
         /// Nombre del titular de la tarjeta.
-        var dataNameForm = ""
-        dataCardNumberForm = TokenCard.cardNumber
-        dataExpYearCardForm = TokenCard.expirationYear
-        dataExpMonthCardForm = TokenCard.expirationMonth
-        dataCvvCardForm = TokenCard.cvv
-        dataNameForm = TokenCard.holderName
-        customerId = TokenCard.customerId
+        let dataNameForm = TokenCard.holderName
         /// Solicitud de tarjeta para traer el token.
         let card = TokenizeCardRequest(cardNumber: dataCardNumberForm,holderName:dataNameForm, expirationYear: dataExpYearCardForm, expirationMonth: dataExpMonthCardForm, cvv2: dataCvvCardForm)
         openpay.tokenizeCard(card: card) { (OPToken) in
             self.tokenID = OPToken.id
-            print(OPToken.id)
-            self.postPayMembership()
         } failureFunction: { (NSError) in
             print(NSError)
         }
     }
     /// Funcion para el llamado el servicio payMembership para verificar que se realizo el pago
-    func postPayMembership() {
+    func postPayMembership<T: Decodable>( objectType: T.Type, completion: @escaping (EnumsRequestAndErrors.Result<T>) -> Void) {
         let semaphore = DispatchSemaphore (value: 0)
         let parameters: NSDictionary = [
             "DeviceSessionId": sessionID,
@@ -113,38 +96,32 @@ class SABRealizaTuPagoRemoteDataManagerInputProtocol: NSObject {
             "MembershipTypeId":"1",
             "TotalMembership":"105"
         ]
-        let jsonData = try? JSONSerialization.data(withJSONObject: parameters)
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
         var request = URLRequest(url: URL(string: "https://ec2-3-136-112-167.us-east-2.compute.amazonaws.com:4443/Api/payMembership")!,timeoutInterval: Double.infinity)
         request.addValue("Bearer ", forHTTPHeaderField: "Authorization")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
-        request.httpBody = jsonData
-        let task = session.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil, let respuesta = response as?
-                    HTTPURLResponse else {
-                print(String(describing: error))
-                semaphore.signal()
-                return
-            }
-            if respuesta.statusCode == 200 {
-                print("traemos datos:\(data)")
-                do{
-                    if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {
-                        print(json)
-                        for item in json {
-                            print(item)
-                        }
-                    }
-                }catch{
-                    print("error cagante:\(error.localizedDescription)")
-                }
-            }else{
-                print("error:\(respuesta.statusCode)")
-            }
-            print(String(data: data, encoding: .utf8)!)
-            semaphore.signal()
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+        } catch let error {
+            print(error.localizedDescription)
         }
+        let task = session.dataTask(with: request, completionHandler: { data, response, error in
+             guard error == nil else {
+                completion(EnumsRequestAndErrors.Result.failure(EnumsRequestAndErrors.APPError.networkError(error!)))
+                 return
+             }
+             guard let data = data else {
+                completion(EnumsRequestAndErrors.Result.failure(EnumsRequestAndErrors.APPError.dataNotFound))
+                 return
+             }
+             do {
+                let decodedObject = try JSONDecoder().decode(objectType.self, from: data)
+                completion(EnumsRequestAndErrors.Result.success(decodedObject))
+             } catch let error {
+                completion(EnumsRequestAndErrors.Result.failure(EnumsRequestAndErrors.APPError.jsonParsingError(error as! DecodingError)))
+             }
+         })
         task.resume()
         semaphore.wait()
     }
@@ -170,7 +147,6 @@ extension SABRealizaTuPagoRemoteDataManagerInputProtocol:URLSessionDelegate {
     ///   - session: Descripcion de session
     ///   - error: Descripcion del error
     func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {
-        // tenemos un error
         if let err = error {
             print("Error: URLSessionDelegate \(err.localizedDescription)")
         }
