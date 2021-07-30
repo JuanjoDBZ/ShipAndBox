@@ -1,10 +1,6 @@
-//
 //  SABRealizaTuPagoInteractor.swift
 //  ShipAndBox
-//
 //  Created by IsitaFS003 on 06/07/21.
-//  
-//
 import Foundation
 /// Estructura de los datos que recivismos en el servicio
 struct ToDoPayDecodable:Decodable {

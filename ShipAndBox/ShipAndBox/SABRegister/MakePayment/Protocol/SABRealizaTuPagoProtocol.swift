@@ -1,10 +1,6 @@
-//
 //  SABRealizaTuPagoProtocol.swift
 //  ShipAndBox
-//
 //  Created by IsitaFS003 on 06/07/21.
-//  
-//
 import Foundation
 import UIKit
 /// Protocolo que define los métodos y atributos para el view de SABRealizaTuPago

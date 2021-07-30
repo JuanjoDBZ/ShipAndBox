@@ -33,11 +33,16 @@ extension SABLoginRouter: SABLoginRouterProtocol {
     }
     /// Muestra la pantalla de inicio
     func showHomeRouting() {
-        // Tab Bar Customisation
+        // Tab Bar Customisation.
+        /// Objeto TabBar.
         let tabBar = UITabBarController()
+        /// Variable  controlador de vista SABTabBarHomeRouter
         let homeVC = UINavigationController(rootViewController: SABTabBarHomeRouter().view)
+        /// Variable  controlador de vista facturaViewContrller
         let invoice = UINavigationController(rootViewController: facturaViewContrller())
+        /// Variable  controlador de vista comprasViewContrller
         let purchases = UINavigationController(rootViewController: comprasViewContrller())
+        /// Variable  controlador de vista cotitularViewContrller
         let coOwner = UINavigationController(rootViewController: cotitularViewContrller())
         tabBar.setViewControllers([homeVC,invoice,purchases,coOwner], animated: true)
         homeVC.tabBarItem.image = UIImage(named: "item")

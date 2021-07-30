@@ -1,29 +1,26 @@
-//
 //  SABCoOwnerVC.swift
 //  ShipAndBox
-//
 //  Created by IsitaFS003 on 21/07/21.
-//  
-//
 import Foundation
 import UIKit
 /// SABCoOwnerVC
 class SABCoOwnerVC: UIViewController {
-    /// Objeto CollectionView
+    /// Objeto CollectionView.
     @IBOutlet weak var collectionCoOwner: UICollectionView!
-    /// Arreglo de cotitular
+    /// Arreglo de cotitular.
     var arrayCoOwner: Array<Any> = []
-    /// Arreglo de tipo modelo
+    /// Arreglo de tipo modelo.
     var modelNewCoOwner = [newPersonModel]()
-    /// Array PlaceHolder cotitular
+    /// Array PlaceHolder cotitular.
     var arrayPlaceHolderOwner: Array = [""]
-    /// Declaracion de variables  para logica de integracion de datos para consumo de servicios
+    /// Declaracion de variables  para logica de integracion de datos para consumo de servicios.
     var presenter: SABCoOwnerPresenterProtocol?
+    /// Método que se llama una vez que se ha cargado la vista.
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCollectionView()
     }
-    /// Configuración del collectionview
+    /// Configuración del collectionview.
     func setUpCollectionView() {
         collectionCoOwner.dataSource = self
         collectionCoOwner.delegate = self
@@ -41,16 +38,16 @@ extension SABCoOwnerVC: SABCoOwnerViewProtocol {
     }
 }
 extension SABCoOwnerVC: UICollectionViewDelegate,UICollectionViewDataSource {
-    /// Devuelva el número de secciones en la vista
-    /// - Parameter collectionView: Un objeto que representa la vista
-    /// - Returns: El número de secciones
+    /// Devuelva el número de secciones en la vista.
+    /// - Parameter collectionView: Un objeto que representa la vista.
+    /// - Returns: El número de secciones.
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 4
     }
-    /// Pregunta a su objeto de fuente de datos la cantidad de elementos en la sección especificada
+    /// Pregunta a su objeto de fuente de datos la cantidad de elementos en la sección especificada.
     /// - Parameters:
     ///   - collectionView: La vista de la colección que solicita esta información.
-    ///   - section: Un número de índice que identifica una sección en .
+    ///   - section: Un número de índice que identifica una sección en.
     /// - Returns: El número de elementos en section.
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if arrayCoOwner.count == 0 {
@@ -110,7 +107,6 @@ extension SABCoOwnerVC: UICollectionViewDelegate,UICollectionViewDataSource {
     ///   - collectionView: El objeto de vista de colección que le notifica el cambio de selección.
     ///   - indexPath: La ruta de índice de la celda que se seleccionó.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
         let section = indexPath.section
         if section == 0{
             if arrayCoOwner.count == 0 {

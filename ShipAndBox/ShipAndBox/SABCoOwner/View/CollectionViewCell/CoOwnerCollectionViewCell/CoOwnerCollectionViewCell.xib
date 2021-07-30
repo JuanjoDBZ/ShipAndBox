@@ -40,9 +40,6 @@
                                     <constraint firstAttribute="width" constant="30" id="YRn-dJ-3K1"/>
                                     <constraint firstAttribute="height" constant="30" id="mmU-4e-NPm"/>
                                 </constraints>
-                                <connections>
-                                    <action selector="buttonNewGroup:" destination="gTV-IL-0wX" eventType="touchUpInside" id="1l0-Wa-EMQ"/>
-                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wLI-EC-8B0">
                                 <rect key="frame" x="21" y="185" width="16" height="17.5"/>
@@ -144,10 +141,10 @@
                 <constraint firstItem="q63-o2-Ii4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vrd-Oy-3cb"/>
             </constraints>
             <connections>
-                <outlet property="buttonGroup" destination="fN5-Zb-Iiu" id="RfX-fv-GZ1"/>
+                <outlet property="LabelPosition" destination="lqc-Si-HTh" id="3Da-2i-vl7"/>
                 <outlet property="labelEmail" destination="Les-Rc-bB0" id="ckO-CA-dTB"/>
                 <outlet property="labelName" destination="nsN-g3-yeN" id="1Y4-Wk-se8"/>
-                <outlet property="labelPlace" destination="lqc-Si-HTh" id="KvY-yc-wYs"/>
+                <outlet property="labelPlace" destination="HbJ-r0-xhh" id="zkm-P3-e5t"/>
             </connections>
             <point key="canvasLocation" x="95.652173913043484" y="76.674107142857139"/>
         </collectionViewCell>

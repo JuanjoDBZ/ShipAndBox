@@ -1,10 +1,6 @@
-//
 //  SABRealizaTuPagoPresenter.swift
 //  ShipAndBox
-//
 //  Created by IsitaFS003 on 06/07/21.
-//  
-//
 import Foundation
 class SABRealizaTuPagoPresenter {
     var view: SABRealizaTuPagoViewProtocol?

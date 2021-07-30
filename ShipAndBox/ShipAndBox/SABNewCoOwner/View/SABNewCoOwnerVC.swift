@@ -1,35 +1,31 @@
-//
 //  SABNewCoOwnerVC.swift
 //  ShipAndBox
-//
 //  Created by IsitaFS003 on 27/07/21.
-//  
-//
 import Foundation
 import UIKit
 class SABNewCoOwnerVC: UIViewController {
-    /// Nombre completo
+    /// Nombre completo cotitular.
     @IBOutlet weak var txtFullName: UITextField!
-    /// Perfil
+    /// Perfil del cotitular.
     @IBOutlet weak var txtProfile: UITextField!
-    /// Correo
+    /// Correo del cotitular.
     @IBOutlet weak var txtEmail: UITextField!
-    /// Dirección
+    /// Dirección del cotitular.
     @IBOutlet weak var txtAddress: UITextField!
-    /// Ciudad
+    /// Ciudad del cotitular.
     @IBOutlet weak var txtCity: UITextField!
-    /// Estado
+    /// Estado del cotitular.
     @IBOutlet weak var txtState: UITextField!
-    /// CP
+    /// CP del cotitular.
     @IBOutlet weak var txtCP: UITextField!
-    /// // Protocolo que define los métodos y atributos para el Presenter
+    /// // Protocolo que define los métodos y atributos para el Presenter.
     var presenter: SABNewCoOwnerPresenterProtocol?
-    /// Varible tipo newPersonModel
+    /// Varible tipo newPersonModel.
     var newPerson: newPersonModel = newPersonModel()
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    /// Boton para guardar la informacion
+    /// Boton para guardar la informacion.
     @IBAction func buttonSavePerson(_ sender: Any) {
         newPerson.name = txtFullName.text
         newPerson.email = txtEmail.text
