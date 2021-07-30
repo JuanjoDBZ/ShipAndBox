@@ -77,7 +77,7 @@ extension SABCoOwnerVC: UICollectionViewDelegate,UICollectionViewDataSource {
                let cellPlaceHolder = collectionView.dequeueReusableCell(withReuseIdentifier:"PlaceHolderCollectionViewCell", for: indexPath)
                 return cellPlaceHolder
             }else{
-                let cellCo = collectionView.dequeueReusableCell(withReuseIdentifier:"CoOwnerCollectionViewCell", for: indexPath) as! CoOwnerCollectionViewCell
+                guard let cellCo = collectionView.dequeueReusableCell(withReuseIdentifier: "CoOwnerCollectionViewCell", for: indexPath) as? CoOwnerCollectionViewCell else { return UICollectionViewCell() }
                 let coOwnerList = modelNewCoOwner[indexPath.row]
                 let names:String = coOwnerList.name!
                 let email:String = coOwnerList.email!
