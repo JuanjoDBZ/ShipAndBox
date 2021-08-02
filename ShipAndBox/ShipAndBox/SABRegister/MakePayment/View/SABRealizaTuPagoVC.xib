@@ -9,20 +9,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SABRegisterStep4VC" customModule="ShipAndBox" customModuleProvider="target">
             <connections>
-                <outlet property="labelAmount" destination="uY5-nR-zZr" id="XXT-aA-Qac"/>
-                <outlet property="labelCVV" destination="n6p-xc-tkQ" id="KJX-dT-X6W"/>
-                <outlet property="labelCode" destination="PBl-JK-7Oc" id="Reh-Q5-eAL"/>
-                <outlet property="labelColony" destination="Qsh-Ll-sV9" id="2UY-4c-cwW"/>
-                <outlet property="labelMembership" destination="XNK-nj-3Is" id="aUe-it-N3s"/>
-                <outlet property="labelMonth" destination="qfN-bB-Jsm" id="dza-Ky-Olq"/>
-                <outlet property="labelName" destination="zxH-GO-8aj" id="XaF-Xi-Kgs"/>
-                <outlet property="labelNumber" destination="NeL-J8-iwJ" id="Qdn-eC-L7V"/>
-                <outlet property="labelState" destination="2Ac-yV-zZd" id="a8A-it-6bP"/>
-                <outlet property="labelStreet" destination="e1h-yL-Job" id="esC-fY-Feq"/>
-                <outlet property="labelTown" destination="2YA-On-jaF" id="Umf-L2-eaS"/>
-                <outlet property="labelYear" destination="kdq-Gy-M0i" id="I9G-6S-z8W"/>
                 <outlet property="txtAmount" destination="uY5-nR-zZr" id="qLA-QI-Ohp"/>
+                <outlet property="txtCVV" destination="n6p-xc-tkQ" id="YEA-lx-uTz"/>
+                <outlet property="txtCode" destination="PBl-JK-7Oc" id="1ZO-zn-58F"/>
+                <outlet property="txtColony" destination="Qsh-Ll-sV9" id="GWG-9M-xuf"/>
+                <outlet property="txtMonth" destination="qfN-bB-Jsm" id="eQO-5T-rF3"/>
+                <outlet property="txtName" destination="zxH-GO-8aj" id="5rh-Ik-xyJ"/>
+                <outlet property="txtNumber" destination="NeL-J8-iwJ" id="V43-u4-rCw"/>
+                <outlet property="txtState" destination="2Ac-yV-zZd" id="oQJ-ZN-pxx"/>
+                <outlet property="txtStreet" destination="e1h-yL-Job" id="WVY-ve-d8k"/>
+                <outlet property="txtTown" destination="2YA-On-jaF" id="2if-Uf-Ghr"/>
                 <outlet property="txtTypeMemberShip" destination="XNK-nj-3Is" id="Mpc-tC-kay"/>
+                <outlet property="txtYear" destination="kdq-Gy-M0i" id="shI-sq-Wgq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -75,6 +73,9 @@
                                     <rect key="frame" x="20" y="317" width="330" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                    </userDefinedRuntimeAttributes>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Número de tarjeta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iO-6J-l0e">
                                     <rect key="frame" x="20" y="366" width="124" height="18"/>
@@ -267,6 +268,9 @@
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VAG-rK-3rw" userLabel="2">
                                                     <rect key="frame" x="117" y="20" width="30" height="30"/>
@@ -281,6 +285,9 @@
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z1p-jn-C9C" userLabel="4">
                                                     <rect key="frame" x="251" y="20" width="30" height="30"/>
@@ -294,7 +301,10 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                    <color key="backgroundColor" red="0.29803921568627451" green="0.65490196078431373" blue="0.20392156862745098" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rC6-sK-9d2" userLabel="3">
                                                     <rect key="frame" x="186" y="20" width="30" height="30"/>
@@ -309,6 +319,9 @@
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>

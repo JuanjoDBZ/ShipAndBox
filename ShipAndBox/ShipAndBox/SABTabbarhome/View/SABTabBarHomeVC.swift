@@ -36,7 +36,6 @@ class SABTabBarHomeVC: UIViewController {
         navigationItem.titleView = imageView
     }
     @objc func profileSelector()  {
-        print("entro")
     }
 }
 class facturaViewContrller: UIViewController {

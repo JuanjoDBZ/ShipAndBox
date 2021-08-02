@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SABCoOwnerVC" customModule="ShipAndBox" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionCoOwner" destination="W4E-eF-4fV" id="X74-hR-OvA"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ukz-Vq-cGI">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="W4E-eF-4fV">
+                            <rect key="frame" x="48" y="8" width="279" height="684"/>
+                            <color key="backgroundColor" systemColor="systemGray4Color"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pVx-bs-OID">
+                                <size key="itemSize" width="208" height="323"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="uxo-zg-7zs"/>
+                            </connections>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                    <constraints>
+                        <constraint firstItem="W4E-eF-4fV" firstAttribute="top" secondItem="ukz-Vq-cGI" secondAttribute="top" constant="8" id="24X-qm-cWu"/>
+                        <constraint firstAttribute="trailing" secondItem="W4E-eF-4fV" secondAttribute="trailing" constant="48" id="AEe-HI-aLB"/>
+                        <constraint firstAttribute="bottom" secondItem="W4E-eF-4fV" secondAttribute="bottom" constant="8" id="TCK-rf-8NX"/>
+                        <constraint firstItem="W4E-eF-4fV" firstAttribute="leading" secondItem="ukz-Vq-cGI" secondAttribute="leading" constant="48" id="yWG-B3-u94"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemGray4Color"/>
+            <constraints>
+                <constraint firstItem="ukz-Vq-cGI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5eG-RA-bMS"/>
+                <constraint firstItem="ukz-Vq-cGI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8HS-vc-HWd"/>
+                <constraint firstItem="ukz-Vq-cGI" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" id="SSV-D9-MuT"/>
+                <constraint firstItem="ukz-Vq-cGI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" id="Xru-Qg-xrS"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="96.799999999999997" y="103.44827586206897"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
