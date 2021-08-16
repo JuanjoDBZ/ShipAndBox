@@ -2,19 +2,18 @@
 //  SABInvoicesRouter.swift
 //  ShipAndBox
 //
-//  Created by IsitaFS003 on 02/08/21.
+//  Created by IsitaFS003 on 03/08/21.
 //  
 //
 
 import Foundation
 import UIKit
-
+ 
 class SABInvoicesRouter {
-    private var view: SABInvoicesVC
+    public var view: SABInvoicesVC
     private var presenter: SABInvoicesPresenter
     private var interactor: SABInvoicesInteractor
-    private var window: UIWindow?
-    init(in window: UIWindow?) {
+    init() {
         self.view = SABInvoicesVC()
         self.presenter = SABInvoicesPresenter()
         self.interactor = SABInvoicesInteractor()
@@ -23,11 +22,6 @@ class SABInvoicesRouter {
         presenter.interactor = self.interactor
         presenter.router = self
         interactor.presenter = self.presenter
-        self.window = window
-    }
-    func showView() {
-        window?.rootViewController = UINavigationController(rootViewController: view)
-        window?.makeKeyAndVisible()
     }
 }
 extension SABInvoicesRouter: SABInvoicesRouterProtocol {
