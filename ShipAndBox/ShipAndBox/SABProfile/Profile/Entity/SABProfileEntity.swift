@@ -5,6 +5,7 @@
 //  Created by ISITA on 26/07/21.
 //
 import Foundation
+/// Estructura para entidad de perfil
 struct DataUserProfile {
     /// Id de usuario
     var customerId: Int = 0
