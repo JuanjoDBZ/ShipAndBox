@@ -18,5 +18,7 @@ struct DataUserProfile {
     var addressTax = [dataResultUserProfileAddressTax]()
     /// Direccion del usuario
     var address = [dataResultUserProfileAddress]()
+    /// pobox
+    var pobox:dataResultUserProfilePobox?
     public init() {}
 }

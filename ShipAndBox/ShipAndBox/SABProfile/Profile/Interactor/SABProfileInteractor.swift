@@ -57,7 +57,6 @@ struct dataResultUserProfileAddress: Decodable {
     /// Estatus
     let status: String?
 }
-
 /// Direcciones del usuario
 struct dataResultUserProfileAddressTax: Decodable {
     /// Id dirección
@@ -109,7 +108,7 @@ extension SABProfileInteractor: SABProfileInteractorInputProtocol {
             switch result {
             case .success(let object):
                 if object.status == 1 {
-                    if let data =  object.data, let names = data.names, let surnames = data.surnames, let email = data.email, let address = data.addrees, let addressTax = data.addressTax{
+                    if let data =  object.data, let names = data.names, let surnames = data.surnames, let email = data.email, let address = data.addrees, let addressTax = data.addressTax, let pobox = data.pobox {
                         if let customerId = data.customerId {
                             var dataUserProfile: DataUserProfile = DataUserProfile()
                             dataUserProfile.customerId = customerId
@@ -118,6 +117,7 @@ extension SABProfileInteractor: SABProfileInteractorInputProtocol {
                             dataUserProfile.email = email
                             dataUserProfile.addressTax = addressTax
                             dataUserProfile.address = address
+                            dataUserProfile.pobox = pobox
                             self.presenter?.setDataSucces(data: dataUserProfile)
                         }
                     }

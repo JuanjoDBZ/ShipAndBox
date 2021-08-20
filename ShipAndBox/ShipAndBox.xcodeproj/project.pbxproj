@@ -397,7 +397,7 @@
 		E302688526A89C5100E59CDE /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				E382333126AF2A1C008CA3B9 /* Entiy */,
+				E382333126AF2A1C008CA3B9 /* Entity */,
 				E302688B26AA25B100E59CDE /* RemoteData */,
 				E302688A26A8D0EE00E59CDE /* Protocol */,
 				E302688926A8D0C000E59CDE /* Interactor */,
@@ -465,12 +465,12 @@
 			path = RemoteData;
 			sourceTree = "<group>";
 		};
-		E382333126AF2A1C008CA3B9 /* Entiy */ = {
+		E382333126AF2A1C008CA3B9 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
 				E382333226AF2A89008CA3B9 /* SABProfileEntity.swift */,
 			);
-			path = Entiy;
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		E382334026B1B3D4008CA3B9 /* EditProfile */ = {

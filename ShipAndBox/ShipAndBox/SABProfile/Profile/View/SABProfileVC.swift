@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-
 class SABProfileVC: UIViewController {
     var presenter: SABProfilePresenterProtocol?
     /// Imagen de usuario
@@ -28,7 +27,8 @@ class SABProfileVC: UIViewController {
         self.view.activityStartAnimating(activityColor: UIColor.green, backgroundColor: UIColor.black.withAlphaComponent(0.5))
         presenter?.getInfoUserProfile()
     }
-    
+    /// Editar imgaen del usuario
+    /// - Parameter sender: Contiene la información del botón que se pulsa
     @IBAction func UpdateImageUserProfile(_ sender: UIButton) {
     }
     /// Editar datos del usuario

@@ -9,11 +9,9 @@
 import Foundation
 
 class SABProfilePresenter {
-    
     var view: SABProfileViewProtocol?
     var interactor: SABProfileInteractorInputProtocol?
     var router: SABProfileRouterProtocol?
-    
 }
 extension SABProfilePresenter: SABProfilePresenterProtocol {
     /// Ir a la pantalla de editar datos de usuario

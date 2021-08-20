@@ -10,8 +10,7 @@ import Foundation
 
 class SABEditProfileInteractor {
     var presenter: SABEditProfileInteractorOutputProtocol?
-    
 }
 extension SABEditProfileInteractor: SABEditProfileInteractorInputProtocol {
-    
+
 }
