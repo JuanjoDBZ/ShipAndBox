@@ -20,7 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 window = UIWindow(frame: windowScene.coordinateSpace.bounds)
                 window?.windowScene = windowScene
         let login = SABLoginRouter()
-        let navigationController = UINavigationController(rootViewController: login.view)
+        let On = SABOnBoardingViewController()
+        let navigationController = UINavigationController(rootViewController:On)
                 navigationController.modalPresentationStyle = .fullScreen
                 window?.rootViewController = navigationController
                 window?.makeKeyAndVisible()
