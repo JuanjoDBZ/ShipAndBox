@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SABOnBoardingAdministrationCollectionViewCell" customModule="ShipAndBox" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="260" height="672"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="260" height="672"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OnBoardingAdministration" translatesAutoresizingMaskIntoConstraints="NO" id="wIf-zp-HeS">
+                        <rect key="frame" x="0.0" y="0.0" width="260" height="672"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Administra tus cotizacion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejb-w0-yJA">
+                        <rect key="frame" x="34" y="457" width="192" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.29803921570000003" green="0.65490196079999996" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Administra tus Cotizaciones activas y puedes pagar de un artículo hasta un grupo de artículos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zf-y8-kck">
+                        <rect key="frame" x="8" y="495" width="244" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="244" id="37K-g1-UlV"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9w-qq-FOB">
+                        <rect key="frame" x="109" y="530" width="42" height="30"/>
+                        <state key="normal" title="Omitir">
+                            <color key="titleColor" systemColor="labelColor"/>
+                        </state>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="8Zf-y8-kck" firstAttribute="top" secondItem="ejb-w0-yJA" secondAttribute="bottom" constant="17" id="1Od-q4-FBl"/>
+                <constraint firstAttribute="trailing" secondItem="wIf-zp-HeS" secondAttribute="trailing" id="65d-fo-RtM"/>
+                <constraint firstItem="8Zf-y8-kck" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Gjo-k9-Bhr"/>
+                <constraint firstAttribute="bottom" secondItem="e9w-qq-FOB" secondAttribute="bottom" constant="112" id="b9z-YP-N3V"/>
+                <constraint firstItem="e9w-qq-FOB" firstAttribute="top" secondItem="8Zf-y8-kck" secondAttribute="bottom" constant="11" id="bID-uE-oS0"/>
+                <constraint firstItem="wIf-zp-HeS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dfK-L8-NTe"/>
+                <constraint firstItem="e9w-qq-FOB" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="fU5-ag-lnd"/>
+                <constraint firstAttribute="bottom" secondItem="wIf-zp-HeS" secondAttribute="bottom" id="ngj-qd-Wez"/>
+                <constraint firstItem="ejb-w0-yJA" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="tqY-Op-Vs1"/>
+                <constraint firstItem="wIf-zp-HeS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ulz-qh-syV"/>
+            </constraints>
+            <size key="customSize" width="284" height="672"/>
+            <point key="canvasLocation" x="59.420289855072468" y="79.017857142857139"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="OnBoardingAdministration" width="126.5" height="311"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
