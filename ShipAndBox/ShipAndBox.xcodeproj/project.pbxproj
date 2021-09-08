@@ -49,6 +49,8 @@
 		04A991F8269E113D00F491A6 /* SABRealizaTuPagoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A991EF269E113D00F491A6 /* SABRealizaTuPagoInteractor.swift */; };
 		04A991F9269E113D00F491A6 /* SABRealizaTuPagoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A991F1269E113D00F491A6 /* SABRealizaTuPagoPresenter.swift */; };
 		04A991FA269E113D00F491A6 /* SABRealizaTuPagoRemoteDataManagerInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A991F3269E113D00F491A6 /* SABRealizaTuPagoRemoteDataManagerInputProtocol.swift */; };
+		04B9EAAE26CF0FDE00B553ED /* PrivacyAndTerms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9EAAD26CF0FDE00B553ED /* PrivacyAndTerms.swift */; };
+		04B9EAB026CF0FE800B553ED /* PrivacyAndTerms.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B9EAAF26CF0FE800B553ED /* PrivacyAndTerms.xib */; };
 		04BD476D268D0E860058B77A /* SABLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BD4767268D0E860058B77A /* SABLoginVC.xib */; };
 		04BD476E268D0E860058B77A /* SABLoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD4768268D0E860058B77A /* SABLoginPresenter.swift */; };
 		04BD476F268D0E860058B77A /* SABLoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BD4769268D0E860058B77A /* SABLoginRouter.swift */; };
@@ -163,6 +165,8 @@
 		04A991EF269E113D00F491A6 /* SABRealizaTuPagoInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABRealizaTuPagoInteractor.swift; sourceTree = "<group>"; };
 		04A991F1269E113D00F491A6 /* SABRealizaTuPagoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABRealizaTuPagoPresenter.swift; sourceTree = "<group>"; };
 		04A991F3269E113D00F491A6 /* SABRealizaTuPagoRemoteDataManagerInputProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABRealizaTuPagoRemoteDataManagerInputProtocol.swift; sourceTree = "<group>"; };
+		04B9EAAD26CF0FDE00B553ED /* PrivacyAndTerms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyAndTerms.swift; sourceTree = "<group>"; };
+		04B9EAAF26CF0FE800B553ED /* PrivacyAndTerms.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyAndTerms.xib; sourceTree = "<group>"; };
 		04BD4767268D0E860058B77A /* SABLoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SABLoginVC.xib; sourceTree = "<group>"; };
 		04BD4768268D0E860058B77A /* SABLoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABLoginPresenter.swift; sourceTree = "<group>"; };
 		04BD4769268D0E860058B77A /* SABLoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABLoginRouter.swift; sourceTree = "<group>"; };
@@ -537,6 +541,15 @@
 			path = RemoteData;
 			sourceTree = "<group>";
 		};
+		04B9EA9826CEA12900B553ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04B9EAAD26CF0FDE00B553ED /* PrivacyAndTerms.swift */,
+				04B9EAAF26CF0FE800B553ED /* PrivacyAndTerms.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		04BD4761268D0DF10058B77A /* SABLogin */ = {
 			isa = PBXGroup;
 			children = (
@@ -906,6 +919,7 @@
 		F2995ACB269CFA3A000F5FB8 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				04B9EA9826CEA12900B553ED /* View */,
 				F2995ACC269CFA68000F5FB8 /* ActivityIndicator.swift */,
 				F2995ACD269CFA68000F5FB8 /* UtilitiesSAB.swift */,
 				F2995ACE269CFA68000F5FB8 /* YPDrawSignatureView.swift */,
@@ -1113,6 +1127,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B9EAB026CF0FE800B553ED /* PrivacyAndTerms.xib in Resources */,
 				0410D4F726B898BA009E5259 /* SABNewCoOwnerVC.xib in Resources */,
 				0410D4DD26B898B4009E5259 /* PlaceHolderCollectionViewCell.xib in Resources */,
 				0448A7A526A0E6CE00B83524 /* SABTabBarHomeVC.xib in Resources */,
@@ -1254,6 +1269,7 @@
 				F233E15C268CFF6A00D44AFD /* AppDelegate.swift in Sources */,
 				F233E15E268CFF6A00D44AFD /* SceneDelegate.swift in Sources */,
 				F2995AD0269CFA68000F5FB8 /* UtilitiesSAB.swift in Sources */,
+				04B9EAAE26CF0FDE00B553ED /* PrivacyAndTerms.swift in Sources */,
 				F2995AF9269CFC4E000F5FB8 /* RequestInformationProtocol.swift in Sources */,
 				E302688126A89C2600E59CDE /* SABProfileInteractor.swift in Sources */,
 				F24274DA269D247F0070A4F8 /* SABChangePasswordProtocol.swift in Sources */,

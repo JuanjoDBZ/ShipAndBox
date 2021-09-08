@@ -1,28 +1,53 @@
-//
 //  SABLoginVC.swift
 //  ShipAndBox
-//
 //  Created by IsitaFS003 on 30/06/21.
-//  
-//
 import Foundation
 import UIKit
 class SABLoginVC: UIViewController {
-    /// Declaracion de objetos y variables  para la vista.
-    @IBOutlet weak var imageLogo: UIImageView!
+    ///  Uitext contraseña del usuario.
     @IBOutlet weak var txtPassword: UITextField!
+    /// Uitext nombre del usuario.
     @IBOutlet weak var txtUserName: UITextField!
+    /// Boton olvidaste tu contraseña.
     @IBOutlet weak var buttonForgotPassword: UIButton!
+    /// Boton registrate.
     @IBOutlet weak var buttonSignIn: UIButton!
+    /// Boton login.
     @IBOutlet weak var buttonLogin: UIButton!
+    /// Protocolo que define los métodos y atributos para el Presenter.
     var presenter: SABLoginPresenterProtocol?
-    var protocolView: SABLoginViewProtocol?
+    /// Variable correo.
     var email:String = ""
+    /// Variable contraseña.
     var password:String = ""
+    /// Funcion que se llama después de que la vista del controlador se cargue en la memoria.
     override func viewDidLoad() {
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
         super.viewDidLoad()
+        setUpNavigatorBar()
+    }
+    /// Función que de la Configuración al NavigatorBar.
+    func setUpNavigatorBar() {
+        let profileButton = UIButton(type: .custom)
+        profileButton.setImage(UIImage(systemName: "house"), for: .normal)
+        profileButton.addTarget(self, action: #selector(self.menu), for: .touchUpInside)
+        profileButton.contentMode = .scaleToFill
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: profileButton)
+        let searchButton = UIButton(type: .custom)
+        searchButton.setImage(UIImage(systemName: "folder"), for: .normal)
+        searchButton.addTarget(self, action: #selector(self.menu), for: .touchUpInside)
+        searchButton.contentMode = .scaleToFill
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchButton)
+        let imageViewLogo = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 30))
+        imageViewLogo.contentMode = .scaleAspectFit
+        let image = UIImage(named: "logo")
+        imageViewLogo.image = image
+        navigationItem.titleView = imageViewLogo
+    }
+    /// Funcion que abre el menu.
+    @objc func menu()  {
+        print("Aqui abrira el menu")
     }
     /// Función para envió de parámetros para el consumo de servicio de login.
     func loginUser(){
@@ -49,18 +74,6 @@ class SABLoginVC: UIViewController {
     /// - Parameter sender: Objeto del programa.
     @IBAction func buttonMakeYourPaymnet(_ sender: UIButton) {
         presenter?.registerNewUser()
-    }
-    class secondViewContrller: UIViewController {
-        override func viewDidLoad(){
-            super.viewDidLoad()
-            view.backgroundColor = .blue
-        }
-    }
-    class thirdViewContrller: UIViewController {
-        override func viewDidLoad(){
-            super.viewDidLoad()
-            view.backgroundColor = .green
-        }
     }
 }
 ///Protocolo para recibir datos de presenter.
