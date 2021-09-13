@@ -9,21 +9,15 @@
 /* Begin PBXBuildFile section */
 		02F30CA9AA80841FA6AF6475 /* Pods_ShipAndBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4963031E43E093E5431B14C6 /* Pods_ShipAndBox.framework */; };
 		0410D4DB26B898B4009E5259 /* SABCoOwnerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410D4CA26B898B4009E5259 /* SABCoOwnerPresenter.swift */; };
-		0410D4DC26B898B4009E5259 /* SABCoOwnerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410D4CC26B898B4009E5259 /* SABCoOwnerProtocol.swift */; };
 		0410D4DD26B898B4009E5259 /* PlaceHolderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0410D4D026B898B4009E5259 /* PlaceHolderCollectionViewCell.xib */; };
-		0410D4DE26B898B4009E5259 /* PlaceHolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410D4D126B898B4009E5259 /* PlaceHolderCollectionViewCell.swift */; };
 		0410D4DF26B898B4009E5259 /* CoOwnerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0410D4D326B898B4009E5259 /* CoOwnerCollectionViewCell.xib */; };
 		0410D4E026B898B4009E5259 /* CoOwnerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410D4D426B898B4009E5259 /* CoOwnerCollectionViewCell.swift */; };
 		0410D4E126B898B4009E5259 /* SABCoOwnerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0410D4D526B898B4009E5259 /* SABCoOwnerVC.xib */; };
 		0410D4E226B898B4009E5259 /* SABCoOwnerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410D4D626B898B4009E5259 /* SABCoOwnerVC.swift */; };
-		0410D4E326B898B4009E5259 /* SABCoOwnerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410D4D826B898B4009E5259 /* SABCoOwnerInteractor.swift */; };
 		0410D4E426B898B4009E5259 /* SABCoOwnerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410D4DA26B898B4009E5259 /* SABCoOwnerRouter.swift */; };
-		0410D4F326B898BA009E5259 /* SABPersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410D4E726B898BA009E5259 /* SABPersonModel.swift */; };
 		0410D4F426B898BA009E5259 /* SABNewCoOwnerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410D4E926B898BA009E5259 /* SABNewCoOwnerPresenter.swift */; };
-		0410D4F526B898BA009E5259 /* SABNewCoOwnerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410D4EB26B898BA009E5259 /* SABNewCoOwnerProtocol.swift */; };
 		0410D4F626B898BA009E5259 /* SABNewCoOwnerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410D4ED26B898BA009E5259 /* SABNewCoOwnerVC.swift */; };
 		0410D4F726B898BA009E5259 /* SABNewCoOwnerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0410D4EE26B898BA009E5259 /* SABNewCoOwnerVC.xib */; };
-		0410D4F826B898BA009E5259 /* SABNewCoOwnerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410D4F026B898BA009E5259 /* SABNewCoOwnerInteractor.swift */; };
 		0410D4F926B898BA009E5259 /* SABNewCoOwnerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410D4F226B898BA009E5259 /* SABNewCoOwnerRouter.swift */; };
 		043775E2269E21D500BCA086 /* OpenpayKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043775DC269E21B500BCA086 /* OpenpayKit.xcframework */; };
 		043775E3269E21D500BCA086 /* OpenpayKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 043775DC269E21B500BCA086 /* OpenpayKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -42,6 +36,12 @@
 		0497851A26E2CDC400BCD188 /* SABOnBoardingAdministrationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0497851826E2CDC400BCD188 /* SABOnBoardingAdministrationCollectionViewCell.xib */; };
 		0497851D26E2CDDD00BCD188 /* SABOnBoardingCoOwnerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497851B26E2CDDD00BCD188 /* SABOnBoardingCoOwnerCollectionViewCell.swift */; };
 		0497851E26E2CDDD00BCD188 /* SABOnBoardingCoOwnerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0497851C26E2CDDD00BCD188 /* SABOnBoardingCoOwnerCollectionViewCell.xib */; };
+		0497852726E9136B00BCD188 /* SABCoOwnerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410D4D826B898B4009E5259 /* SABCoOwnerInteractor.swift */; };
+		0497852826E9137900BCD188 /* SABCoOwnerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410D4CC26B898B4009E5259 /* SABCoOwnerProtocol.swift */; };
+		0497852926E9139B00BCD188 /* PlaceHolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410D4D126B898B4009E5259 /* PlaceHolderCollectionViewCell.swift */; };
+		0497852A26E913D300BCD188 /* SABPersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410D4E726B898BA009E5259 /* SABPersonModel.swift */; };
+		0497852B26E913D900BCD188 /* SABNewCoOwnerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410D4EB26B898BA009E5259 /* SABNewCoOwnerProtocol.swift */; };
+		0497852C26E913E100BCD188 /* SABNewCoOwnerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410D4F026B898BA009E5259 /* SABNewCoOwnerInteractor.swift */; };
 		04A991F4269E113D00F491A6 /* SABRealizaTuPagoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A991E8269E113D00F491A6 /* SABRealizaTuPagoRouter.swift */; };
 		04A991F5269E113D00F491A6 /* SABRealizaTuPagoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04A991EA269E113D00F491A6 /* SABRealizaTuPagoVC.xib */; };
 		04A991F6269E113D00F491A6 /* SABRealizaTuPagoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A991EB269E113D00F491A6 /* SABRealizaTuPagoVC.swift */; };
@@ -1226,6 +1226,7 @@
 				0410D4F626B898BA009E5259 /* SABNewCoOwnerVC.swift in Sources */,
 				F2995AF0269CFC4E000F5FB8 /* ExternalDataManager.swift in Sources */,
 				F2995AFC269CFC4E000F5FB8 /* RequestInformationInteractor.swift in Sources */,
+				0497852826E9137900BCD188 /* SABCoOwnerProtocol.swift in Sources */,
 				F2995ACF269CFA68000F5FB8 /* ActivityIndicator.swift in Sources */,
 				0410D4E026B898B4009E5259 /* CoOwnerCollectionViewCell.swift in Sources */,
 				F24274DE269D247F0070A4F8 /* SABChangePasswordRouter.swift in Sources */,
@@ -1233,11 +1234,14 @@
 				04BD476F268D0E860058B77A /* SABLoginRouter.swift in Sources */,
 				0410D4F926B898BA009E5259 /* SABNewCoOwnerRouter.swift in Sources */,
 				04BD476E268D0E860058B77A /* SABLoginPresenter.swift in Sources */,
+				0497852926E9139B00BCD188 /* PlaceHolderCollectionViewCell.swift in Sources */,
 				0410D4E226B898B4009E5259 /* SABCoOwnerVC.swift in Sources */,
 				04A991FA269E113D00F491A6 /* SABRealizaTuPagoRemoteDataManagerInputProtocol.swift in Sources */,
 				0497851926E2CDC400BCD188 /* SABOnBoardingAdministrationCollectionViewCell.swift in Sources */,
 				0448A7A626A0E6CE00B83524 /* SABTabBarHomePresenter.swift in Sources */,
+				0497852726E9136B00BCD188 /* SABCoOwnerInteractor.swift in Sources */,
 				047937342694C4B900979654 /* SABLoginRemoteDataManagerInputProtocol.swift in Sources */,
+				0497852A26E913D300BCD188 /* SABPersonModel.swift in Sources */,
 				04BD4772268D0E860058B77A /* SABLoginVC.swift in Sources */,
 				E3C55E55269D0C6B00E312A5 /* SABUserRegisterStepThreeRemoteDataManager.swift in Sources */,
 				E3C55E5C269D0C6B00E312A5 /* SABUserRegisterStepThreeRouter.swift in Sources */,
@@ -1260,6 +1264,7 @@
 				0448A7A826A0E6CE00B83524 /* SABTabBarHomeInteractor.swift in Sources */,
 				E382333E26B1B376008CA3B9 /* SABEditProfileProtocol.swift in Sources */,
 				E3C55E57269D0C6B00E312A5 /* SABUserRegisterStepThreeProtocol.swift in Sources */,
+				0497852B26E913D900BCD188 /* SABNewCoOwnerProtocol.swift in Sources */,
 				E3C55E5B269D0C6B00E312A5 /* SABUserRegisterStepThreeInteractor.swift in Sources */,
 				E382333C26B1B376008CA3B9 /* SABEditProfileRouter.swift in Sources */,
 				E302688226A89C2600E59CDE /* SABProfileProtocol.swift in Sources */,
@@ -1275,6 +1280,7 @@
 				F24274DA269D247F0070A4F8 /* SABChangePasswordProtocol.swift in Sources */,
 				F2995AF7269CFC4E000F5FB8 /* SABRequestInformationEntity.swift in Sources */,
 				E382333B26B1B376008CA3B9 /* SABEditProfilePresenter.swift in Sources */,
+				0497852C26E913E100BCD188 /* SABNewCoOwnerInteractor.swift in Sources */,
 				F2995AF8269CFC4E000F5FB8 /* RequestInformationPresenter.swift in Sources */,
 				0410D4F426B898BA009E5259 /* SABNewCoOwnerPresenter.swift in Sources */,
 				E3C55E5A269D0C6B00E312A5 /* SABUserRegisterStepThreeVC.swift in Sources */,
