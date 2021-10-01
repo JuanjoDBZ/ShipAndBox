@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SABHomeVC" customModule="ShipAndBox" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OnBoardingAdministration" translatesAutoresizingMaskIntoConstraints="NO" id="QWf-ak-VYh">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Administra tus cotizaciones" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aso-vn-J9X">
+                    <rect key="frame" x="76.666666666666657" y="436" width="260.66666666666674" height="24"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" red="0.3240616918" green="0.69673079250000003" blue="0.17160853740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Administra tus cotizaciones activas y puedes pagar desde un artículo hasta un grupo de artículos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvq-FX-5T7">
+                    <rect key="frame" x="20" y="468" width="374" height="61"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smH-Wy-eH9">
+                    <rect key="frame" x="90.666666666666686" y="563" width="233" height="44"/>
+                    <color key="backgroundColor" red="0.3240616918" green="0.69673079250000003" blue="0.17160853740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="hpQ-mF-3g2"/>
+                        <constraint firstAttribute="width" constant="233" id="kHb-X8-DxD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="Entrar">
+                        <color key="titleColor" red="0.93132691059999995" green="0.93132691059999995" blue="0.93132691059999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="goToWebViewSab:" destination="-1" eventType="touchUpInside" id="iu3-Ba-RD4"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.3240616918" green="0.69673079250000003" blue="0.17160853740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="smH-Wy-eH9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0ba-OD-fjv"/>
+                <constraint firstAttribute="bottom" secondItem="QWf-ak-VYh" secondAttribute="bottom" id="EFE-ic-PQA"/>
+                <constraint firstItem="QWf-ak-VYh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GwI-Qm-KhS"/>
+                <constraint firstItem="smH-Wy-eH9" firstAttribute="top" secondItem="nvq-FX-5T7" secondAttribute="bottom" constant="34" id="NwW-xw-dcJ"/>
+                <constraint firstItem="nvq-FX-5T7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="ThA-ly-vf4"/>
+                <constraint firstItem="QWf-ak-VYh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Xpe-FB-CE3"/>
+                <constraint firstItem="QWf-ak-VYh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="b8b-nD-vGu"/>
+                <constraint firstItem="Aso-vn-J9X" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cHz-nH-087"/>
+                <constraint firstItem="nvq-FX-5T7" firstAttribute="top" secondItem="Aso-vn-J9X" secondAttribute="bottom" constant="8" id="kyA-R1-B8G"/>
+                <constraint firstItem="Aso-vn-J9X" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="lQS-PU-eBL"/>
+                <constraint firstAttribute="trailing" secondItem="nvq-FX-5T7" secondAttribute="trailing" constant="20" symbolic="YES" id="zz5-Ue-nQK"/>
+            </constraints>
+            <point key="canvasLocation" x="139.13043478260872" y="145.98214285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="OnBoardingAdministration" width="126.66666412353516" height="311.33334350585938"/>
+    </resources>
+</document>
