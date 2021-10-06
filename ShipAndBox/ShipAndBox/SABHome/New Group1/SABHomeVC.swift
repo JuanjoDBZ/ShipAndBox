@@ -5,14 +5,10 @@
 //  Created by ISITA on 01/10/21.
 //  
 //
-
 import Foundation
 import UIKit
-
 class SABHomeVC: UIViewController {
-
     var presenter: SABHomePresenterProtocol?
-
     override func viewDidLoad() {
         super.viewDidLoad()
         //Opcional
