@@ -11,8 +11,6 @@ class SABHomeVC: UIViewController {
     var presenter: SABHomePresenterProtocol?
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Opcional
-        presenter?.getInitialInfo()
     }
     /// Función para ocultar navegation
     /// - Parameter animated: parametro que se envía para ocultar la barra de navegación
