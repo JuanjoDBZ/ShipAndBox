@@ -10,7 +10,7 @@ class SABLoginRemoteDataManagerInputProtocol:NSObject  {
     /// Función que llama el servicio de login.
     /// - Parameter params: Parámetros que se enviaran al servicio.
     func GetDatalogin<T: Decodable>( objectType: T.Type, params: NSDictionary, completion: @escaping (EnumsRequestAndErrors.Result<T>) -> Void) {
-        let url = URL(string: "https://ec2-3-136-112-167.us-east-2.compute.amazonaws.com:4443/Api/login")!
+        let url = URL(string: "https://apiapp.shipandbox.com/api/auth/login")!
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

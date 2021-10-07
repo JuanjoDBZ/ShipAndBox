@@ -10,6 +10,8 @@ import UIKit
 import WebKit
 class SABWWebViewHomeVC: UIViewController{
     var presenter: SABWWebViewHomePresenterProtocol?
+    /// Url para la webview
+    let url = "https://login.shipandbox.com/"
     /// web view para mostrar la página
     @IBOutlet weak var webViewHome: WKWebView!
     /// Icono para ir hacia atrás
@@ -26,7 +28,7 @@ class SABWWebViewHomeVC: UIViewController{
         let tapGRnext = UITapGestureRecognizer(target: self, action: #selector(self.imageTappedNext))
         imageViewNext.addGestureRecognizer(tapGRnext)
         imageViewNext.isUserInteractionEnabled = true
-        let request = URLRequest(url: URL(string: "https://www.shipandbox.com")!)
+        let request = URLRequest(url: URL(string: url)!)
         webViewHome.load(request)
     }
     /// Función para ocultar navegation

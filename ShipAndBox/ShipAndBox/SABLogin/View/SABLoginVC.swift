@@ -17,7 +17,7 @@ class SABLoginVC: UIViewController {
     /// Protocolo que define los métodos y atributos para el Presenter.
     var presenter: SABLoginPresenterProtocol?
     /// Variable correo.
-    var email:String = ""
+    var userId:Int = 0
     /// Variable contraseña.
     var password:String = ""
     /// Funcion que se llama después de que la vista del controlador se cargue en la memoria.
@@ -57,12 +57,13 @@ class SABLoginVC: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }else{
             if let usrName = txtUserName.text {
-                email = usrName
+                let idUser = Int(usrName)
+                userId = idUser!
             }
             if let usrPassword = txtPassword.text {
                 password = usrPassword
             }
-            presenter?.loginUser(usrEmail:email,usrPassword:password)
+            presenter?.loginUser(userId:userId,usrPassword:password)
         }
     }
     /// Función para ingresar ala aplicación.
@@ -81,11 +82,8 @@ extension SABLoginVC: SABLoginViewProtocol {
     /// Función que trae los datos del servicio login y permite acceso a vista home
     /// - Parameter resultLogin: Datos Decodable para su uso
     func resulSetLoginView(resultLogin: dataLoginResultSerive) {
-        print(resultLogin)
         DispatchQueue.main.async {
-            if  resultLogin.email == self.email {
                 self.presenter?.showHome()
-            }
         }
     }
 }

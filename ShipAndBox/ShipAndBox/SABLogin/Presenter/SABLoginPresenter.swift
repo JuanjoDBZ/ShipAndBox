@@ -20,8 +20,8 @@ extension SABLoginPresenter: SABLoginPresenterProtocol {
     /// - Parameters:
     ///   - usrEmail: Correo usuario.
     ///   - usrPassword: Contraseña usuario.
-    func loginUser(usrEmail: String, usrPassword: String) {
-        interactor?.loginUserInteractor(usrEmail: usrEmail, usrPassword: usrPassword)
+    func loginUser(userId: Int, usrPassword: String) {
+        interactor?.loginUserInteractor(userId: userId, usrPassword: usrPassword)
     }
     /// Funcion para mostrar la vista Home
     func showHome() {

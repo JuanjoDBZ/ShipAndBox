@@ -29,7 +29,7 @@ protocol SABLoginPresenterProtocol {
     /// - Parameters:
     ///   - usrEmail: Correo del usuario.
     ///   - usrPassword: Contraseña del usuario.
-    func loginUser(usrEmail: String, usrPassword: String)
+    func loginUser(userId: Int, usrPassword: String)
     /// Crear nuevo usuario
     func registerNewUser()
     /// Funcion para mostrar la vista Home
@@ -42,7 +42,7 @@ protocol SABLoginInteractorInputProtocol {
     /// - Parameters:
     ///   - usrEmail: Correo del usuario.
     ///   - usrPassword: Contraseña del usuario.
-    func loginUserInteractor(usrEmail: String, usrPassword: String)
+    func loginUserInteractor(userId: Int, usrPassword: String)
 }
 /// Protocolo que define los métodos y atributos para el Interactor de SABLogin
 protocol SABLoginInteractorOutputProtocol {
