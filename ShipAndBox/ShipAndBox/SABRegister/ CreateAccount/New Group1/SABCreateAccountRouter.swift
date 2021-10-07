@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 class SABCreateAccountRouter {
-    private var view: SABCreateAccountVC
+    public var view: SABCreateAccountVC
     private var presenter: SABCreateAccountPresenter
     private var interactor: SABCreateAccountInteractor
     private var window: UIWindow?
-    init(in window: UIWindow?) {
+    init() {
         self.view = SABCreateAccountVC()
         self.presenter = SABCreateAccountPresenter()
         self.interactor = SABCreateAccountInteractor()
@@ -23,11 +23,6 @@ class SABCreateAccountRouter {
         presenter.interactor = self.interactor
         presenter.router = self
         interactor.presenter = self.presenter
-        self.window = window
-    }
-    func showView() {
-        window?.rootViewController = UINavigationController(rootViewController: view)
-        window?.makeKeyAndVisible()
     }
 }
 extension SABCreateAccountRouter: SABCreateAccountRouterProtocol {

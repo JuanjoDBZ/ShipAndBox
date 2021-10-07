@@ -26,6 +26,11 @@ class SABLoginRouter {
     }
 }
 extension SABLoginRouter: SABLoginRouterProtocol {
+    /// Ir a pantalla de recuperar contraseña
+    func showRecoverPwd() {
+        let RecoverPwdVc = SABRecoverPasswordRouter().view
+        self.view.navigationController?.pushViewController(RecoverPwdVc, animated: true)
+    }
     ///Ir a la pantalla de registro
     func registerNewUserRouter() {
         let registerVC = SABRegisterRouter().view

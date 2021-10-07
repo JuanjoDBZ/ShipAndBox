@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -20,7 +20,7 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="f5g-va-alf">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORT-6e-N1L">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORT-6e-N1L" customClass="PrivacyAndTerms" customModule="ShipAndBox" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="768" width="414" height="150"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
@@ -31,7 +31,7 @@
                     <rect key="frame" x="30" y="100" width="354" height="554"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crea una cuenta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnU-pO-ubh">
-                            <rect key="frame" x="8" y="8.0000000000000018" width="266" height="27.666666666666671"/>
+                            <rect key="frame" x="8" y="8" width="266" height="27.5"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                             <color key="textColor" red="0.3240616918" green="0.69673079250000003" blue="0.17160853740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
@@ -98,7 +98,7 @@
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2n-Uv-hWs">
-                            <rect key="frame" x="86.666666666666686" y="364" width="181" height="42"/>
+                            <rect key="frame" x="86.5" y="364" width="181" height="42"/>
                             <color key="backgroundColor" red="0.3240616918" green="0.69673079250000003" blue="0.17160853740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="42" id="Wfp-rS-hWF"/>
@@ -109,7 +109,7 @@
                             </state>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Al dar siguiente, se guardarán los datos regístrados" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hk-1I-4We">
-                            <rect key="frame" x="8" y="531.66666666666663" width="338" height="14.333333333333371"/>
+                            <rect key="frame" x="8" y="531.5" width="338" height="14.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="338" id="MdT-0q-YeU"/>
                             </constraints>
@@ -157,10 +157,12 @@
                 <constraint firstItem="Rhk-QP-8wl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" constant="10" id="3vT-rY-dC8"/>
                 <constraint firstAttribute="trailing" secondItem="f5g-va-alf" secondAttribute="trailing" id="7pA-sK-8A2"/>
                 <constraint firstItem="f5g-va-alf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AXM-iF-cE3"/>
+                <constraint firstAttribute="trailing" secondItem="Rhk-QP-8wl" secondAttribute="trailing" constant="30" id="E6d-S3-Jas"/>
                 <constraint firstAttribute="bottom" secondItem="ORT-6e-N1L" secondAttribute="bottom" constant="-22" id="GPh-WG-xyw"/>
                 <constraint firstItem="ORT-6e-N1L" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JET-8m-CDa"/>
                 <constraint firstAttribute="bottom" secondItem="f5g-va-alf" secondAttribute="bottom" id="OY2-Lk-I6N"/>
                 <constraint firstItem="ORT-6e-N1L" firstAttribute="leading" secondItem="f5g-va-alf" secondAttribute="leading" id="aDw-GU-NsH"/>
+                <constraint firstItem="Rhk-QP-8wl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="i85-K4-NKm"/>
                 <constraint firstItem="f5g-va-alf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="kEP-Rz-ApD"/>
                 <constraint firstAttribute="bottom" secondItem="Rhk-QP-8wl" secondAttribute="bottom" constant="242" id="mfk-jQ-dmN"/>
                 <constraint firstItem="Rhk-QP-8wl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="sZA-2S-bCP"/>

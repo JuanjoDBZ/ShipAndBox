@@ -25,7 +25,19 @@ class SABLoginVC: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
         super.viewDidLoad()
-        setUpNavigatorBar()
+        //setUpNavigatorBar()
+    }
+    /// Función para ocultar navegation
+    /// - Parameter animated: parametro que se envía para ocultar la barra de navegación
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    /// Función para ocultar navegation
+    /// - Parameter animated: parametro que se envía para ocultar la barra de navegación
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     /// Función que de la Configuración al NavigatorBar.
     func setUpNavigatorBar() {
@@ -57,8 +69,8 @@ class SABLoginVC: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }else{
             if let usrName = txtUserName.text {
-                let idUser = Int(usrName)
-                userId = idUser!
+                let idUser = Int(usrName) ?? 0
+                userId = idUser
             }
             if let usrPassword = txtPassword.text {
                 password = usrPassword
@@ -75,6 +87,11 @@ class SABLoginVC: UIViewController {
     /// - Parameter sender: Objeto del programa.
     @IBAction func buttonMakeYourPaymnet(_ sender: UIButton) {
         presenter?.registerNewUser()
+    }
+    /// Función para ir a pantalla de recuperar contraseña
+    /// - Parameter sender: Contiene la información del botón que se pulsa
+    @IBAction func recoverPassword(_ sender: UIButton) {
+        presenter?.showRecoverPassword()
     }
 }
 ///Protocolo para recibir datos de presenter.

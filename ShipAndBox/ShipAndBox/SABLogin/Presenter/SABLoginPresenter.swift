@@ -12,6 +12,10 @@ class SABLoginPresenter {
     var router: SABLoginRouterProtocol?
 }
 extension SABLoginPresenter: SABLoginPresenterProtocol {
+    /// Recuperar contraseña
+    func showRecoverPassword() {
+        router?.showRecoverPwd()
+    }
     /// Ir a la pantalla de registro de usuario
     func registerNewUser() {
         router?.registerNewUserRouter()

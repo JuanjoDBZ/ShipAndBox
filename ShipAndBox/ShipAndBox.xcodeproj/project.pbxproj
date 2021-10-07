@@ -1076,13 +1076,6 @@
 			path = ShipAndBox;
 			sourceTree = "<group>";
 		};
-		F24274CD269D247F0070A4F8 /* ChangePassword */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ChangePassword;
-			sourceTree = "<group>";
-		};
 		F24274CE269D247F0070A4F8 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -1142,7 +1135,6 @@
 			children = (
 				E3144D2726DE88CD0064FD8B /*  CreateAccount */,
 				04A991E6269E10CA00F491A6 /* MakePayment */,
-				F24274CD269D247F0070A4F8 /* ChangePassword */,
 				E3C55E45269D0C6B00E312A5 /* GenerateElectronicSignature */,
 				F2995AD4269CFC4E000F5FB8 /* RegisterNewUser */,
 				F2995AE2269CFC4E000F5FB8 /* RequestInformation */,

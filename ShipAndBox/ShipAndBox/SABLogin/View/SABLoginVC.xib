@@ -94,6 +94,9 @@
                                                     <state key="normal" title="¿Olvidaste tu contraseña?">
                                                         <color key="titleColor" systemColor="systemGreenColor"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="recoverPassword:" destination="-1" eventType="touchUpInside" id="LXb-r0-6O8"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recordarme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEJ-ol-gcN">
                                                     <rect key="frame" x="94" y="8" width="84" height="18"/>

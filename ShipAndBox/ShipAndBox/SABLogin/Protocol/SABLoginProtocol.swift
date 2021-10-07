@@ -21,6 +21,7 @@ protocol SABLoginRouterProtocol {
     func registerNewUserRouter()
     /// funcion que muestra la vista Home
     func showHomeRouting()
+    func showRecoverPwd()
 }
 /// Protocolo que define los métodos y atributos para el Presenter de SABLogin
 protocol SABLoginPresenterProtocol {
@@ -34,6 +35,8 @@ protocol SABLoginPresenterProtocol {
     func registerNewUser()
     /// Funcion para mostrar la vista Home
     func showHome()
+    /// Función para decirle al presenter que llame la pantalla de recuperar contraseña
+    func showRecoverPassword()
 }
 /// Protocolo que define los métodos y atributos para el Interactor de SABLogin
 protocol SABLoginInteractorInputProtocol {

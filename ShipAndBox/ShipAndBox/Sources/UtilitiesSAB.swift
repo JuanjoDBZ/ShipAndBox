@@ -13,7 +13,7 @@ class UtilitiesSAB {
     /// Esquema
     let scheme = "https://"
     /// Url del servidor
-    let host = "ec2-3-136-112-167.us-east-2.compute.amazonaws.com:4443/Api/"
+    let host = "apiapp.shipandbox.com/api/auth/"
     /// Funcion para retornar una url
     /// - Parameter path: complemeto de la url
     /// - Returns: retorna una url

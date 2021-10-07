@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 class SABRecoverPasswordRouter {
-    private var view: SABRecoverPasswordVC
+    public var view: SABRecoverPasswordVC
     private var presenter: SABRecoverPasswordPresenter
     private var interactor: SABRecoverPasswordInteractor
     private var window: UIWindow?
-    init(in window: UIWindow?) {
+    init() {
         self.view = SABRecoverPasswordVC()
         self.presenter = SABRecoverPasswordPresenter()
         self.interactor = SABRecoverPasswordInteractor()
@@ -23,11 +23,6 @@ class SABRecoverPasswordRouter {
         presenter.interactor = self.interactor
         presenter.router = self
         interactor.presenter = self.presenter
-        self.window = window
-    }
-    func showView() {
-        window?.rootViewController = UINavigationController(rootViewController: view)
-        window?.makeKeyAndVisible()
     }
 }
 extension SABRecoverPasswordRouter: SABRecoverPasswordRouterProtocol {
