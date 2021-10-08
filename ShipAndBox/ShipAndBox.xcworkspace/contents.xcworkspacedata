@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ShipAndBox.xcodeproj">
+      location = "group:/Users/isitafs003/Documents/clonShipAndBox/ShipAndBox/ShipAndBox/Ship&amp;Box.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

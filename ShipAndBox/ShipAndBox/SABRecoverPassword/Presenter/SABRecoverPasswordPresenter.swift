@@ -16,6 +16,11 @@ class SABRecoverPasswordPresenter {
     
 }
 extension SABRecoverPasswordPresenter: SABRecoverPasswordPresenterProtocol {
+    /// Llamar al interactor para que envie correo
+    /// - Parameter email: email de recuperación
+    func recoverPassword(email: String) {
+        interactor?.recoverPwdInteractor(email: email)
+    }
     //Uso y nombre opcional
     func getInitialInfo() {
         interactor?.processInfo()

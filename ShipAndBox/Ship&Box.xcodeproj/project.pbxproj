@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		02F30CA9AA80841FA6AF6475 /* Pods_ShipAndBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4963031E43E093E5431B14C6 /* Pods_ShipAndBox.framework */; };
+		04076E83270F9A6700322FA3 /* SABRecoverPasswordRemoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04076E82270F9A6700322FA3 /* SABRecoverPasswordRemoteData.swift */; };
+		04076E89270FC3BA00322FA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F233E164268CFF6B00D44AFD /* Assets.xcassets */; };
 		0410D4DB26B898B4009E5259 /* SABCoOwnerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410D4CA26B898B4009E5259 /* SABCoOwnerPresenter.swift */; };
 		0410D4DC26B898B4009E5259 /* SABCoOwnerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410D4CC26B898B4009E5259 /* SABCoOwnerProtocol.swift */; };
 		0410D4DD26B898B4009E5259 /* PlaceHolderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0410D4D026B898B4009E5259 /* PlaceHolderCollectionViewCell.xib */; };
@@ -106,7 +108,6 @@
 		E3C55E5C269D0C6B00E312A5 /* SABUserRegisterStepThreeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C55E54269D0C6B00E312A5 /* SABUserRegisterStepThreeRouter.swift */; };
 		F233E15C268CFF6A00D44AFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F233E15B268CFF6A00D44AFD /* AppDelegate.swift */; };
 		F233E15E268CFF6A00D44AFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F233E15D268CFF6A00D44AFD /* SceneDelegate.swift */; };
-		F233E165268CFF6B00D44AFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F233E164268CFF6B00D44AFD /* Assets.xcassets */; };
 		F233E168268CFF6B00D44AFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F233E166268CFF6B00D44AFD /* LaunchScreen.storyboard */; };
 		F24274E3269DFD380070A4F8 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24274E2269DFD380070A4F8 /* Enums.swift */; };
 		F2995ACF269CFA68000F5FB8 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2995ACC269CFA68000F5FB8 /* ActivityIndicator.swift */; };
@@ -143,6 +144,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04076E82270F9A6700322FA3 /* SABRecoverPasswordRemoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SABRecoverPasswordRemoteData.swift; sourceTree = "<group>"; };
 		0410D4CA26B898B4009E5259 /* SABCoOwnerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABCoOwnerPresenter.swift; sourceTree = "<group>"; };
 		0410D4CC26B898B4009E5259 /* SABCoOwnerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABCoOwnerProtocol.swift; sourceTree = "<group>"; };
 		0410D4D026B898B4009E5259 /* PlaceHolderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceHolderCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -241,10 +243,10 @@
 		E3C55E50269D0C6B00E312A5 /* SABUserRegisterStepThreeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABUserRegisterStepThreeVC.swift; sourceTree = "<group>"; };
 		E3C55E52269D0C6B00E312A5 /* SABUserRegisterStepThreeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABUserRegisterStepThreeInteractor.swift; sourceTree = "<group>"; };
 		E3C55E54269D0C6B00E312A5 /* SABUserRegisterStepThreeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SABUserRegisterStepThreeRouter.swift; sourceTree = "<group>"; };
-		F233E158268CFF6A00D44AFD /* ShipAndBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShipAndBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F233E158268CFF6A00D44AFD /* Ship&Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ship&Box.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F233E15B268CFF6A00D44AFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F233E15D268CFF6A00D44AFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F233E164268CFF6B00D44AFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F233E164268CFF6B00D44AFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ShipAndBox/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		F233E167268CFF6B00D44AFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F233E169268CFF6B00D44AFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F24274E2269DFD380070A4F8 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
@@ -280,6 +282,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04076E81270F9A1400322FA3 /* RemoteData */ = {
+			isa = PBXGroup;
+			children = (
+				04076E82270F9A6700322FA3 /* SABRecoverPasswordRemoteData.swift */,
+			);
+			path = RemoteData;
+			sourceTree = "<group>";
+		};
 		0410D4C826B898B4009E5259 /* SABCoOwner */ = {
 			isa = PBXGroup;
 			children = (
@@ -911,6 +921,7 @@
 		E38CBD5C26DD4A9E006EC205 /* SABRecoverPassword */ = {
 			isa = PBXGroup;
 			children = (
+				04076E81270F9A1400322FA3 /* RemoteData */,
 				F24274CE269D247F0070A4F8 /* Presenter */,
 				F24274D0269D247F0070A4F8 /* Protocol */,
 				F24274D2269D247F0070A4F8 /* View */,
@@ -1048,7 +1059,7 @@
 		F233E159268CFF6A00D44AFD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F233E158268CFF6A00D44AFD /* ShipAndBox.app */,
+				F233E158268CFF6A00D44AFD /* Ship&Box.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1270,9 +1281,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F233E157268CFF6A00D44AFD /* ShipAndBox */ = {
+		F233E157268CFF6A00D44AFD /* Ship&Box */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F233E16C268CFF6B00D44AFD /* Build configuration list for PBXNativeTarget "ShipAndBox" */;
+			buildConfigurationList = F233E16C268CFF6B00D44AFD /* Build configuration list for PBXNativeTarget "Ship&Box" */;
 			buildPhases = (
 				58057C14D1CEEDB09DAA3DBA /* [CP] Check Pods Manifest.lock */,
 				F233E154268CFF6A00D44AFD /* Sources */,
@@ -1286,9 +1297,9 @@
 			);
 			dependencies = (
 			);
-			name = ShipAndBox;
+			name = "Ship&Box";
 			productName = ShipAndBox;
-			productReference = F233E158268CFF6A00D44AFD /* ShipAndBox.app */;
+			productReference = F233E158268CFF6A00D44AFD /* Ship&Box.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1305,7 +1316,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F233E153268CFF6A00D44AFD /* Build configuration list for PBXProject "ShipAndBox" */;
+			buildConfigurationList = F233E153268CFF6A00D44AFD /* Build configuration list for PBXProject "Ship&Box" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -1318,7 +1329,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F233E157268CFF6A00D44AFD /* ShipAndBox */,
+				F233E157268CFF6A00D44AFD /* Ship&Box */,
 			);
 		};
 /* End PBXProject section */
@@ -1332,6 +1343,7 @@
 				0410D4F726B898BA009E5259 /* SABNewCoOwnerVC.xib in Resources */,
 				0410D4DD26B898B4009E5259 /* PlaceHolderCollectionViewCell.xib in Resources */,
 				0448A7A526A0E6CE00B83524 /* SABTabBarHomeVC.xib in Resources */,
+				04076E89270FC3BA00322FA3 /* Assets.xcassets in Resources */,
 				E3C55E59269D0C6B00E312A5 /* SABUserRegisterStepThreeVC.xib in Resources */,
 				F2995AFA269CFC4E000F5FB8 /* RequestInformationVC.xib in Resources */,
 				0410D4E126B898B4009E5259 /* SABCoOwnerVC.xib in Resources */,
@@ -1343,7 +1355,6 @@
 				E38CBD7B26DD65BB006EC205 /* SABRecoverPasswordVC.xib in Resources */,
 				04DE73E9270D36EB00D87713 /* SABOnBoardingAdministrationCollectionViewCell.xib in Resources */,
 				E32F11F22707B7BB00972A4A /* SABHomeVC.xib in Resources */,
-				F233E165268CFF6B00D44AFD /* Assets.xcassets in Resources */,
 				04DE73EC270D36EB00D87713 /* SABOnBoardingViewController.xib in Resources */,
 				04DE73EA270D36EB00D87713 /* SABOnBoardingCoOwnerCollectionViewCell.xib in Resources */,
 				04DE73E6270D36EB00D87713 /* SABOnBoardingPackagesCollectionViewCell.xib in Resources */,
@@ -1462,6 +1473,7 @@
 				F2995AF5269CFC4E000F5FB8 /* SABRegisterInteractor.swift in Sources */,
 				04A991F7269E113D00F491A6 /* SABRealizaTuPagoProtocol.swift in Sources */,
 				0410D4DB26B898B4009E5259 /* SABCoOwnerPresenter.swift in Sources */,
+				04076E83270F9A6700322FA3 /* SABRecoverPasswordRemoteData.swift in Sources */,
 				04A991F4269E113D00F491A6 /* SABRealizaTuPagoRouter.swift in Sources */,
 				0448A7A926A0E6CE00B83524 /* SABTabBarHomeProtocol.swift in Sources */,
 				E38CBD7F26DD65BB006EC205 /* SABRecoverPasswordProtocol.swift in Sources */,
@@ -1655,7 +1667,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4U7GZPW9DW;
+				DEVELOPMENT_TEAM = 872D554Y6E;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1666,7 +1678,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appViper.com;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shipAndBox.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1680,7 +1692,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4U7GZPW9DW;
+				DEVELOPMENT_TEAM = 872D554Y6E;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1691,7 +1703,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appViper.com;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shipAndBox.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1701,7 +1713,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F233E153268CFF6A00D44AFD /* Build configuration list for PBXProject "ShipAndBox" */ = {
+		F233E153268CFF6A00D44AFD /* Build configuration list for PBXProject "Ship&Box" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F233E16A268CFF6B00D44AFD /* Debug */,
@@ -1710,7 +1722,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F233E16C268CFF6B00D44AFD /* Build configuration list for PBXNativeTarget "ShipAndBox" */ = {
+		F233E16C268CFF6B00D44AFD /* Build configuration list for PBXNativeTarget "Ship&Box" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F233E16D268CFF6B00D44AFD /* Debug */,

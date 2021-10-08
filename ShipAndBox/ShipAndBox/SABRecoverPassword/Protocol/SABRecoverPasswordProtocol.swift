@@ -22,11 +22,17 @@ protocol SABRecoverPasswordRouterProtocol {
 protocol SABRecoverPasswordPresenterProtocol {
     // VIEW -> PRESENTER
     func getInitialInfo()
+    /// Función para decirle al presenter que envie el correo
+    /// - Parameter email: correo de recuperación
+    func recoverPassword(email:String)
 }
 /// Protocolo que define los métodos y atributos para el Interactor de SABRecoverPassword
 protocol SABRecoverPasswordInteractorInputProtocol {
     // PRESENTER -> INTERACTOR
     func processInfo()
+    /// Función para recuperar contraseña
+    /// - Parameter email: correo de recuperación
+    func recoverPwdInteractor(email:String)
 }
 /// Protocolo que define los métodos y atributos para el Interactor de SABRecoverPassword
 protocol SABRecoverPasswordInteractorOutputProtocol {

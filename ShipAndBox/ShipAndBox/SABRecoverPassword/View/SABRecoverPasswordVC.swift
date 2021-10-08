@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 class SABRecoverPasswordVC: UIViewController {
+    /// Email de recuperación
+    @IBOutlet weak var txtEmailRecover: UITextField!
     var presenter: SABRecoverPasswordPresenterProtocol?
     /// Vista principal
     @IBOutlet var principalView: UIView!
@@ -28,6 +30,17 @@ class SABRecoverPasswordVC: UIViewController {
         let backButton = UIBarButtonItem()
         backButton.title = "Atrás"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+    }
+    /// Enviar correo para recuperar contraseña
+    /// - Parameter sender: información del botón pulsado
+    @IBAction func sendEmailRecoverPwd(_ sender: UIButton) {
+        if txtEmailRecover.text != "" {
+            if let emailUser =  txtEmailRecover.text{
+                presenter?.recoverPassword(email: emailUser)
+            }
+        } else {
+            UtilitiesSAB.api.showMessageError(msg:"El campo de correo electrónico no debe estar vacío", controller: self)
+        }
     }
 }
 ///Protocolo para recibir datos de presenter.
