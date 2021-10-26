@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SABEditProfileVC" customModule="ShipAndBox" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SABEditProfileVC" customModule="Ship_Box" customModuleProvider="target">
             <connections>
                 <outlet property="txtEmail" destination="JH8-Ps-vKM" id="M8D-YT-mXR"/>
                 <outlet property="txtMobile" destination="Smq-3g-Y7J" id="49S-bH-yVr"/>
@@ -151,6 +151,7 @@
                 <constraint firstItem="h1S-35-LWe" firstAttribute="top" secondItem="JH8-Ps-vKM" secondAttribute="bottom" constant="15" id="tBI-A8-9Aq"/>
                 <constraint firstAttribute="trailing" secondItem="Smq-3g-Y7J" secondAttribute="trailing" constant="30" id="zr7-qu-dMh"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="140" y="127.28635682158921"/>
         </view>
     </objects>

@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SABProfileVC" customModule="ShipAndBox" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SABProfileVC" customModule="Ship_Box" customModuleProvider="target">
             <connections>
                 <outlet property="addressUser" destination="jeZ-xb-Tfp" id="PJc-IR-YYR"/>
                 <outlet property="emailUser" destination="TM0-uG-a3c" id="3V7-2W-eOe"/>
@@ -242,6 +242,7 @@ Monterrey N.L.</string>
                 <constraint firstItem="Ehe-t6-5Xl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="HbH-WT-Mdt"/>
                 <constraint firstAttribute="bottom" secondItem="Ehe-t6-5Xl" secondAttribute="bottom" id="K9F-4e-Y1X"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="142.02898550724638" y="154.6875"/>
         </view>
     </objects>
